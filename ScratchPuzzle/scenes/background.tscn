@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnk2fnjuctysb"]
+[gd_scene load_steps=12 format=3 uid="uid://bnk2fnjuctysb"]
 
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_dyt6f"]
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="2_vdshm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="3_xqd5j"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="4_l7hcq"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="6_o381j"]
+[ext_resource type="PackedScene" uid="uid://nhieqmidr7y4" path="res://levels/level_01.tscn" id="6_pp52g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxlft"]
 atlas = ExtResource("3_c6iql")
@@ -338,11 +339,18 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 31
+theme_override_constants/margin_bottom = 4
 
 [node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="level-01" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/LevelArea" instance=ExtResource("6_pp52g")]
+scale = Vector2(1.6, 1.6)
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/LevelArea"]
 layout_mode = 2
@@ -350,7 +358,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_dyt6f")
 theme_override_font_sizes/font_size = 24
-text = "O LEVEL SERA EXIBIDO AQUI"
+text = "O LEVEL SERA EXIBIDO AQUI
+					16:9"
 horizontal_alignment = 1
 
 [node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]

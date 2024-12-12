@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bndv7omluqw2h"]
+
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_v6g4l"]
+[ext_resource type="Texture2D" uid="uid://baf3wsgi3vxqp" path="res://assets/Cyberpunk platformer - World starter/tileset/decorations.png" id="2_6slgx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_452df"]
+atlas = ExtResource("2_6slgx")
+region = Rect2(85.8634, 117.594, 23.5127, 26.4856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiyqe"]
+size = Vector2(22, 26)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_v6g4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_452df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oiyqe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
