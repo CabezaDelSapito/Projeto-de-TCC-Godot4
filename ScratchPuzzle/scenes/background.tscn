@@ -32,14 +32,13 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 
 [node name="CommandsMenu" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -330,23 +329,22 @@ theme_override_fonts/font = ExtResource("1_dyt6f")
 theme_override_font_sizes/font_size = 24
 text = "EXECUTAR"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 38
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 
-[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelArea"]
+[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/LevelArea"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -355,16 +353,16 @@ theme_override_font_sizes/font_size = 24
 text = "O LEVEL SERA EXIBIDO AQUI"
 horizontal_alignment = 1
 
-[node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 396)
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -373,7 +371,7 @@ theme_override_font_sizes/font_size = 24
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -382,11 +380,11 @@ theme_override_font_sizes/font_size = 24
 text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE A BANDEIRA. "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -394,7 +392,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = SubResource("AtlasTexture_cd7vr")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -404,11 +402,11 @@ text = "ESTRELA 1 : PEGUE A BANDEIRA. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -416,7 +414,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = SubResource("AtlasTexture_cd7vr")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -426,11 +424,11 @@ text = "ESTRELA 2 : USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -438,7 +436,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = SubResource("AtlasTexture_cd7vr")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/LevelInfo/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
