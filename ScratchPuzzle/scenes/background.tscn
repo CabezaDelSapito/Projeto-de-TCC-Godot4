@@ -1,11 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnk2fnjuctysb"]
+[gd_scene load_steps=11 format=3 uid="uid://bnk2fnjuctysb"]
 
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_dyt6f"]
-[ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Coin-Sprites/00_Coin-Sprites.png" id="2_unqti"]
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="2_vdshm"]
+[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="3_c6iql"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="3_xqd5j"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="4_l7hcq"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="6_o381j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxlft"]
+atlas = ExtResource("3_c6iql")
+region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d5o6"]
+atlas = ExtResource("3_c6iql")
+region = Rect2(17.7839, 4.75685, 12.432, 11.2432)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc8lp"]
+atlas = ExtResource("3_c6iql")
+region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
 atlas = ExtResource("6_o381j")
@@ -106,7 +118,7 @@ script = ExtResource("2_vdshm")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_pxlft")
 expand_mode = 1
 script = ExtResource("3_xqd5j")
 
@@ -114,7 +126,7 @@ script = ExtResource("3_xqd5j")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_pxlft")
 expand_mode = 1
 script = ExtResource("3_xqd5j")
 
@@ -122,7 +134,7 @@ script = ExtResource("3_xqd5j")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_pxlft")
 expand_mode = 1
 script = ExtResource("3_xqd5j")
 
@@ -165,69 +177,35 @@ size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 3
+script = ExtResource("2_vdshm")
+CommandType = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_7d5o6")
 expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 1
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_7d5o6")
 expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 1
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_7d5o6")
 expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 1
 
 [node name="Direcao" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
@@ -263,69 +241,35 @@ size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 3
+script = ExtResource("2_vdshm")
+CommandType = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_vc8lp")
 expand_mode = 1
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
-
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 2
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_vc8lp")
 expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 2
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_unqti")
+texture = SubResource("AtlasTexture_vc8lp")
 expand_mode = 1
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("2_unqti")
-expand_mode = 1
+script = ExtResource("3_xqd5j")
+CommandType = 2
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
 custom_minimum_size = Vector2(450, 0)
@@ -360,7 +304,7 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 3
 script = ExtResource("4_l7hcq")
 

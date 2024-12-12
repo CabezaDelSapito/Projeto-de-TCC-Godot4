@@ -1,8 +1,10 @@
 extends GridContainer
 
+@export_enum("Estrutura", "Movimento", "Direcao") var CommandType = 0
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return true
+	if data[1] == CommandType:
+		return true
 	return false
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
