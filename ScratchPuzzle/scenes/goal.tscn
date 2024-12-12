@@ -10,7 +10,8 @@ region = Rect2(85.8634, 117.594, 23.5127, 26.4856)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiyqe"]
 size = Vector2(22, 26)
 
-[node name="Area2D" type="Area2D"]
+[node name="goal" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_v6g4l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
