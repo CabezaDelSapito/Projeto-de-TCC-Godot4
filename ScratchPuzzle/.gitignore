@@ -1,2 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Diretório de cache do Godot
+.import/
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Configuração específica do usuário
+.editor_settings-*
