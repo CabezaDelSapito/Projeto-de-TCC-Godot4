@@ -1424,8 +1424,7 @@ scale = Vector2(1.5, 1.5)
 next_level = "res://levels/level_02.tscn"
 
 [node name="player" parent="." instance=ExtResource("4_c05eb")]
-position = Vector2(69.3333, 288)
-scale = Vector2(1.5, 1.5)
+position = Vector2(74.6667, 280)
 
 [node name="pause_menu" parent="." instance=ExtResource("6_guiaq")]
 visible = false
