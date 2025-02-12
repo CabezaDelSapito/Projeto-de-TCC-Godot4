@@ -1,14 +1,14 @@
 extends PanelContainer
 
 @onready var target_node = find_child("GridContainer")
+@onready var map_o1 = get_node("MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea/map_01")  # Caminho correto para map_01
+@onready var player = map_o1.get_node("player") 
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true  # Pode modificar conforme necessário
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	# Acha o nó desejado onde o filho deve ser adicionado
-	
-
 	
 	# Remove o filho atual do nó original
 	data[0].get_parent().remove_child(data[0])
@@ -18,3 +18,32 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	
 	# Ajusta a posição global do filho
 	data[0].global_position = global_position
+
+
+func _on_execute_button_pressed() -> void:
+	var comandos = []
+	
+	# Obtém todos os filhos do GridContainer e adiciona à lista de comandos
+	for child in target_node.get_children():
+		if child is TextureRect:
+			#print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
+			comandos.append(child)
+	
+	await executar_sequencial(comandos)
+
+
+func executar_sequencial(comandos):
+	for comando in comandos:
+		#match comando.CommandType:
+			#0: print("Executando Estrutura:", comando.name)
+			#1: print("Executando Movimento:", comando.name)
+			#2: print("Executando Direção:", comando.name)
+		match comando.name:
+			"Andar":
+				if player != null:
+					await player.andar()  # Chama a função andar() no jogador
+				else:
+					print("Jogador não encontrado!")
+				
+				
+		await get_tree().create_timer(1.0).timeout  # Espera entre comandos

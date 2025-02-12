@@ -43,10 +43,8 @@ func _set_state():
 	
 	if texture.name != state:
 		texture.play(state)
-	
-	
-	
-	
-	
-	
-	
+
+func andar():
+	velocity.x = direction * SPEED  # Anda na direção atual
+	await get_tree().create_timer(1.0).timeout  # Anda por 1 segundo
+	velocity.x = 0  # Para após o tempo
