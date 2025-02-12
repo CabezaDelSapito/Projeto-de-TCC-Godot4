@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var target_node = find_child("VBoxArea")
+@onready var target_node = find_child("GridContainer")
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true  # Pode modificar conforme necessário

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="3_0x8l5"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="4_o4fh2"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="5_5rr02"]
-[ext_resource type="PackedScene" uid="uid://nhieqmidr7y4" path="res://levels/map_01.tscn" id="6_ysvtb"]
+[ext_resource type="PackedScene" uid="uid://cfi1vkywlihep" path="res://levels/map_01.tscn" id="6_ysvtb"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="7_0mjjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxlft"]
@@ -303,11 +303,13 @@ script = ExtResource("5_5rr02")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxArea" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 3
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
+columns = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6f01v5omrgn2"]
+[gd_scene load_steps=5 format=3 uid="uid://dflntd4tv6247"]
 
 [ext_resource type="Shader" path="res://shaders/transition.gdshader" id="1_30c52"]
 [ext_resource type="Script" path="res://scripts/transition.gd" id="1_yuypy"]

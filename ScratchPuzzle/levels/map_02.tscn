@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjscbp1rbjbhg"]
+[gd_scene load_steps=11 format=3 uid="uid://dnaurapub8byo"]
 
 [ext_resource type="Texture2D" uid="uid://cttk4h1sudh2f" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_jnyos"]
 [ext_resource type="Texture2D" uid="uid://baf3wsgi3vxqp" path="res://assets/Cyberpunk platformer - World starter/tileset/decorations.png" id="2_nkxpu"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bndv7omluqw2h" path="res://scenes/goal.tscn" id="4_5tj2g"]
 [ext_resource type="PackedScene" uid="uid://b5sgue78hwjow" path="res://actors/player.tscn" id="5_hr4gj"]
 [ext_resource type="PackedScene" uid="uid://dban0dsbdglg0" path="res://scenes/pause_menu.tscn" id="6_dy1da"]
-[ext_resource type="PackedScene" uid="uid://c6f01v5omrgn2" path="res://scenes/transition.tscn" id="7_rnt23"]
+[ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="7_rnt23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm60d"]
 texture = ExtResource("2_nkxpu")
@@ -1430,3 +1430,4 @@ position = Vector2(74.6667, 280)
 visible = false
 
 [node name="transition" parent="." instance=ExtResource("7_rnt23")]
+visible = false
