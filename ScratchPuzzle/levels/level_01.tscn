@@ -182,7 +182,16 @@ columns = 3
 script = ExtResource("2_c30mm")
 CommandType = 1
 
-[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="AndarEsquerda" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("AtlasTexture_7d5o6")
+expand_mode = 1
+script = ExtResource("4_o4fh2")
+CommandType = 1
+
+[node name="AndarDireita" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2

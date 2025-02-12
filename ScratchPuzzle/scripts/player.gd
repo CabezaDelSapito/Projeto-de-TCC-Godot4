@@ -44,7 +44,15 @@ func _set_state():
 	if texture.name != state:
 		texture.play(state)
 
-func andar():
-	velocity.x = direction * SPEED  # Anda na direção atual
-	await get_tree().create_timer(1.0).timeout  # Anda por 1 segundo
+func andar(direcao: int):
+	velocity.x = direcao * SPEED  # Define a velocidade na direção especificada
+	move_and_slide()  # Move o player
+	await get_tree().create_timer(2.0).timeout  # Espera 1 segundo
 	velocity.x = 0  # Para após o tempo
+	move_and_slide()  # Garante que o movimento pare
+
+func pular():
+	if is_on_floor():
+		velocity.y = JUMP_VELOCITY  # Faz o personagem pular
+		await get_tree().create_timer(2.0).timeout  # Espera um pouco no ar
+
