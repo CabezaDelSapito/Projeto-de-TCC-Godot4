@@ -40,9 +40,9 @@ func executar_sequencial(comandos):
 			2: print("Executando Direção:", comando.name)
 		match comando.name:
 			"AndarEsquerda":
-				player.andar(1)
-			"AndarDireita":
 				player.andar(-1)
+			"AndarDireita":
+				player.andar(1)
 			"Pular":
 				player.pular()
 				

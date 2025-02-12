@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var direction
+var is_walking := false
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
 
@@ -20,15 +21,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Movimentação pelo teclado (ainda pode ser usada manualmente)
 	direction = Input.get_axis("ui_left", "ui_right")
-	
-	if direction:
-		velocity.x = direction * SPEED
-		texture.scale.x = -direction
+
+	# Se o jogador estiver em movimento automático, usa a direção do comando "Andar"
+	if is_walking:
+		print("andando sozinho")
+		velocity.x += direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Se não estiver andando automaticamente, usa a entrada do jogador
+		if direction:
+			velocity.x = direction * SPEED
+			texture.scale.x = -direction
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	_set_state()
 	move_and_slide()
@@ -45,11 +51,17 @@ func _set_state():
 		texture.play(state)
 
 func andar(direcao: int):
-	velocity.x = direcao * SPEED  # Define a velocidade na direção especificada
-	move_and_slide()  # Move o player
-	await get_tree().create_timer(2.0).timeout  # Espera 1 segundo
-	velocity.x = 0  # Para após o tempo
-	move_and_slide()  # Garante que o movimento pare
+	is_walking = true
+	direction = direcao  # Define a direção para continuar andando
+	velocity.x = direcao * SPEED
+	move_and_slide()
+
+# Para o movimento contínuo
+func parar():
+	is_walking = false
+	velocity.x = 0
+	move_and_slide()
+
 
 func pular():
 	if is_on_floor():
