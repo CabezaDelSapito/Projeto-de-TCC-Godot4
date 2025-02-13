@@ -9,15 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dnaurapub8byo" path="res://levels/map_02.tscn" id="6_lid8f"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="7_x0swl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxlft"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxg8"]
 atlas = ExtResource("3_oixgv")
 region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7d5o6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qd8v"]
 atlas = ExtResource("3_oixgv")
 region = Rect2(17.7839, 4.75685, 12.432, 11.2432)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vc8lp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a8ck"]
 atlas = ExtResource("3_oixgv")
 region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
 
@@ -120,7 +120,7 @@ script = ExtResource("2_lc4sq")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_pxlft")
+texture = SubResource("AtlasTexture_ekxg8")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 
@@ -128,7 +128,7 @@ script = ExtResource("4_0cs50")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_pxlft")
+texture = SubResource("AtlasTexture_ekxg8")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 
@@ -136,23 +136,7 @@ script = ExtResource("4_0cs50")
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_pxlft")
-expand_mode = 1
-script = ExtResource("4_0cs50")
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("AtlasTexture_pxlft")
-expand_mode = 1
-script = ExtResource("4_0cs50")
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("AtlasTexture_pxlft")
+texture = SubResource("AtlasTexture_ekxg8")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 
@@ -198,47 +182,43 @@ columns = 3
 script = ExtResource("2_lc4sq")
 CommandType = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Andar"
+texture = SubResource("AtlasTexture_7qd8v")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 1
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Virar"
+texture = SubResource("AtlasTexture_ekxg8")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 1
 
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Pular"
+texture = SubResource("AtlasTexture_7a8ck")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 1
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Parar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+modulate = Color(1, 0, 1, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
-expand_mode = 1
-script = ExtResource("4_0cs50")
-CommandType = 1
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Parar"
+texture = SubResource("AtlasTexture_7a8ck")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 1
@@ -280,38 +260,20 @@ columns = 3
 script = ExtResource("2_lc4sq")
 CommandType = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
+[node name="Esquerda" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_vc8lp")
+texture = SubResource("AtlasTexture_7a8ck")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 2
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
+[node name="Direita" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_vc8lp")
-expand_mode = 1
-script = ExtResource("4_0cs50")
-CommandType = 2
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("AtlasTexture_vc8lp")
-expand_mode = 1
-script = ExtResource("4_0cs50")
-CommandType = 2
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/GridContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = SubResource("AtlasTexture_vc8lp")
+texture = SubResource("AtlasTexture_7a8ck")
 expand_mode = 1
 script = ExtResource("4_0cs50")
 CommandType = 2
@@ -491,3 +453,5 @@ theme_override_font_sizes/font_size = 24
 text = "ESTRELA 3 : USE NO MÁXIMO 5 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer" method="_on_execute_button_pressed"]

@@ -4,7 +4,8 @@ extends PanelContainer
 
 func _ready():
 	if clear_button:
-		clear_button.pressed.connect(_on_clear_button_pressed)
+		if not clear_button.pressed.is_connected(_on_clear_button_pressed):
+			clear_button.pressed.connect(_on_clear_button_pressed)
 
 
 

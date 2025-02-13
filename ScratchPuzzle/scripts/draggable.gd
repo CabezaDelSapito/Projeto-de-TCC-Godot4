@@ -3,7 +3,7 @@ extends TextureRect
 @export_enum("Estrutura", "Movimento", "Direcao") var CommandType = 0
 #@export_enum("Loop", "Enquanto", "Se", "Senão") var Command = 0
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	var data = [self, CommandType]
 	visible = false
 	var preview = TextureRect.new()
@@ -16,5 +16,3 @@ func _notification(notification_type) -> void:
 		match notification_type:
 			NOTIFICATION_DRAG_END:
 				visible = true
-
-
