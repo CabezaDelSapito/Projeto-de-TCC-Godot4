@@ -34,17 +34,15 @@ func _on_execute_button_pressed() -> void:
 
 func executar_sequencial(comandos):
 	for comando in comandos:
-		match comando.CommandType:
-			0: print("Executando Estrutura:", comando.name)
-			1: print("Executando Movimento:", comando.name)
-			2: print("Executando Direção:", comando.name)
 		match comando.name:
-			"AndarEsquerda":
-				player.andar(1)
-			"AndarDireita":
-				player.andar(-1)
+			"Andar":
+				player.andar()
+			"Virar":
+				player.virar()
 			"Pular":
 				player.pular()
+			"Parar":
+				player.parar()
 				
 				
 		await get_tree().create_timer(0.5).timeout  # Espera entre comandos

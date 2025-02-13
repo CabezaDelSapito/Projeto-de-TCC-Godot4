@@ -182,20 +182,22 @@ columns = 3
 script = ExtResource("2_c30mm")
 CommandType = 1
 
-[node name="AndarEsquerda" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+tooltip_text = "Andar"
 texture = SubResource("AtlasTexture_7d5o6")
 expand_mode = 1
 script = ExtResource("4_o4fh2")
 CommandType = 1
 
-[node name="AndarDireita" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Virar"
+texture = SubResource("AtlasTexture_pxlft")
 expand_mode = 1
 script = ExtResource("4_o4fh2")
 CommandType = 1
@@ -204,7 +206,19 @@ CommandType = 1
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = SubResource("AtlasTexture_7d5o6")
+tooltip_text = "Pular"
+texture = SubResource("AtlasTexture_vc8lp")
+expand_mode = 1
+script = ExtResource("4_o4fh2")
+CommandType = 1
+
+[node name="Parar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/GridContainer"]
+modulate = Color(1, 0, 1, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "Parar"
+texture = SubResource("AtlasTexture_vc8lp")
 expand_mode = 1
 script = ExtResource("4_o4fh2")
 CommandType = 1

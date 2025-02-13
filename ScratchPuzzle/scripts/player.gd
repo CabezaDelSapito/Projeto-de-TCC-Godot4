@@ -1,32 +1,23 @@
 extends CharacterBody2D
 
-
 const SPEED = 350.0
 const JUMP_VELOCITY = -400.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
-var direction
+var is_moving := false  # Define se está andando ou não
+var direction := 1  # 1 = Direita, -1 = Esquerda
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Adiciona a gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_axis("ui_left", "ui_right")
-	
-	if direction:
+	# Aplica o movimento apenas se estiver andando
+	if is_moving:
 		velocity.x = direction * SPEED
-		texture.scale.x = -direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -38,21 +29,28 @@ func _set_state():
 	
 	if !is_on_floor():
 		state = 'jump'
-	elif direction:
+	elif is_moving:
 		state = 'run'
 	
 	if texture.name != state:
 		texture.play(state)
 
-func andar(direcao: int):
-	velocity.x = direcao * SPEED  # Define a velocidade na direção especificada
-	move_and_slide()  # Move o player
-	await get_tree().create_timer(2.0).timeout  # Espera 1 segundo
-	velocity.x = 0  # Para após o tempo
-	move_and_slide()  # Garante que o movimento pare
+# ====== COMANDOS EXTERNOS ======
 
+# Inicia o movimento do personagem na direção atual
+func andar():
+	is_moving = true
+
+# Vira o personagem para a direção oposta
+func virar():
+	direction *= -1
+	texture.scale.x = -direction
+
+# Faz o personagem pular
 func pular():
 	if is_on_floor():
-		velocity.y = JUMP_VELOCITY  # Faz o personagem pular
-		await get_tree().create_timer(2.0).timeout  # Espera um pouco no ar
+		velocity.y = JUMP_VELOCITY
 
+# Para o movimento
+func parar():
+	is_moving = false
