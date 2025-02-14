@@ -1,2 +1,2 @@
 # Explorando-Godot-4
-Projetos como menu com arraste e drop de botão, executar ações com botão em alguma area especifica
+Projetos como jogo de puzzles envolvendo logica e algoritmo de programação para solução passo a passo de um problema 
