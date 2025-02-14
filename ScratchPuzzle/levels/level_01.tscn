@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnk2fnjuctysb"]
+[gd_scene load_steps=11 format=3 uid="uid://bnk2fnjuctysb"]
 
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_g34hy"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_sy5u3"]
@@ -12,14 +12,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3wam"]
 atlas = ExtResource("3_0x8l5")
 region = Rect2(17.7839, 4.75685, 12.432, 11.2432)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_js46i"]
-atlas = ExtResource("3_0x8l5")
-region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f5khh"]
-atlas = ExtResource("3_0x8l5")
-region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
 atlas = ExtResource("7_0mjjq")
@@ -125,26 +117,6 @@ texture = SubResource("AtlasTexture_m3wam")
 expand_mode = 1
 script = ExtResource("4_o4fh2")
 
-[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Virar"
-texture = SubResource("AtlasTexture_js46i")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 1
-
-[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Pular"
-texture = SubResource("AtlasTexture_f5khh")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 2
-
 [node name="Estrutura" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -179,35 +151,6 @@ texture_filter = 1
 layout_mode = 2
 script = ExtResource("3_qk66y")
 
-[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Andar"
-texture = SubResource("AtlasTexture_m3wam")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-
-[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Virar"
-texture = SubResource("AtlasTexture_js46i")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 1
-
-[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Pular"
-texture = SubResource("AtlasTexture_f5khh")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 2
-
 [node name="Direcao" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -239,35 +182,6 @@ theme_override_constants/margin_bottom = 40
 texture_filter = 1
 layout_mode = 2
 script = ExtResource("3_qk66y")
-
-[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Andar"
-texture = SubResource("AtlasTexture_m3wam")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-
-[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Virar"
-texture = SubResource("AtlasTexture_js46i")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 1
-
-[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-tooltip_text = "Pular"
-texture = SubResource("AtlasTexture_f5khh")
-expand_mode = 1
-script = ExtResource("4_o4fh2")
-CommandType = 2
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
 custom_minimum_size = Vector2(450, 0)
@@ -441,7 +355,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_sy5u3")
 theme_override_font_sizes/font_size = 24
-text = "ESTRELA 3 : USE NO MÁXIMO 3 COMANDOS."
+text = "ESTRELA 3 : USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
 
