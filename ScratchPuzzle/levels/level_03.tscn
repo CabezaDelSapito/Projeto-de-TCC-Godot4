@@ -1,33 +1,37 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtx4jcw4gwgx7"]
+[gd_scene load_steps=13 format=3 uid="uid://dkklxsjgu1xys"]
 
-[ext_resource type="Script" path="res://scripts/level_01.gd" id="1_1xeg5"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_vj5hk"]
-[ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_n0nd1"]
-[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="3_oixgv"]
-[ext_resource type="Script" path="res://scripts/draggable.gd" id="4_0cs50"]
-[ext_resource type="Script" path="res://scripts/dropArea.gd" id="5_0e5v0"]
-[ext_resource type="PackedScene" uid="uid://dnaurapub8byo" path="res://levels/map_02.tscn" id="6_lid8f"]
-[ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="7_x0swl"]
+[ext_resource type="Script" path="res://scripts/level_01.gd" id="1_acp42"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_dixjn"]
+[ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_tmx7f"]
+[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="4_j5ovj"]
+[ext_resource type="Script" path="res://scripts/draggable.gd" id="5_3gapf"]
+[ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_sxv7o"]
+[ext_resource type="PackedScene" uid="uid://cctqc4v3ks2a5" path="res://levels/map_03.tscn" id="7_xsvo5"]
+[ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_aytvx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hstsg"]
-atlas = ExtResource("3_oixgv")
+atlas = ExtResource("4_j5ovj")
 region = Rect2(17.7839, 4.75685, 12.432, 11.2432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2ngm"]
-atlas = ExtResource("3_oixgv")
+atlas = ExtResource("4_j5ovj")
 region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_02a0r"]
+atlas = ExtResource("4_j5ovj")
+region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
-atlas = ExtResource("7_x0swl")
+atlas = ExtResource("8_aytvx")
 region = Rect2(1.89012, 5.86402, 12.432, 10.136)
 
-[node name="level_02" type="PanelContainer"]
+[node name="level_03" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1xeg5")
+script = ExtResource("1_acp42")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -59,7 +63,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "Lista de Comandos
 "
@@ -82,7 +86,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "M
 O
@@ -110,7 +114,7 @@ theme_override_constants/margin_bottom = 40
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-script = ExtResource("3_n0nd1")
+script = ExtResource("3_tmx7f")
 
 [node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
 texture_filter = 1
@@ -119,7 +123,7 @@ layout_mode = 2
 tooltip_text = "Andar"
 texture = SubResource("AtlasTexture_hstsg")
 expand_mode = 1
-script = ExtResource("4_0cs50")
+script = ExtResource("5_3gapf")
 
 [node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
 texture_filter = 1
@@ -128,8 +132,18 @@ layout_mode = 2
 tooltip_text = "Virar"
 texture = SubResource("AtlasTexture_b2ngm")
 expand_mode = 1
-script = ExtResource("4_0cs50")
+script = ExtResource("5_3gapf")
 CommandType = 1
+
+[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+tooltip_text = "Pular"
+texture = SubResource("AtlasTexture_02a0r")
+expand_mode = 1
+script = ExtResource("5_3gapf")
+CommandType = 2
 
 [node name="Estrutura" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
@@ -139,7 +153,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "E
 S
@@ -163,7 +177,7 @@ theme_override_constants/margin_bottom = 40
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-script = ExtResource("3_n0nd1")
+script = ExtResource("3_tmx7f")
 
 [node name="Direcao" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
@@ -173,7 +187,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "D
 I
@@ -195,7 +209,7 @@ theme_override_constants/margin_bottom = 40
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-script = ExtResource("3_n0nd1")
+script = ExtResource("3_tmx7f")
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
 custom_minimum_size = Vector2(450, 0)
@@ -214,7 +228,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
@@ -223,7 +237,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("5_0e5v0")
+script = ExtResource("6_sxv7o")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -246,7 +260,7 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "LIMPAR"
 
@@ -254,7 +268,7 @@ text = "LIMPAR"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "EXECUTAR"
 
@@ -277,7 +291,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="map_02" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea" instance=ExtResource("6_lid8f")]
+[node name="map_03" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea" instance=ExtResource("7_xsvo5")]
 scale = Vector2(1.6, 1.6)
 
 [node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
@@ -293,16 +307,16 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
-text = "LEVEL - 2"
+text = "LEVEL - 3"
 horizontal_alignment = 1
 
 [node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
 horizontal_alignment = 1
@@ -323,7 +337,7 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
 text = "ESTRELA 1 : ACESSE O COMPUTADOR."
 horizontal_alignment = 1
@@ -345,9 +359,9 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
-text = "ESTRELA 2 : USE O COMANDO VIRAR. "
+text = "ESTRELA 2 : USE O COMANDO PULAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -367,9 +381,9 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_vj5hk")
+theme_override_fonts/font = ExtResource("2_dixjn")
 theme_override_font_sizes/font_size = 24
-text = "ESTRELA 3 : USE O COMANDO ANDAR EM CONJUNTO DO COMANDO VIRAR"
+text = "ESTRELA 3 : USE O COMANDO ANDAR EM CONJUNTO DO COMANDO PULAR."
 horizontal_alignment = 1
 vertical_alignment = 2
 
