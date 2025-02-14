@@ -17,14 +17,13 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# Acha o nó desejado onde o filho deve ser adicionado
 	
 	# Remove o filho atual do nó original
-	data[0].get_parent().remove_child(data[0])
+	#data[0].get_parent().remove_child(data[0])
 	
 	# Adiciona o filho no nó desejado
-	target_node.add_child(data[0])
+	target_node.add_child(data[0].duplicate())
 	
 	# Ajusta a posição global do filho
-	data[0].global_position = global_position
-
+	#data[0].global_position = global_position
 
 func _on_execute_button_pressed() -> void:
 	var comandos = []
@@ -40,15 +39,13 @@ func _on_execute_button_pressed() -> void:
 
 func executar_sequencial(comandos):
 	for comando in comandos:
-		match comando.name:
-			"Andar":
+		match comando.CommandType:
+			0:
 				player.andar()
-			"Virar":
+			1:
 				player.virar()
-			"Pular":
+			2:
 				player.pular()
-			"Parar":
-				player.parar()
 				
 				
 		await get_tree().create_timer(0.5).timeout  # Espera entre comandos
