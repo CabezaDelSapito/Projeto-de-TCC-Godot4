@@ -4,7 +4,7 @@ extends MarginContainer
 
 @onready var target_node = find_child("VBoxContainer")
 
-func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	#if data[1] == CommandType:
 		return true
 	#return false

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtfay4bduce72"]
+
+[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="1_8h5qx"]
+[ext_resource type="Script" path="res://scripts/draggable.gd" id="2_mr7du"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ngm"]
+atlas = ExtResource("1_8h5qx")
+region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
+
+[node name="Virar" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+tooltip_text = "Virar"
+texture = SubResource("AtlasTexture_b2ngm")
+expand_mode = 1
+script = ExtResource("2_mr7du")
+CommandType = 1

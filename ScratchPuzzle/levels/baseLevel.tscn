@@ -1,26 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://jcpm4dh6ri56"]
+[gd_scene load_steps=7 format=3 uid="uid://df8ojf4140yyt"]
 
-[ext_resource type="Script" path="res://scripts/level_01.gd" id="1_sonqb"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_iv5yb"]
-[ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_twb05"]
-[ext_resource type="PackedScene" uid="uid://dfv7dhi7km4wx" path="res://commands/ComandoAndar.tscn" id="4_qgbhf"]
-[ext_resource type="PackedScene" uid="uid://dtfay4bduce72" path="res://commands/ComandoVirar.tscn" id="5_q8v3n"]
-[ext_resource type="PackedScene" uid="uid://icnhidp3gljf" path="res://commands/ComandoPular.tscn" id="6_ag21t"]
-[ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_ylfhv"]
-[ext_resource type="PackedScene" uid="uid://bpynp40egsdvx" path="res://levels/map_04.tscn" id="7_iwu8r"]
-[ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_hmmoj"]
+[ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_i8lrg"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_wp66i"]
+[ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_eeked"]
+[ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_4n43j"]
+[ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_umicp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
-atlas = ExtResource("8_hmmoj")
+atlas = ExtResource("8_umicp")
 region = Rect2(1.89012, 5.86402, 12.432, 10.136)
 
-[node name="level_04" type="PanelContainer"]
+[node name="baseLevel" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sonqb")
+script = ExtResource("1_i8lrg")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -52,7 +48,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "Lista de Comandos
 "
@@ -75,7 +71,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "M
 O
@@ -99,19 +95,10 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 40
-script = ExtResource("3_twb05")
+script = ExtResource("3_eeked")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer"]
 texture_filter = 1
-layout_mode = 2
-
-[node name="Andar" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("4_qgbhf")]
-layout_mode = 2
-
-[node name="Virar" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("5_q8v3n")]
-layout_mode = 2
-
-[node name="Pular" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("6_ag21t")]
 layout_mode = 2
 
 [node name="Estrutura" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
@@ -122,7 +109,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "E
 S
@@ -155,7 +142,7 @@ size_flags_vertical = 3
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "D
 I
@@ -195,7 +182,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
@@ -204,7 +191,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("6_ylfhv")
+script = ExtResource("6_4n43j")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -227,7 +214,7 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "LIMPAR"
 
@@ -235,7 +222,7 @@ text = "LIMPAR"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "EXECUTAR"
 
@@ -258,9 +245,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="map_04" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea" instance=ExtResource("7_iwu8r")]
-scale = Vector2(1.6, 1.6)
-
 [node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
 custom_minimum_size = Vector2(0, 396)
 layout_mode = 2
@@ -274,16 +258,16 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
-text = "LEVEL - 3"
+text = "LEVEL - 1"
 horizontal_alignment = 1
 
 [node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
 horizontal_alignment = 1
@@ -304,7 +288,7 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
 text = "ESTRELA 1 : ACESSE O COMPUTADOR."
 horizontal_alignment = 1
@@ -326,9 +310,9 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
-text = "ESTRELA 2 : USE O COMANDO PULAR. "
+text = "ESTRELA 2 : USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -348,10 +332,11 @@ texture = SubResource("AtlasTexture_cd7vr")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_iv5yb")
+theme_override_fonts/font = ExtResource("2_wp66i")
 theme_override_font_sizes/font_size = 24
-text = "ESTRELA 3 : USE O COMANDO ANDAR EM CONJUNTO DO COMANDO PULAR."
+text = "ESTRELA 3 : USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer" method="_on_execute_button_pressed"]
