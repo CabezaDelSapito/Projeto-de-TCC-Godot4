@@ -14,7 +14,8 @@ extends PanelContainer
 @export var commands: Dictionary = {
 	"level_1": [preload("res://commands/ComandoAndar.tscn")],
 	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn")],
-	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn")]
+	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn")],
+	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn")],
 }
 
 var current_map = null
