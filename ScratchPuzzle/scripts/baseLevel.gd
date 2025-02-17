@@ -34,6 +34,8 @@ func _on_clear_button_pressed() -> void:
 		child.queue_free()
 
 func load_level(level_name: String):
+	_on_clear_button_pressed()
+	
 	current_level = level_name
 	load_map(level_name)
 	load_commands(level_name)
