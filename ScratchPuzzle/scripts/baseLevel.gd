@@ -36,8 +36,8 @@ func _on_clear_button_pressed() -> void:
 func load_level(level_name: String):
 	_on_clear_button_pressed()
 	load_map(level_name)
+	print(current_map.name)
 	load_commands(level_name)
-	print("depois:",current_map.name)
 
 func load_map(level_name: String):
 	if current_map:

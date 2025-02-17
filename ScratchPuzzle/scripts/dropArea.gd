@@ -82,5 +82,5 @@ func verificar_objetivo():
 			print("Objetivo atingido!")
 		else:
 			print("Objetivo não atingido. Resetando o nível...")
-			print("Nome do mapa antes de resetar:", map.name)
-			base_level.load_level(map.name)
+			print("Nome do mapa antes de resetar:", map.nome)
+			base_level.load_level( map.nome)
