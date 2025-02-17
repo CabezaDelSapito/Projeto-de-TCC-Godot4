@@ -53,7 +53,7 @@ func pular():
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_moving = true
-		await get_tree().create_timer(0.5).timeout  # Espera 1 segundo
+		await get_tree().create_timer(0.5).timeout  # Espera 0.5 segundo
 		is_moving = false 
 
 # Para o movimento

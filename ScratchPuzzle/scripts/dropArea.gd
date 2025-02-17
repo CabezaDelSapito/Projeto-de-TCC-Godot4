@@ -55,5 +55,6 @@ func executar_sequencial(comandos):
 				player.virar()
 			2:
 				player.pular()
+				await get_tree().create_timer(0.5).timeout  # Espera entre comandos
 				
-		await get_tree().create_timer(0.6).timeout  # Espera entre comandos
+		await get_tree().create_timer(0.5).timeout  # Espera entre comandos
