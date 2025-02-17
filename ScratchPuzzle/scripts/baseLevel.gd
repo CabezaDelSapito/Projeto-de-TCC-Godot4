@@ -36,7 +36,6 @@ func _on_clear_button_pressed() -> void:
 func load_level(level_name: String):
 	_on_clear_button_pressed()
 	load_map(level_name)
-	print(current_map.name)
 	load_commands(level_name)
 
 func load_map(level_name: String):
@@ -45,7 +44,6 @@ func load_map(level_name: String):
 	
 	if level_name in maps:
 		current_map = maps[level_name].instantiate()
-		current_map.name = level_name 
 		current_map.scale = Vector2(1.6, 1.6)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		
