@@ -41,6 +41,8 @@ func _on_execute_button_pressed() -> void:
 	await executar_sequencial(comandos)
 
 func executar_sequencial(comandos):
+	# Garante que estamos pegando o player atualizado
+	find_map_and_player()
 	if not player:
 		print("⚠️ Nenhum player encontrado para executar os comandos.")
 		return

@@ -3,6 +3,7 @@ extends PanelContainer
 @onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
 @onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea
 @onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer
+@onready var grid_container: GridContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer/GridContainer
 
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/map_01.tscn"),
@@ -18,6 +19,7 @@ extends PanelContainer
 
 var current_map = null
 var current_level = "level_1"
+var player = null
 
 func _ready():
 	if clear_button and not clear_button.pressed.is_connected(_on_clear_button_pressed):
@@ -26,9 +28,12 @@ func _ready():
 	load_level(current_level) # Carrega o primeiro mapa e seus comandos
 
 func _on_clear_button_pressed() -> void:
-	get_tree().reload_current_scene()  # Agora recarregamos o nível sem resetar a cena inteira
+	# Remove todos os filhos dentro do painel
+	for child in grid_container.get_children():
+		child.queue_free()
 
 func load_level(level_name: String):
+	current_level = level_name
 	load_map(level_name)
 	load_commands(level_name)
 
@@ -40,6 +45,10 @@ func load_map(level_name: String):
 		current_map = maps[level_name].instantiate()
 		current_map.scale = Vector2(1.6, 1.6)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
+		
+		player = current_map.get_node("player")
+		if not player:
+			print("⚠️ Player não encontrado no mapa!")
 
 
 func load_commands(level_name: String):
