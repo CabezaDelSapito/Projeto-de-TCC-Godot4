@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var transition: CanvasLayer = $"../transition"
 @export var next_level : String = ""
-@onready var goal: Area2D = $"."
+@onready var goal: Area2D = self
 
 @onready var player: CharacterBody2D = $"../player"
 

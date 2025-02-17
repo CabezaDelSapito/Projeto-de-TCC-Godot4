@@ -1,25 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://jcpm4dh6ri56"]
+[gd_scene load_steps=11 format=3 uid="uid://jcpm4dh6ri56"]
 
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_sonqb"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_iv5yb"]
 [ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_twb05"]
-[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="4_y357k"]
-[ext_resource type="Script" path="res://scripts/draggable.gd" id="5_w73f7"]
+[ext_resource type="PackedScene" uid="uid://dfv7dhi7km4wx" path="res://commands/ComandoAndar.tscn" id="4_qgbhf"]
+[ext_resource type="PackedScene" uid="uid://dtfay4bduce72" path="res://commands/ComandoVirar.tscn" id="5_q8v3n"]
+[ext_resource type="PackedScene" uid="uid://icnhidp3gljf" path="res://commands/ComandoPular.tscn" id="6_ag21t"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_ylfhv"]
 [ext_resource type="PackedScene" uid="uid://bpynp40egsdvx" path="res://levels/map_04.tscn" id="7_iwu8r"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_hmmoj"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hstsg"]
-atlas = ExtResource("4_y357k")
-region = Rect2(17.7839, 4.75685, 12.432, 11.2432)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2ngm"]
-atlas = ExtResource("4_y357k")
-region = Rect2(1.70333, 4.62172, 12.7023, 11.3783)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_02a0r"]
-atlas = ExtResource("4_y357k")
-region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
 atlas = ExtResource("8_hmmoj")
@@ -116,34 +105,14 @@ script = ExtResource("3_twb05")
 texture_filter = 1
 layout_mode = 2
 
-[node name="Andar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+[node name="Andar" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("4_qgbhf")]
 layout_mode = 2
-tooltip_text = "Andar"
-texture = SubResource("AtlasTexture_hstsg")
-expand_mode = 1
-script = ExtResource("5_w73f7")
 
-[node name="Virar" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+[node name="Virar" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("5_q8v3n")]
 layout_mode = 2
-tooltip_text = "Virar"
-texture = SubResource("AtlasTexture_b2ngm")
-expand_mode = 1
-script = ExtResource("5_w73f7")
-CommandType = 1
 
-[node name="Pular" type="TextureRect" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+[node name="Pular" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer" instance=ExtResource("6_ag21t")]
 layout_mode = 2
-tooltip_text = "Pular"
-texture = SubResource("AtlasTexture_02a0r")
-expand_mode = 1
-script = ExtResource("5_w73f7")
-CommandType = 2
 
 [node name="Estrutura" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
 layout_mode = 2
