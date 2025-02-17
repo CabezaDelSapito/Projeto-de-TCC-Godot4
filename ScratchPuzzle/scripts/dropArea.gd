@@ -4,11 +4,14 @@ extends PanelContainer
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)  # Busca a LevelArea dinamicamente
 var map: Node = null
 var player: Node = null
+var goal: Area2D = null  # Referência ao nó de objetivo
+@onready var base_level: PanelContainer = $"../../../../../.."
+
 
 func _ready():
 	await get_tree().process_frame  # Aguarda um frame para garantir que os nós sejam carregados
-
 	find_map_and_player()  # Chama a função para localizar os nós corretamente
+	find_goal()  # Localiza o nó de objetivo
 
 func find_map_and_player():
 	# Verifica se há mapas dentro de LevelArea
@@ -20,6 +23,14 @@ func find_map_and_player():
 	
 	if not player:
 		print("⚠️ Player não encontrado no mapa!")
+
+func find_goal():
+	# Localiza o nó de objetivo (goal) no mapa
+	if map:
+		goal = map.find_child("goal", true, false)  # Busca o nó "goal" em qualquer nível do mapa
+	
+	if not goal:
+		print("⚠️ Goal não encontrado no mapa!")
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	return true  # Pode modificar conforme necessário
@@ -43,6 +54,7 @@ func _on_execute_button_pressed() -> void:
 func executar_sequencial(comandos):
 	# Garante que estamos pegando o player atualizado
 	find_map_and_player()
+	
 	if not player:
 		print("⚠️ Nenhum player encontrado para executar os comandos.")
 		return
@@ -58,3 +70,17 @@ func executar_sequencial(comandos):
 				await get_tree().create_timer(0.5).timeout  # Espera entre comandos
 				
 		await get_tree().create_timer(0.5).timeout  # Espera entre comandos
+	
+	verificar_objetivo()
+
+func verificar_objetivo():
+	find_map_and_player()
+	find_goal()
+	# Verifica se o jogador atingiu o objetivo
+	if goal and player:
+		if goal.overlaps_body(player):  # Verifica se o jogador está sobrepondo o objetivo
+			print("Objetivo atingido!")
+		else:
+			print("Objetivo não atingido. Resetando o nível...")
+			print("Nome do mapa antes de resetar:", map.name)
+			base_level.load_level(map.name)

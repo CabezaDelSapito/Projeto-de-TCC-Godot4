@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://cctqc4v3ks2a5"]
 
-[ext_resource type="Texture2D" uid="uid://cttk4h1sudh2f" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_415tq"]
-[ext_resource type="Texture2D" uid="uid://baf3wsgi3vxqp" path="res://assets/Cyberpunk platformer - World starter/tileset/decorations.png" id="2_h34eu"]
-[ext_resource type="Texture2D" uid="uid://b2lufwa56g4lf" path="res://assets/Cyberpunk platformer - World starter/tileset/main_tileset.png" id="3_s4uu0"]
-[ext_resource type="PackedScene" uid="uid://bndv7omluqw2h" path="res://scenes/goal.tscn" id="4_mj7sp"]
-[ext_resource type="PackedScene" uid="uid://b5sgue78hwjow" path="res://actors/player.tscn" id="5_0c0g6"]
-[ext_resource type="PackedScene" uid="uid://dban0dsbdglg0" path="res://scenes/pause_menu.tscn" id="6_r0piv"]
-[ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="7_ejvpw"]
+[ext_resource type="Texture2D" uid="uid://cttk4h1sudh2f" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_i4eqo"]
+[ext_resource type="Texture2D" uid="uid://baf3wsgi3vxqp" path="res://assets/Cyberpunk platformer - World starter/tileset/decorations.png" id="2_ljwwo"]
+[ext_resource type="Texture2D" uid="uid://b2lufwa56g4lf" path="res://assets/Cyberpunk platformer - World starter/tileset/main_tileset.png" id="3_fawfu"]
+[ext_resource type="PackedScene" uid="uid://bndv7omluqw2h" path="res://scenes/goal.tscn" id="4_oeox0"]
+[ext_resource type="PackedScene" uid="uid://b5sgue78hwjow" path="res://actors/player.tscn" id="5_hqy4s"]
+[ext_resource type="PackedScene" uid="uid://dban0dsbdglg0" path="res://scenes/pause_menu.tscn" id="6_ma0pv"]
+[ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="7_qyq1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdq8t"]
-texture = ExtResource("2_h34eu")
+texture = ExtResource("2_ljwwo")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -408,7 +408,7 @@ texture = ExtResource("2_h34eu")
 16:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3u2vx"]
-texture = ExtResource("3_s4uu0")
+texture = ExtResource("3_fawfu")
 1:1/next_alternative_id = 2
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1441,7 +1441,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_fdq8t")
 sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 
-[node name="map_03" type="Node2D"]
+[node name="level_3" type="Node2D"]
 scale = Vector2(3, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -1449,7 +1449,7 @@ texture_filter = 1
 texture_repeat = 3
 position = Vector2(16, 0)
 scale = Vector2(1.056, 1)
-texture = ExtResource("1_415tq")
+texture = ExtResource("1_i4eqo")
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1462,16 +1462,16 @@ layer_0/tile_data = PackedInt32Array(1310720, 65537, 2, 1310721, 393217, 10, 131
 layer_1/name = "decorations"
 layer_1/tile_data = PackedInt32Array(1048591, 589824, 2, 1114127, 589824, 3, 1179663, 589824, 4, 983056, 655360, 1, 1048592, 655360, 2, 1114128, 655360, 3, 1179664, 655360, 4, 983057, 720896, 1, 1048593, 720896, 2, 1114129, 720896, 3, 1179665, 720896, 4, 1048594, 786432, 2, 1114130, 786432, 3, 1179666, 786432, 4, 1048598, 589824, 6, 1114134, 589824, 7, 1179670, 589824, 8, 983063, 655360, 5, 1048599, 655360, 6, 1114135, 655360, 7, 1179671, 655360, 8, 983064, 720896, 5, 1048600, 720896, 6, 1114136, 720896, 7, 1179672, 720896, 8, 1048601, 786432, 6, 1114137, 786432, 7, 1179673, 786432, 8)
 
-[node name="goal" parent="." instance=ExtResource("4_mj7sp")]
+[node name="goal" parent="." instance=ExtResource("4_oeox0")]
 position = Vector2(453.333, 133.333)
 scale = Vector2(1.5, 1.5)
 next_level = "level_4"
 
-[node name="player" parent="." instance=ExtResource("5_0c0g6")]
+[node name="player" parent="." instance=ExtResource("5_hqy4s")]
 position = Vector2(216, 152)
 
-[node name="pause_menu" parent="." instance=ExtResource("6_r0piv")]
+[node name="pause_menu" parent="." instance=ExtResource("6_ma0pv")]
 visible = false
 
-[node name="transition" parent="." instance=ExtResource("7_ejvpw")]
+[node name="transition" parent="." instance=ExtResource("7_qyq1h")]
 visible = false

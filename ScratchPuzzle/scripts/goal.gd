@@ -9,7 +9,7 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == 'player' && !next_level == "":
+	if body.name == 'player' && next_level != "":
 		player.parar()
 		transition.change_scene(next_level)
 	else:

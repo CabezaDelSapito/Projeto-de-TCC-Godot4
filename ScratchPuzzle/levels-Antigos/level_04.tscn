@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtfay4bduce72" path="res://commands/ComandoVirar.tscn" id="5_q8v3n"]
 [ext_resource type="PackedScene" uid="uid://icnhidp3gljf" path="res://commands/ComandoPular.tscn" id="6_ag21t"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_ylfhv"]
-[ext_resource type="PackedScene" uid="uid://bpynp40egsdvx" path="res://levels/map_04.tscn" id="7_iwu8r"]
+[ext_resource type="PackedScene" uid="uid://bpynp40egsdvx" path="res://levels/level_4.tscn" id="7_iwu8r"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_hmmoj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]

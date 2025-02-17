@@ -6,10 +6,10 @@ extends PanelContainer
 @onready var grid_container: GridContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer/GridContainer
 
 @export var maps: Dictionary = {
-	"level_1": preload("res://levels/map_01.tscn"),
-	"level_2": preload("res://levels/map_02.tscn"),
-	"level_3": preload("res://levels/map_03.tscn"),
-	"level_4": preload("res://levels/map_04.tscn")
+	"level_1": preload("res://levels/level_1.tscn"),
+	"level_2": preload("res://levels/level_2.tscn"),
+	"level_3": preload("res://levels/level_3.tscn"),
+	"level_4": preload("res://levels/level_4.tscn")
 }
 @export var commands: Dictionary = {
 	"level_1": [preload("res://commands/ComandoAndar.tscn")],
@@ -35,10 +35,9 @@ func _on_clear_button_pressed() -> void:
 
 func load_level(level_name: String):
 	_on_clear_button_pressed()
-	
-	current_level = level_name
 	load_map(level_name)
 	load_commands(level_name)
+	print("depois:",current_map.name)
 
 func load_map(level_name: String):
 	if current_map:
@@ -46,6 +45,7 @@ func load_map(level_name: String):
 	
 	if level_name in maps:
 		current_map = maps[level_name].instantiate()
+		current_map.name = level_name 
 		current_map.scale = Vector2(1.6, 1.6)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		

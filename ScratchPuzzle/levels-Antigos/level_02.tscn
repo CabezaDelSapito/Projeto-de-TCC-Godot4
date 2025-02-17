@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="3_oixgv"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="4_0cs50"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="5_0e5v0"]
-[ext_resource type="PackedScene" uid="uid://dnaurapub8byo" path="res://levels/map_02.tscn" id="6_lid8f"]
+[ext_resource type="PackedScene" uid="uid://dnaurapub8byo" path="res://levels/level_2.tscn" id="6_lid8f"]
 [ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="7_x0swl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hstsg"]
