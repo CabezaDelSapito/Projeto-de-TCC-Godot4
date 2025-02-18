@@ -70,7 +70,7 @@ func executar_sequencial(comandos):
 			3:
 				player.parar() 
 			4:
-				player.esperar() 	
+				player.esperar(1) 	
 	
 	#verificar_objetivo()
 
