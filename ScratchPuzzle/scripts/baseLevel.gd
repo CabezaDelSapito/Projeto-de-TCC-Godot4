@@ -15,11 +15,11 @@ extends PanelContainer
 	"level_1": [preload("res://commands/ComandoAndar.tscn"),preload("res://commands/ComandoParar.tscn")],
 	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"),preload("res://commands/ComandoParar.tscn")],
 	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
-	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
+	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn")],
 }
 
 var current_map = null
-var current_level = "level_1"
+var current_level = "level_4"
 var player = null
 
 func _ready():

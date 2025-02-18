@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35r8j6sxiryo"]
+
+[ext_resource type="Texture2D" uid="uid://cuovfjj6j4pgo" path="res://assets/Mini FX, Items & UI/Common Pick-ups/esperar.png" id="1_om6o3"]
+[ext_resource type="Script" path="res://scripts/draggable.gd" id="2_tehjv"]
+
+[node name="Parar" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+tooltip_text = "Virar"
+texture = ExtResource("1_om6o3")
+expand_mode = 1
+script = ExtResource("2_tehjv")
+CommandType = 3

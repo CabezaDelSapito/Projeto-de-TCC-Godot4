@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxtn81ygexwy"
-path="res://.godot/imported/parar.png-6dd18d78fd887986acfa5d3ba3ae6c32.ctex"
+uid="uid://cuovfjj6j4pgo"
+path="res://.godot/imported/esperar.png-a6fa5de8bf1657dced7dc1ebfb4886f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Mini FX, Items & UI/Common Pick-ups/parar.png"
-dest_files=["res://.godot/imported/parar.png-6dd18d78fd887986acfa5d3ba3ae6c32.ctex"]
+source_file="res://assets/Mini FX, Items & UI/Common Pick-ups/esperar.png"
+dest_files=["res://.godot/imported/esperar.png-a6fa5de8bf1657dced7dc1ebfb4886f0.ctex"]
 
 [params]
 
