@@ -40,8 +40,6 @@ func _set_state():
 # Inicia o movimento do personagem na direção atual
 func andar():
 	is_moving = true
-	await get_tree().create_timer(0.25).timeout  # Espera 1 segundo
-	is_moving = false  # Para após o tempo
 
 # Vira o personagem para a direção oposta
 func virar():
@@ -52,10 +50,10 @@ func virar():
 func pular():
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		is_moving = true
-		await get_tree().create_timer(0.5).timeout  # Espera 0.5 segundo
-		is_moving = false 
 
 # Para o movimento
 func parar():
 	is_moving = false
+	
+func esperar(tempo: float):
+	await get_tree().create_timer(tempo).timeout  # Espera entre comandos

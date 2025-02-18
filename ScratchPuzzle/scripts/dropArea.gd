@@ -66,12 +66,13 @@ func executar_sequencial(comandos):
 			1:
 				player.virar()
 			2:
-				player.pular()
-				await get_tree().create_timer(0.5).timeout  # Espera entre comandos
-				
-		await get_tree().create_timer(0.5).timeout  # Espera entre comandos
+				player.pular() 
+			3:
+				player.parar() 
+			4:
+				player.esperar() 	
 	
-	verificar_objetivo()
+	#verificar_objetivo()
 
 func verificar_objetivo():
 	find_map_and_player()

@@ -49,7 +49,7 @@ func load_map(level_name: String):
 		
 		player = current_map.get_node("player")
 		if not player:
-			print("⚠️ Player não encontrado no mapa!")
+			print("Player não encontrado no mapa!")
 
 
 func load_commands(level_name: String):
