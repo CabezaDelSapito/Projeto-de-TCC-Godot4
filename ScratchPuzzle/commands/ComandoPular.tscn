@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://icnhidp3gljf"]
 
-[ext_resource type="Texture2D" uid="uid://by4ru76dasktm" path="res://assets/Mini FX, Items & UI/Common Pick-ups/pular.png" id="1_a4wly"]
+[ext_resource type="Texture2D" path="res://assets/Mini FX, Items & UI/Common Pick-ups/pular.png" id="1_a4wly"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_kb6qf"]
 
 [node name="Pular" type="TextureRect"]

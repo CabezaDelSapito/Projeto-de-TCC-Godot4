@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d35r8j6sxiryo"]
+[gd_scene load_steps=3 format=3 uid="uid://x5wlxpxhn24p"]
 
-[ext_resource type="Texture2D" uid="uid://cuovfjj6j4pgo" path="res://assets/Mini FX, Items & UI/Common Pick-ups/esperar.png" id="1_om6o3"]
+[ext_resource type="Texture2D" path="res://assets/Mini FX, Items & UI/Common Pick-ups/esperar.png" id="1_om6o3"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_tehjv"]
 
 [node name="Parar" type="TextureRect"]
@@ -10,4 +10,4 @@ tooltip_text = "Virar"
 texture = ExtResource("1_om6o3")
 expand_mode = 1
 script = ExtResource("2_tehjv")
-CommandType = 3
+CommandType = 4

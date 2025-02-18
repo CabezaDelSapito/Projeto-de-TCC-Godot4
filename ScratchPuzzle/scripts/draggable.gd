@@ -1,6 +1,6 @@
 extends TextureRect
 
-@export_enum("Andar", "Virar", "Pular", "Parar") var CommandType = 0
+@export_enum("Andar", "Virar", "Pular", "Parar", "Esperar") var CommandType = 0
 #@export_enum("Loop", "Enquanto", "Se", "Senão") var Command = 0
 
 func _get_drag_data(_at_position: Vector2) -> Variant:

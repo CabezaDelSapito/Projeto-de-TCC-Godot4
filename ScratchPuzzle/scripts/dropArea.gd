@@ -70,7 +70,8 @@ func executar_sequencial(comandos):
 			3:
 				player.parar() 
 			4:
-				player.esperar(1) 	
+				player.esperar() 
+				await get_tree().create_timer(1.0).timeout  # gambiarra enquanto função não funciona
 	
 	#verificar_objetivo()
 
