@@ -74,6 +74,21 @@ func executar_sequencial(comandos):
 				player.parar() 
 			4:
 				await player.esperar(tempo)
+			5:
+				print("repetição")
+				#var repetir_node = find_child("VBoxContainer").find_child("Repetir")
+				#var comands = []
+				## Obtém todos os filhos do VBoxContainer e adiciona à lista de comandos
+				#for child in repetir_node.get_children():
+					#if child is TextureRect:
+						##print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
+						#var tempo1 = child.get_valor() if child.has_method("get_valor") else 1.0  # Obtém o tempo do bloco
+						#comands.append([child, tempo1])
+				#
+				#await executar_sequencial(comands)
+				#var end = comando.end
+				#for i in range(0, end + 1):
+				#	await executar_comandos(comando.commands)
 	
 	#verificar_objetivo()
 

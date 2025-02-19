@@ -1,6 +1,6 @@
 extends TextureRect
 
-@export_enum("Andar", "Virar", "Pular", "Parar", "Esperar") var CommandType = 0
+@export_enum("Andar", "Virar", "Pular", "Parar", "Esperar", "Repetir") var CommandType = 0
 @export var valor: float = 1.0  # Novo campo para armazenar um número inteiro
 #@export_enum("Loop", "Enquanto", "Se", "Senão") var Command = 0
 @onready var tempo_input: SpinBox = $TempoInput
