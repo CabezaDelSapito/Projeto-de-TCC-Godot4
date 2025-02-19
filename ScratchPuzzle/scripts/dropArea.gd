@@ -1,4 +1,4 @@
-extends PanelContainer
+extends MarginContainer
 
 @onready var target_node = find_child("VBoxContainer")
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)  # Busca a LevelArea dinamicamente
@@ -42,7 +42,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 func _on_execute_button_pressed() -> void:
 	var comandos = []
-	
 	# Obtém todos os filhos do VBoxContainer e adiciona à lista de comandos
 	for child in target_node.get_children():
 		if child is TextureRect:

@@ -6,7 +6,7 @@
 [node name="Parar" type="TextureRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
-tooltip_text = "Virar"
+tooltip_text = "Parar"
 texture = ExtResource("1_1ibft")
 expand_mode = 1
 script = ExtResource("2_2h2bo")
