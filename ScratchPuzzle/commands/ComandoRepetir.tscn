@@ -1,15 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://do2x3uwnjgh18"]
+[gd_scene load_steps=3 format=3 uid="uid://cqfj3kd2iqgwe"]
 
-[ext_resource type="Texture2D" uid="uid://dljwlvhfa7y8j" path="res://assets/Mini FX, Items & UI/Common Pick-ups/repetir.png" id="1_xresa"]
+[ext_resource type="Texture2D" path="res://assets/Mini FX, Items & UI/Common Pick-ups/repetir.png" id="1_xresa"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_ig0tx"]
 
 [node name="Repetir" type="TextureRect"]
 texture_filter = 1
 offset_right = 89.0
 offset_bottom = 39.0
-scale = Vector2(0.996367, 1)
-tooltip_text = "Virar"
+tooltip_text = "Repetir"
 texture = ExtResource("1_xresa")
-stretch_mode = 2
 script = ExtResource("2_ig0tx")
 CommandType = 5
