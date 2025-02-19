@@ -6,7 +6,7 @@ extends TextureRect
 @onready var tempo_input: SpinBox = $TempoInput
 
 func get_valor() -> float:
-	return float(tempo_input.value) if tempo_input else 1 
+	return float(tempo_input.value) if tempo_input else 1.0
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var data = [self, CommandType, valor]
