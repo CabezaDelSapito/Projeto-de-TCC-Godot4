@@ -62,3 +62,7 @@ func load_commands(level_name: String):
 		for command_scene in commands[level_name]:
 			var command_instance = command_scene.instantiate()
 			command_container.add_child(command_instance)
+
+
+func _on_restart_button_pressed() -> void:
+	load_level(current_map.nome)

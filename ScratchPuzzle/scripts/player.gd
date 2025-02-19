@@ -55,5 +55,5 @@ func pular():
 func parar():
 	is_moving = false
 	
-func esperar():
-	await get_tree().create_timer(1.0).timeout  # Espera entre comandos
+func esperar(tempo):
+	await get_tree().create_timer(tempo).timeout  # Espera entre comandos

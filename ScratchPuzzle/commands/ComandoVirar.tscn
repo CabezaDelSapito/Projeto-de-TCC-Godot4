@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtfay4bduce72"]
 
-[ext_resource type="Texture2D" path="res://assets/Mini FX, Items & UI/Common Pick-ups/virar.png" id="1_7xhx4"]
+[ext_resource type="Texture2D" uid="uid://bqinuxgfwwsy0" path="res://assets/Mini FX, Items & UI/Common Pick-ups/virar.png" id="1_7xhx4"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_mr7du"]
 
 [node name="Virar" type="TextureRect"]
