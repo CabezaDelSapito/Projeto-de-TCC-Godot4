@@ -5,9 +5,11 @@
 
 [node name="Repetir" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+offset_right = 89.0
+offset_bottom = 39.0
+scale = Vector2(0.996367, 1)
 tooltip_text = "Virar"
 texture = ExtResource("1_xresa")
-expand_mode = 1
+stretch_mode = 2
 script = ExtResource("2_ig0tx")
 CommandType = 5
