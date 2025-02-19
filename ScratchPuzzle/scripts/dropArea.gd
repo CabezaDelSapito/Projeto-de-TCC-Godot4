@@ -5,7 +5,7 @@ extends PanelContainer
 var map: Node = null
 var player: Node = null
 var goal: Area2D = null  # Referência ao nó de objetivo
-@onready var base_level: PanelContainer = $"../../../../../.."
+@onready var base_level: PanelContainer = $"../../../../../../.."
 
 
 func _ready():

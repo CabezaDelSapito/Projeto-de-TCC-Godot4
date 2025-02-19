@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
 @onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea
 @onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer
-@onready var v_box_container: VBoxContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer/VBoxContainer
+@onready var v_box_container = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
 
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/level_1.tscn"),
