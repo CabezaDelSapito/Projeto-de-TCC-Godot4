@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://icnhidp3gljf"]
+[gd_scene load_steps=3 format=3 uid="uid://icnhidp3gljf"]
 
-[ext_resource type="Texture2D" uid="uid://cdcwnhuk1151d" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Wrapped_Presents (16 x 16).png" id="1_56pj6"]
+[ext_resource type="Texture2D" uid="uid://by4ru76dasktm" path="res://assets/Mini FX, Items & UI/Common Pick-ups/pular.png" id="1_a4wly"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_kb6qf"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_02a0r"]
-atlas = ExtResource("1_56pj6")
-region = Rect2(33.8644, 4.75685, 12.432, 11.2432)
 
 [node name="Pular" type="TextureRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 tooltip_text = "Pular"
-texture = SubResource("AtlasTexture_02a0r")
+texture = ExtResource("1_a4wly")
 expand_mode = 1
 script = ExtResource("2_kb6qf")
 CommandType = 2

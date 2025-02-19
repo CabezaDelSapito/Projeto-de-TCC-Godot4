@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tond4dw4y40m"]
+
+[ext_resource type="Texture2D" uid="uid://djxtn81ygexwy" path="res://assets/Mini FX, Items & UI/Common Pick-ups/parar.png" id="1_1ibft"]
+[ext_resource type="Script" path="res://scripts/draggable.gd" id="2_2h2bo"]
+
+[node name="Parar" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+tooltip_text = "Parar"
+texture = ExtResource("1_1ibft")
+expand_mode = 1
+script = ExtResource("2_2h2bo")
+CommandType = 3

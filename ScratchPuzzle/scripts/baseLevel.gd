@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
 @onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea
 @onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer
-@onready var grid_container: GridContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/PanelContainer/ScrollContainer/GridContainer
+@onready var v_box_container = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/level_1.tscn"),
@@ -12,14 +12,14 @@ extends PanelContainer
 	"level_4": preload("res://levels/level_4.tscn")
 }
 @export var commands: Dictionary = {
-	"level_1": [preload("res://commands/ComandoAndar.tscn")],
-	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn")],
-	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn")],
-	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn")],
+	"level_1": [preload("res://commands/ComandoAndar.tscn"),preload("res://commands/ComandoParar.tscn")],
+	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"),preload("res://commands/ComandoParar.tscn")],
+	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
+	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),],
 }
 
 var current_map = null
-var current_level = "level_1"
+var current_level = "level_4"
 var player = null
 
 func _ready():
@@ -30,7 +30,7 @@ func _ready():
 
 func _on_clear_button_pressed() -> void:
 	# Remove todos os filhos dentro do painel
-	for child in grid_container.get_children():
+	for child in v_box_container.get_children():
 		child.queue_free()
 
 func load_level(level_name: String):
@@ -49,7 +49,7 @@ func load_map(level_name: String):
 		
 		player = current_map.get_node("player")
 		if not player:
-			print("⚠️ Player não encontrado no mapa!")
+			print("Player não encontrado no mapa!")
 
 
 func load_commands(level_name: String):
@@ -62,3 +62,7 @@ func load_commands(level_name: String):
 		for command_scene in commands[level_name]:
 			var command_instance = command_scene.instantiate()
 			command_container.add_child(command_instance)
+
+
+func _on_restart_button_pressed() -> void:
+	load_level(current_map.nome)

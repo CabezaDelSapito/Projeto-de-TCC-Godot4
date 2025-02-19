@@ -1,11 +1,11 @@
-extends PanelContainer
+extends MarginContainer
 
-@onready var target_node = find_child("GridContainer")
+@onready var target_node = find_child("VBoxContainer")
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)  # Busca a LevelArea dinamicamente
 var map: Node = null
 var player: Node = null
 var goal: Area2D = null  # Referência ao nó de objetivo
-@onready var base_level: PanelContainer = $"../../../../../.."
+@onready var base_level: PanelContainer = $"../../../../../../.."
 
 
 func _ready():
@@ -42,12 +42,12 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 func _on_execute_button_pressed() -> void:
 	var comandos = []
-	
-	# Obtém todos os filhos do GridContainer e adiciona à lista de comandos
+	# Obtém todos os filhos do VBoxContainer e adiciona à lista de comandos
 	for child in target_node.get_children():
 		if child is TextureRect:
 			#print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
-			comandos.append(child)
+			var tempo = child.get_valor() if child.has_method("get_valor") else 1.0  # Obtém o tempo do bloco
+			comandos.append([child, tempo])
 	
 	await executar_sequencial(comandos)
 
@@ -59,19 +59,23 @@ func executar_sequencial(comandos):
 		print("⚠️ Nenhum player encontrado para executar os comandos.")
 		return
 	
-	for comando in comandos:
+	for comando_data in comandos:
+		var comando = comando_data[0]
+		var tempo = comando_data[1]
+		
 		match comando.CommandType:
 			0:
 				player.andar()
 			1:
 				player.virar()
 			2:
-				player.pular()
-				await get_tree().create_timer(0.5).timeout  # Espera entre comandos
-				
-		await get_tree().create_timer(0.5).timeout  # Espera entre comandos
+				player.pular() 
+			3:
+				player.parar() 
+			4:
+				await player.esperar(tempo)
 	
-	verificar_objetivo()
+	#verificar_objetivo()
 
 func verificar_objetivo():
 	find_map_and_player()
