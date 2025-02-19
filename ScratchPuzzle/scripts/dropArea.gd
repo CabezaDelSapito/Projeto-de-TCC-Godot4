@@ -47,7 +47,8 @@ func _on_execute_button_pressed() -> void:
 	for child in target_node.get_children():
 		if child is TextureRect:
 			#print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
-			comandos.append(child)
+			var tempo = child.get_valor() if child.has_method("get_valor") else 1  # Obtém o tempo do bloco
+			comandos.append([child, tempo])
 	
 	await executar_sequencial(comandos)
 
@@ -59,7 +60,10 @@ func executar_sequencial(comandos):
 		print("⚠️ Nenhum player encontrado para executar os comandos.")
 		return
 	
-	for comando in comandos:
+	for comando_data in comandos:
+		var comando = comando_data[0]
+		var tempo = comando_data[1]
+		
 		match comando.CommandType:
 			0:
 				player.andar()
@@ -70,8 +74,7 @@ func executar_sequencial(comandos):
 			3:
 				player.parar() 
 			4:
-				var tempo = 1.0
-				await player.esperar(tempo) 
+				await player.esperar(tempo)
 	
 	#verificar_objetivo()
 

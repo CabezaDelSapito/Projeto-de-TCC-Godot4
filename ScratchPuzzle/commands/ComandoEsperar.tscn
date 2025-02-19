@@ -6,8 +6,18 @@
 [node name="Parar" type="TextureRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
-tooltip_text = "Virar"
+tooltip_text = "Esperar"
 texture = ExtResource("1_om6o3")
 expand_mode = 1
 script = ExtResource("2_tehjv")
 CommandType = 4
+
+[node name="TempoInput" type="SpinBox" parent="."]
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 94.0625
+offset_bottom = 42.0
+alignment = 2
