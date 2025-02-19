@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var target_node = find_child("GridContainer")
+@onready var target_node = find_child("VBoxContainer")
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)  # Busca a LevelArea dinamicamente
 var map: Node = null
 var player: Node = null
@@ -43,11 +43,11 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 func _on_execute_button_pressed() -> void:
 	var comandos = []
 	
-	# Obtém todos os filhos do GridContainer e adiciona à lista de comandos
+	# Obtém todos os filhos do VBoxContainer e adiciona à lista de comandos
 	for child in target_node.get_children():
 		if child is TextureRect:
 			#print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
-			var tempo = child.get_valor() if child.has_method("get_valor") else 1  # Obtém o tempo do bloco
+			var tempo = child.get_valor() if child.has_method("get_valor") else 1.0  # Obtém o tempo do bloco
 			comandos.append([child, tempo])
 	
 	await executar_sequencial(comandos)
