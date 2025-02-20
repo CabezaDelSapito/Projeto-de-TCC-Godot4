@@ -44,7 +44,7 @@ func load_map(level_name: String):
 	
 	if level_name in maps:
 		current_map = maps[level_name].instantiate()
-		current_map.scale = Vector2(1.6, 1.6)  # Ajusta a escala do mapa
+		current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		
 		player = current_map.get_node("player")
