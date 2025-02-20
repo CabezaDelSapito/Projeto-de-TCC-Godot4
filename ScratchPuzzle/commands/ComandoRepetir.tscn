@@ -10,11 +10,22 @@ offset_right = 89.0
 offset_bottom = 39.0
 tooltip_text = "Repetir"
 texture = ExtResource("1_xresa")
+stretch_mode = 2
 script = ExtResource("2_ig0tx")
 CommandType = 5
 
+[node name="repeticaoInput" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 141.063
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 78.0
+offset_bottom = 29.0
 script = ExtResource("3_vxja0")
