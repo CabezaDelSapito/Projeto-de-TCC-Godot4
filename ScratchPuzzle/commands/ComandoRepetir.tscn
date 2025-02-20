@@ -16,11 +16,14 @@ script = ExtResource("2_ig0tx")
 CommandType = 5
 
 [node name="repeticaoInput" type="SpinBox" parent="."]
+z_index = -1
 layout_mode = 0
-offset_left = 119.0
-offset_top = 4.0
-offset_right = 202.063
-offset_bottom = 35.0
+offset_left = 121.0
+offset_top = 5.0
+offset_right = 204.063
+offset_bottom = 36.0
+min_value = 1.0
+value = 1.0
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -30,3 +33,6 @@ offset_top = 34.0
 offset_right = 93.0
 offset_bottom = 49.0
 script = ExtResource("3_vxja0")
+
+[connection signal="child_entered_tree" from="VBoxContainer" to="." method="_on_v_box_container_child_entered_tree"]
+[connection signal="child_exiting_tree" from="VBoxContainer" to="." method="_on_v_box_container_child_exiting_tree"]
