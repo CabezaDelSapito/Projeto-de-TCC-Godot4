@@ -252,8 +252,8 @@ theme_override_constants/margin_bottom = 4
 
 [node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
 custom_minimum_size = Vector2(0, 396)

@@ -1,6 +1,5 @@
-extends GridContainer
+extends VBoxContainer
 
-@export_enum("Andar", "Virar", "Pular") var CommandType = 0
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	#if data[1] == CommandType:

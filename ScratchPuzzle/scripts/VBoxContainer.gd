@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@export_enum("Andar", "Virar", "Pular") var CommandType = 0
+#@export_enum("Andar", "Virar", "Pular") var CommandType = 0
 
 @onready var target_node = find_child("VBoxContainer")
 

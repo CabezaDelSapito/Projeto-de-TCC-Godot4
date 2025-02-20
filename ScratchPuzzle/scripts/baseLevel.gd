@@ -15,7 +15,7 @@ extends PanelContainer
 	"level_1": [preload("res://commands/ComandoAndar.tscn"),preload("res://commands/ComandoParar.tscn")],
 	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"),preload("res://commands/ComandoParar.tscn")],
 	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
-	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),],
+	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),preload("res://commands/ComandoRepetir.tscn")],
 }
 
 var current_map = null

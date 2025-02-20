@@ -48,6 +48,10 @@ func _on_execute_button_pressed() -> void:
 			#print("Comando:", child.name, " | Tipo:", child.CommandType)  # Acessando CommandType
 			var tempo = child.get_valor() if child.has_method("get_valor") else 1.0  # Obtém o tempo do bloco
 			comandos.append([child, tempo])
+		elif child.CommandType == 5:  # "Repetir"
+			var repeat_count = child.get_repeat_count()
+			var inner_comandos = child.get_comandos()
+			comandos.append([child, repeat_count, inner_comandos])  # Salva o próprio objeto no array
 	
 	await executar_sequencial(comandos)
 
@@ -61,19 +65,25 @@ func executar_sequencial(comandos):
 	
 	for comando_data in comandos:
 		var comando = comando_data[0]
-		var tempo = comando_data[1]
-		
+
 		match comando.CommandType:
-			0:
+			0:  # Andar
 				player.andar()
-			1:
+			1:  # Virar
+				print("virar")
 				player.virar()
-			2:
-				player.pular() 
-			3:
-				player.parar() 
-			4:
+			2:  # Pular
+				player.pular()
+			3:  # Parar
+				player.parar()
+			4:  # Esperar
+				var tempo = comando_data[1]
 				await player.esperar(tempo)
+			5:  # Repetir
+				var repeat_count = comando.get_repeat_count()
+				var inner_comandos = comando.get_comandos()
+				for _i in range(repeat_count):
+					await executar_sequencial(inner_comandos)
 	
 	#verificar_objetivo()
 

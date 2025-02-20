@@ -5,9 +5,8 @@
 
 [node name="Pular" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
 tooltip_text = "Pular"
 texture = ExtResource("1_a4wly")
-expand_mode = 1
+stretch_mode = 2
 script = ExtResource("2_kb6qf")
 CommandType = 2
