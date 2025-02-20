@@ -5,9 +5,10 @@
 
 [node name="Andar" type="TextureRect"]
 texture_filter = 1
+custom_minimum_size = Vector2(180, 50)
 offset_right = 89.0
 offset_bottom = 15.0
 tooltip_text = "Andar"
 texture = ExtResource("1_cw835")
-stretch_mode = 2
+expand_mode = 1
 script = ExtResource("2_olyd1")
