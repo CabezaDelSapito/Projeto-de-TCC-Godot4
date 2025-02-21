@@ -5,7 +5,7 @@
 
 [node name="Virar" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(180, 50)
+custom_minimum_size = Vector2(178, 30)
 tooltip_text = "Virar"
 texture = ExtResource("1_7xhx4")
 expand_mode = 1

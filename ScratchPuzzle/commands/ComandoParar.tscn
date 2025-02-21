@@ -5,7 +5,7 @@
 
 [node name="Parar" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(180, 50)
+custom_minimum_size = Vector2(178, 30)
 offset_right = 89.0
 offset_bottom = 15.0
 tooltip_text = "Parar"

@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqfj3kd2iqgwe"]
+[gd_scene load_steps=5 format=3 uid="uid://cqfj3kd2iqgwe"]
 
 [ext_resource type="Texture2D" uid="uid://dljwlvhfa7y8j" path="res://assets/Mini FX, Items & UI/Common Pick-ups/repetir.png" id="1_xresa"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_ig0tx"]
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="3_vxja0"]
+[ext_resource type="Texture2D" uid="uid://cqornouqpvh2c" path="res://assets/Mini FX, Items & UI/Common Pick-ups/PerninhaRepetir.png" id="4_7yw84"]
 
 [node name="Repetir" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(180, 100)
-offset_right = 89.0
-offset_bottom = 39.0
+custom_minimum_size = Vector2(178, 30)
+offset_right = 178.0
+offset_bottom = 30.0
 tooltip_text = "Repetir"
 texture = ExtResource("1_xresa")
 expand_mode = 1
@@ -18,18 +19,28 @@ CommandType = 5
 [node name="repeticaoInput" type="SpinBox" parent="."]
 z_index = -1
 layout_mode = 0
-offset_left = 121.0
-offset_top = 5.0
-offset_right = 204.063
-offset_bottom = 36.0
+offset_left = 118.0
+offset_top = 2.0
+offset_right = 201.063
+offset_bottom = 33.0
 min_value = 1.0
 value = 1.0
 alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 30.0
-offset_top = 35.0
-offset_right = 155.0
-offset_bottom = 95.0
+offset_left = 28.0
+offset_top = 29.0
+offset_right = 153.0
+offset_bottom = 89.0
 script = ExtResource("3_vxja0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(178, 30)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 30.0
+offset_right = 180.0
+offset_bottom = 60.0
+texture = ExtResource("4_7yw84")
+region_rect = Rect2(0, 0, 89, 24)
