@@ -5,7 +5,7 @@ extends TextureRect
 #@export_enum("Loop", "Enquanto", "Se", "Senão") var Command = 0
 @onready var tempo_input: SpinBox = $TempoInput
 @export var repeat_count: int = 1  # Quantas vezes repetir
-@onready var command_container = $VBoxContainer  # Onde os comandos dentro do repetir serão armazenados
+@onready var command_container = $MarginContainer/VBoxContainer  # Onde os comandos dentro do repetir serão armazenados
 @onready var repeticao_input = $repeticaoInput
 
 func get_comandos():
