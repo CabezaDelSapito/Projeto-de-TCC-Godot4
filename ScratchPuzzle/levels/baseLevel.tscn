@@ -187,6 +187,7 @@ theme_override_constants/margin_top = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo"]
 layout_mode = 2
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="LevelTitle" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2

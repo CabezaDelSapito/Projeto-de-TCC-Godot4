@@ -65,4 +65,4 @@ func load_commands(level_name: String):
 
 
 func _on_restart_button_pressed() -> void:
-	load_level(current_map.nome)
+	load_map(current_map.nome)
