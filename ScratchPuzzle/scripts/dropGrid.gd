@@ -11,4 +11,3 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# Adiciona o filho no nó desejado
 	add_child(data[0].duplicate())
 	#data[0].global_position = global_position
-
