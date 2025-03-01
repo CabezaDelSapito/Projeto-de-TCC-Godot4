@@ -6,12 +6,13 @@
 
 [node name="Esperar" type="TextureRect"]
 texture_filter = 1
+custom_minimum_size = Vector2(178, 30)
 offset_left = 1.0
 offset_right = 90.0
 offset_bottom = 15.0
 tooltip_text = "Esperar"
 texture = ExtResource("1_om6o3")
-stretch_mode = 2
+expand_mode = 1
 script = ExtResource("2_tehjv")
 CommandType = 4
 
@@ -19,9 +20,9 @@ CommandType = 4
 z_index = -1
 texture_filter = 1
 layout_mode = 0
-offset_left = 44.0
-offset_right = 127.063
-offset_bottom = 31.0
-scale = Vector2(0.5, 0.5)
+offset_left = 124.0
+offset_top = 2.0
+offset_right = 207.063
+offset_bottom = 33.0
 alignment = 2
 script = ExtResource("3_tj14v")

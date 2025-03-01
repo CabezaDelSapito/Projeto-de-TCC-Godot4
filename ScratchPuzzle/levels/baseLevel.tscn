@@ -47,9 +47,8 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "Lista de Comandos
 "
 horizontal_alignment = 1
@@ -70,9 +69,8 @@ size_flags_vertical = 3
 [node name="TypeTitle" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "M
 O
 V
@@ -101,72 +99,7 @@ script = ExtResource("3_eeked")
 texture_filter = 1
 layout_mode = 2
 
-[node name="Estrutura" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TypeTitle" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
-text = "E
-S
-T
-R
-U
-T
-U
-R
-A"
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Estrutura/MarginContainer"]
-texture_filter = 1
-layout_mode = 2
-
-[node name="Direcao" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TypeTitle" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
-text = "D
-I
-R
-E
-Ç
-Ã
-O"
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Direcao/MarginContainer"]
-texture_filter = 1
-layout_mode = 2
-
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 80
@@ -174,16 +107,14 @@ theme_override_constants/margin_bottom = 80
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
 
@@ -215,25 +146,22 @@ theme_override_constants/separation = 40
 [node name="ClearButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = " LIMPAR"
 
 [node name="RestartButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = " REINICIAR"
 
 [node name="ExecuteButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = " EXECUTAR"
 
 [node name="LevelMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
@@ -245,10 +173,6 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 54
-theme_override_constants/margin_right = 31
-theme_override_constants/margin_bottom = 4
 
 [node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer"]
 layout_mode = 2
@@ -263,22 +187,21 @@ theme_override_constants/margin_top = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo"]
 layout_mode = 2
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="LevelTitle" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
 [node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
 horizontal_alignment = 1
 
@@ -288,7 +211,7 @@ theme_override_constants/separation = 20
 
 [node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -298,9 +221,8 @@ texture = SubResource("AtlasTexture_cd7vr")
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "ESTRELA 1 : ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -311,7 +233,7 @@ theme_override_constants/separation = 20
 
 [node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -321,9 +243,8 @@ texture = SubResource("AtlasTexture_cd7vr")
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "ESTRELA 2 : USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -334,7 +255,7 @@ theme_override_constants/separation = 20
 
 [node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -344,9 +265,8 @@ texture = SubResource("AtlasTexture_cd7vr")
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-theme_override_font_sizes/font_size = 24
 text = "ESTRELA 3 : USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
