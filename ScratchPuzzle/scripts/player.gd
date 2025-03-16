@@ -57,3 +57,16 @@ func parar():
 	
 func esperar(tempo):
 	await get_tree().create_timer(tempo).timeout  # Espera entre comandos
+	
+	
+	
+	
+# ====== CONDIÇÕES PARA O BLOCO "SE" ======
+func esta_no_chao() -> bool:
+	return is_on_floor()
+
+func esta_parado() -> bool:
+	return !is_moving and is_on_floor()
+
+func esta_caindo() -> bool:
+	return velocity.y > 0 and not is_on_floor()

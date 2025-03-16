@@ -52,6 +52,10 @@ func _on_execute_button_pressed() -> void:
 			var repeat_count = child.get_repeat_count()
 			var inner_comandos = child.get_comandos()
 			comandos.append([child, repeat_count, inner_comandos])  # Salva o próprio objeto no array
+		elif child.CommandType == 6:  # "Se"
+			var condicao = child.option_button.get_selected_id()
+			var inner_comandos = child.get_comandos()
+			comandos.append([child, condicao, inner_comandos])  # Salva a condição no array
 	
 	await executar_sequencial(comandos)
 
@@ -84,8 +88,22 @@ func executar_sequencial(comandos):
 				var inner_comandos = comando.get_comandos()
 				for _i in range(repeat_count):
 					await executar_sequencial(inner_comandos)
-	
+			6:  # Se (condicional)
+				var condicao = comando_data[1]  # Condição selecionada no OptionButton
+				var inner_comandos = comando_data[2]  # Comandos dentro do "Se"
+				if verificar_condicao(condicao):  # Só executa se a condição for atendida
+					await executar_sequencial(inner_comandos)
 	#verificar_objetivo()
+
+func verificar_condicao(condicao: int) -> bool:
+	if not player:
+		return false
+	
+	match condicao:
+		0: return player.esta_no_chao()  # NO_CHAO
+		1: return player.esta_parado()  # PARADO
+		2: return player.esta_caindo()  # CAINDO
+	return false  # Se a condição não for reconhecida
 
 func verificar_objetivo():
 	find_map_and_player()

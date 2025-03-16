@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://jcpm4dh6ri56"]
 
 [ext_resource type="Script" path="res://scripts/level_01.gd" id="1_sonqb"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_iv5yb"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/Mini FX, Items & UI/Common Pick-ups/RevMiniPixel.ttf" id="2_iv5yb"]
 [ext_resource type="Script" path="res://scripts/VBoxContainer.gd" id="3_twb05"]
 [ext_resource type="PackedScene" uid="uid://dfv7dhi7km4wx" path="res://commands/ComandoAndar.tscn" id="4_qgbhf"]
 [ext_resource type="PackedScene" uid="uid://dtfay4bduce72" path="res://commands/ComandoVirar.tscn" id="5_q8v3n"]

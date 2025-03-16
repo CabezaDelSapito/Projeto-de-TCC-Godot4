@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="ScratchPuzzle"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1633
 window/size/viewport_height=768
-window/size/mode=3
 
 [rendering]
 
