@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 218.75
 const JUMP_VELOCITY = -300.0
+const RAYCAST_DISTANCE = 25  # Distância para detectar obstáculos
+const HOLE_DETECTION_DISTANCE = 50.0  # Distância para detectar buracos
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
-var is_moving := false  # Define se está andando ou não
+var is_moving := false
 var direction := 1  # 1 = Direita, -1 = Esquerda
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
@@ -37,23 +39,77 @@ func _set_state():
 
 # ====== COMANDOS EXTERNOS ======
 
-# Inicia o movimento do personagem na direção atual
 func andar():
 	is_moving = true
 
-# Vira o personagem para a direção oposta
 func virar():
 	direction *= -1
 	texture.scale.x = -direction
 
-# Faz o personagem pular
 func pular():
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-# Para o movimento
 func parar():
 	is_moving = false
 	
 func esperar(tempo):
-	await get_tree().create_timer(tempo).timeout  # Espera entre comandos
+	await get_tree().create_timer(tempo).timeout
+
+# ====== SISTEMA DE CONDIÇÕES ======
+
+func check_condition(condition: String) -> bool:
+	match condition:
+		"on_ground":
+			return is_on_floor()
+		"obstacle_ahead":
+			return _has_obstacle_ahead()
+		"facing_right":
+			return (direction == 1)
+		"facing_left":
+			return (direction == -1)
+		"hole_ahead":
+			return !_has_ground_ahead()
+		_:
+			return false
+
+func _has_obstacle_ahead() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var ray_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
+	var player_height = 35.0
+	var ray_count = 3
+	var ray_spacing = player_height / (ray_count - 1)
+	var base_y = global_position.y + (player_height / 2)
+	
+	for i in ray_count:
+		var y_offset = -i * ray_spacing
+		var start_pos = Vector2(global_position.x, base_y + y_offset)
+		var end_pos = start_pos + ray_direction * RAYCAST_DISTANCE
+		
+		var query = PhysicsRayQueryParameters2D.create(start_pos, end_pos)
+		query.exclude = [self]
+		query.collision_mask = collision_mask
+		
+		var result = space_state.intersect_ray(query)
+		if result.has("collider"):
+			return true
+	
+	return false
+
+func _has_ground_ahead() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var ray_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
+	
+	# Ajuste estes valores conforme necessário
+	var forward_offset = 30  # Distância à frente do personagem
+	var vertical_offset = -10  # Ajuste vertical (negativo = acima dos pés)
+	
+	var start_pos = global_position + ray_direction * forward_offset + Vector2(0, vertical_offset)
+	var end_pos = start_pos + Vector2.DOWN * HOLE_DETECTION_DISTANCE
+	
+	var query = PhysicsRayQueryParameters2D.create(start_pos, end_pos)
+	query.exclude = [self]  # Ignora o próprio jogador
+	query.collision_mask = collision_mask  # Usa a mesma máscara do personagem
+	
+	var result = space_state.intersect_ray(query)
+	return result.has("collider")  # Forma mais confiável
