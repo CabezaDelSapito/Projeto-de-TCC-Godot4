@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="3_vryld"]
 [ext_resource type="Texture2D" uid="uid://drsh37jovl5k4" path="res://assets/Mini FX, Items & UI/Common Pick-ups/PerninhaSe.png" id="5_cp1gf"]
 
-[node name="Repetir" type="TextureRect"]
+[node name="Se" type="TextureRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(178, 30)
 offset_right = 178.0
@@ -40,6 +40,7 @@ offset_bottom = 89.0
 script = ExtResource("3_vryld")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_repeat = 2
 custom_minimum_size = Vector2(178, 30)
 layout_mode = 0
 offset_left = 2.0
