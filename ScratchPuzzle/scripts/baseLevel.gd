@@ -19,10 +19,11 @@ extends PanelContainer
 	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
 	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
 	"level_5": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
+	"level_6": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"), preload("res://commands/ComandoEsperar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
 }
 
 var current_map = null
-var current_level = "level_1"
+var current_level = "level_6"
 var player = null
 
 func _ready():
@@ -47,7 +48,7 @@ func load_map(level_name: String):
 	
 	if level_name in maps:
 		current_map = maps[level_name].instantiate()
-		current_map.scale = Vector2(1.5, 1.5)  # Ajusta a escala do mapa
+		current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		
 		player = current_map.get_node("player")

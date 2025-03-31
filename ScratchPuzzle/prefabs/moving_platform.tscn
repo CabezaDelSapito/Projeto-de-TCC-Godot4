@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhitjlkcbw28i"]
+
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_bm01f"]
+[ext_resource type="Texture2D" uid="uid://1mkoitwl5g0q" path="res://assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_81.png" id="1_jpsh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61hev"]
+size = Vector2(32, 16)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_bm01f")
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+texture = ExtResource("1_jpsh3")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 15.7406)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+shape = SubResource("RectangleShape2D_61hev")
+one_way_collision = true

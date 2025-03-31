@@ -30,6 +30,7 @@ theme_override_fonts/font = ExtResource("3_7fihn")
 language = "pt_BR"
 item_count = 1
 popup/item_0/text = "TESTE"
+popup/item_0/id = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -49,3 +50,4 @@ offset_right = 180.0
 offset_bottom = 60.0
 texture = ExtResource("5_cp1gf")
 region_rect = Rect2(0, 0, 89, 24)
+patch_margin_bottom = 5

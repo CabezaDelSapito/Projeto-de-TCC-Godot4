@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://beijv3dcnw1ts"]
+
+[ext_resource type="Script" path="res://scripts/spikes_area.gd" id="1_8s32c"]
+[ext_resource type="Texture2D" uid="uid://bh8ad1a7iq2bq" path="res://assets/Mini FX, Items & UI/Mini UI/Spike.png" id="1_crado"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehd0v"]
+size = Vector2(7, 7)
+
+[node name="spikes-area" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_8s32c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_crado")
+region_enabled = true
+region_rect = Rect2(0, 8, 88, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ehd0v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
