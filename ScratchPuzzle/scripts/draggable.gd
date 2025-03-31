@@ -6,7 +6,7 @@ extends TextureRect
 @export var repeat_count: int = 1
 @onready var command_container = $VBoxContainer
 @onready var repeticao_input = $repeticaoInput
-@onready var condition_option: OptionButton = $OptionButton
+@onready var condition_option = $OptionButton
 
 # Chamado quando o nó é inicializado
 func _ready():

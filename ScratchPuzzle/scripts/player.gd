@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal player_died()
+
 const SPEED = 218.75
 const JUMP_VELOCITY = -300.0
 const RAYCAST_DISTANCE = 25  # Distância para detectar obstáculos
@@ -9,6 +11,9 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var is_moving := false
 var direction := 1  # 1 = Direita, -1 = Esquerda
+var max_health := 1
+var current_health := max_health
+var is_dead := false
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
 
@@ -36,6 +41,27 @@ func _set_state():
 	
 	if texture.name != state:
 		texture.play(state)
+
+func take_damage(knockback_force: Vector2) -> void:
+	current_health -= 1
+	
+	velocity = knockback_force
+	
+	# Efeito visual de dano
+	$AnimatedSprite2D.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite2D.modulate = Color.WHITE
+	
+	if current_health <= 0:
+		die()
+
+func die() -> void:
+	is_dead = true
+	#$AnimatedSprite2D.play("death")
+	
+	await get_tree().create_timer(1.0).timeout
+	# Emite o sinal de morte
+	emit_signal("player_died")
 
 # ====== COMANDOS EXTERNOS ======
 

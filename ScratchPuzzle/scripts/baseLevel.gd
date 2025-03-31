@@ -23,7 +23,7 @@ extends PanelContainer
 }
 
 var current_map = null
-var current_level = "level_6"
+var current_level = "level_5"
 var player = null
 
 func _ready():
@@ -52,9 +52,15 @@ func load_map(level_name: String):
 		map_container.add_child(current_map)
 		
 		player = current_map.get_node("player")
-		if not player:
+		if player:
+			# Conecta o sinal de morte do player a este script
+			if not player.player_died.is_connected(_on_player_died):
+				player.player_died.connect(_on_player_died)
+		else:
 			print("Player não encontrado no mapa!")
 
+func _on_player_died():
+	load_map(current_map.nome)
 
 func load_commands(level_name: String):
 	# Remove todos os comandos anteriores

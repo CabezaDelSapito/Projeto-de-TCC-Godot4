@@ -1511,7 +1511,7 @@ layer_2/tile_data = PackedInt32Array(1310720, 65537, 2, 1245184, 65537, 2, 11796
 [node name="goal" parent="." instance=ExtResource("5_e7227")]
 position = Vector2(586.667, 165.333)
 scale = Vector2(1.5, 1.5)
-next_level = "level_1"
+next_level = "level_6"
 
 [node name="player" parent="." instance=ExtResource("6_tgn22")]
 position = Vector2(48, 152)
