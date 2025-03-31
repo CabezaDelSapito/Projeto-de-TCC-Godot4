@@ -6,6 +6,7 @@ var map: Node = null
 var player: Node = null
 var goal: Area2D = null
 @onready var base_level: PanelContainer = $"../../../../../../.."
+@onready var execute_button = $"../../HBoxContainer/ExecuteButton"
 
 func _ready():
 	await get_tree().process_frame
@@ -37,6 +38,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		target_node.add_child(data[0].duplicate())
 
 func _on_execute_button_pressed() -> void:
+	# Desabilita o botão de executar
+	execute_button.disabled = true
+	
 	var comandos = []
 	for child in target_node.get_children():
 		if child is TextureRect:

@@ -4,6 +4,7 @@ extends PanelContainer
 @onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea
 @onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/ScrollContainer2/VBoxContainer/Movimentacao/MarginContainer/VBoxContainer
 @onready var v_box_container = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
+@onready var execute_button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
 
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/level_1.tscn"),
@@ -23,7 +24,7 @@ extends PanelContainer
 }
 
 var current_map = null
-var current_level = "level_5"
+var current_level = "level_6"
 var player = null
 
 func _ready():
@@ -43,6 +44,7 @@ func load_level(level_name: String):
 	load_commands(level_name)
 
 func load_map(level_name: String):
+	execute_button.disabled = false
 	if current_map:
 		current_map.queue_free()  # Remove o mapa anterior
 	

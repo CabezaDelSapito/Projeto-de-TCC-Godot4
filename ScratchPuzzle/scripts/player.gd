@@ -59,7 +59,7 @@ func die() -> void:
 	is_dead = true
 	#$AnimatedSprite2D.play("death")
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	# Emite o sinal de morte
 	emit_signal("player_died")
 
