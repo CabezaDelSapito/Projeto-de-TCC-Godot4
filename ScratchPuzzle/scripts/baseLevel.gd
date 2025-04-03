@@ -13,7 +13,8 @@ extends PanelContainer
 	"level_4": preload("res://levels/level_4.tscn"),
 	"level_5": preload("res://levels/level_5.tscn"),
 	"level_6": preload("res://levels/level_6.tscn"),
-	"level_7": preload("res://levels/level_7.tscn")
+	"level_7": preload("res://levels/level_7.tscn"),
+	"level_8": preload("res://levels/level_8.tscn")
 }
 @export var commands: Dictionary = {
 	"level_1": [preload("res://commands/ComandoAndar.tscn")],
@@ -23,10 +24,11 @@ extends PanelContainer
 	"level_5": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
 	"level_6": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn")],
 	"level_7": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
+	"level_8": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
 }
 
 var current_map = null
-var current_level = "level_7"
+var current_level = "level_8"
 var player = null
 
 func _ready():
