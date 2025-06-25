@@ -24,10 +24,10 @@ color = Color(0.0599123, 0.371704, 0.263765, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -35,15 +35,15 @@ theme_override_constants/separation = 30
 
 [node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="CommandArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea"]
-custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -70,6 +70,7 @@ size_flags_horizontal = 4
 columns = 4
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
+custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 20
