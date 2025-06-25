@@ -135,16 +135,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 40
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-layout_direction = 1
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu/MarginContainer"]
+[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 
 [node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
 custom_minimum_size = Vector2(0, 396)
