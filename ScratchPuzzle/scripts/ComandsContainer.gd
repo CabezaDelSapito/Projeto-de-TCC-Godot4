@@ -2,7 +2,7 @@ extends PanelContainer
 
 #@export_enum("Andar", "Virar", "Pular") var CommandType = 0
 
-@onready var target_node = find_child("VBoxContainer")
+@onready var target_node = find_child("GridContainer")
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	#if data[1] == CommandType:

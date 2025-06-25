@@ -35,7 +35,6 @@ theme_override_constants/separation = 30
 
 [node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="CommandArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
 custom_minimum_size = Vector2(275, 0)
@@ -64,9 +63,11 @@ layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("3_ovs63")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer"]
-layout_direction = 3
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer"]
+z_as_relative = false
 layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
 layout_mode = 2
@@ -91,21 +92,16 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(250, 0)
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 40
 script = ExtResource("6_4n43j")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2
@@ -244,4 +240,4 @@ vertical_alignment = 2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/MarginContainer" method="_on_execute_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer" method="_on_execute_button_pressed"]

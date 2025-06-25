@@ -1,8 +1,8 @@
 extends PanelContainer
 
 @onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/MarginContainer/LevelArea
-@onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/VBoxContainer
-@onready var v_box_container = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
+@onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/GridContainer
+@onready var execute_area: VBoxContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
 @onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
 @onready var execute_button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
 
@@ -39,7 +39,7 @@ func _ready():
 
 func _on_clear_button_pressed() -> void:
 	# Remove todos os filhos dentro do painel
-	for child in v_box_container.get_children():
+	for child in execute_area.get_children():
 		child.queue_free()
 
 func load_level(level_name: String):

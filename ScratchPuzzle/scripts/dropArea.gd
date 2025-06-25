@@ -1,4 +1,4 @@
-extends MarginContainer
+extends PanelContainer
 
 @onready var target_node = find_child("VBoxContainer")
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)
