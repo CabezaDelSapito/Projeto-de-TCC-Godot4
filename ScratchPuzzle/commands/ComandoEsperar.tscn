@@ -17,7 +17,6 @@ script = ExtResource("2_tehjv")
 CommandType = 4
 
 [node name="TempoInput" type="SpinBox" parent="."]
-z_index = -1
 texture_filter = 1
 layout_mode = 0
 offset_left = 124.0

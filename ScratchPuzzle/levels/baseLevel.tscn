@@ -67,10 +67,11 @@ script = ExtResource("3_ovs63")
 z_as_relative = false
 layout_mode = 2
 size_flags_horizontal = 4
-columns = 4
+theme_override_constants/v_separation = 10
+columns = 3
 
 [node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-custom_minimum_size = Vector2(0, 600)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 20
