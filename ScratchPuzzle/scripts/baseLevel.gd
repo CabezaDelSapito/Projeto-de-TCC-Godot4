@@ -16,16 +16,6 @@ extends PanelContainer
 	"level_7": preload("res://levels/level_7.tscn"),
 	"level_8": preload("res://levels/level_8.tscn")
 }
-@export var commands: Dictionary = {
-	"level_1": [preload("res://commands/ComandoAndar.tscn")],
-	"level_2": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn") ],
-	"level_3": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn")],
-	"level_4": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn")],
-	"level_5": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn")],
-	"level_6": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn")],
-	"level_7": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
-	"level_8": [preload("res://commands/ComandoAndar.tscn"), preload("res://commands/ComandoVirar.tscn"), preload("res://commands/ComandoEsperar.tscn"), preload("res://commands/ComandoPular.tscn"),preload("res://commands/ComandoParar.tscn"),preload("res://commands/ComandoRepetir.tscn"),preload("res://commands/ComandoSe.tscn")],
-}
 
 var current_map = null
 var current_level = "level_7"
@@ -45,7 +35,6 @@ func _on_clear_button_pressed() -> void:
 func load_level(level_name: String):
 	_on_clear_button_pressed()
 	load_map(level_name)
-	load_commands(level_name)
 
 func load_map(level_name: String):
 	execute_button.disabled = false
@@ -64,21 +53,22 @@ func load_map(level_name: String):
 				player.player_died.connect(_on_player_died)
 		else:
 			print("Player não encontrado no mapa!")
+		load_commands()
 
 func _on_player_died():
 	load_map(current_map.nome)
 
-func load_commands(level_name: String):
+func load_commands():
 	# Remove todos os comandos anteriores
 	for child in command_container.get_children():
 		child.queue_free()
 	
 	# Adiciona os novos comandos conforme o nível
-	if level_name in commands:
-		for command_scene in commands[level_name]:
-			var command_instance = command_scene.instantiate()
-			command_container.add_child(command_instance)
-
+	if current_map and "comandos" in current_map:
+		for command_scene in current_map.comandos:
+			if command_scene:  # Verifica se a cena é válida
+				var command_instance = command_scene.instantiate()
+				command_container.add_child(command_instance)
 
 func _on_restart_button_pressed() -> void:
 	load_map(current_map.nome)
