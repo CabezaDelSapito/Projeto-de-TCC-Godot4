@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://doqpj3kg0vddk"]
+[gd_scene load_steps=6 format=3 uid="uid://doqpj3kg0vddk"]
 
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_i8lrg"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_wp66i"]
 [ext_resource type="Script" path="res://scripts/ComandsContainer.gd" id="3_ovs63"]
+[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="5_vn0uj"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_4n43j"]
-[ext_resource type="Texture2D" uid="uid://jwoh32qvthix" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="8_umicp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cd7vr"]
-atlas = ExtResource("8_umicp")
-region = Rect2(1.89012, 5.86402, 12.432, 10.136)
 
 [node name="baseLevel" type="PanelContainer"]
 anchors_preset = 15
@@ -179,7 +175,7 @@ custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_cd7vr")
+texture = ExtResource("5_vn0uj")
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
 texture_filter = 1
@@ -201,7 +197,7 @@ custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_cd7vr")
+texture = ExtResource("5_vn0uj")
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
@@ -223,7 +219,7 @@ custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_cd7vr")
+texture = ExtResource("5_vn0uj")
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
