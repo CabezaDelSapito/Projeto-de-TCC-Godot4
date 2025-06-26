@@ -18,7 +18,7 @@ extends PanelContainer
 }
 
 var current_map = null
-var current_level = "level_7"
+var current_level = "level_1"
 var player = null
 
 func _ready():
@@ -26,11 +26,6 @@ func _ready():
 		clear_button.pressed.connect(_on_clear_button_pressed)
 
 	load_level(current_level) # Carrega o primeiro mapa e seus comandos
-
-func _on_clear_button_pressed() -> void:
-	# Remove todos os filhos dentro do painel
-	for child in execute_area.get_children():
-		child.queue_free()
 
 func load_level(level_name: String):
 	_on_clear_button_pressed()
@@ -45,6 +40,7 @@ func load_map(level_name: String):
 		current_map = maps[level_name].instantiate()
 		current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
+		
 		
 		player = current_map.get_node("player")
 		if player:
@@ -72,3 +68,11 @@ func load_commands():
 
 func _on_restart_button_pressed() -> void:
 	load_map(current_map.nome)
+	
+func _on_clear_button_pressed() -> void:
+	# Remove todos os filhos dentro do painel
+	for child in execute_area.get_children():
+		child.queue_free()
+
+func _on_execute_button_pressed() -> void:
+	current_map.process_mode = ProcessMode.PROCESS_MODE_INHERIT
