@@ -1410,7 +1410,8 @@ sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 script = ExtResource("1_amd8h")
 nome = "level_2"
 comandos = Array[PackedScene]([ExtResource("2_c8qjy"), ExtResource("3_yagif")])
-stars = Array[String](["ACESSE O COMPUTADOR", "USE O COMANDO VIRAR", "USE NO MÁXIMO 2 COMANDOS"])
+comando_requerido = "virar"
+max_comandos = 2
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1

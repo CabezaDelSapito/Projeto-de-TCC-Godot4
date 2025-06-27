@@ -1449,7 +1449,8 @@ sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 script = ExtResource("1_1smty")
 nome = "level_3"
 comandos = Array[PackedScene]([ExtResource("2_cxpi8"), ExtResource("3_qyyse"), ExtResource("4_nh2jg")])
-stars = Array[String](["ACESSE O COMPUTADOR", "USE O COMANDO ESPERAR", "USE NO MÁXIMO 3 COMANDOS"])
+comando_requerido = "esperar"
+max_comandos = 3
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1

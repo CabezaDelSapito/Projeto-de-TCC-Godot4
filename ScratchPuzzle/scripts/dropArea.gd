@@ -70,7 +70,6 @@ func executar_sequencial(comandos):
 			0:  # Andar
 				player.andar()
 			1:  # Virar
-				print("virar")
 				player.virar()
 			2:  # Pular
 				player.pular()

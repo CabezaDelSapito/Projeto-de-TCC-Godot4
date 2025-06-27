@@ -1496,7 +1496,8 @@ sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 script = ExtResource("1_2psjv")
 nome = "level_6"
 comandos = Array[PackedScene]([ExtResource("2_7nkee"), ExtResource("3_ve3m7"), ExtResource("4_gshrc"), ExtResource("5_2yyer"), ExtResource("6_yuh4b"), ExtResource("7_ivuja")])
-stars = Array[String](["ACESSE O COMPUTADOR", "USE O COMANDO REPETIR", "USE NO MÁXIMO 4 COMANDOS"])
+comando_requerido = "repetir"
+max_comandos = 4
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1

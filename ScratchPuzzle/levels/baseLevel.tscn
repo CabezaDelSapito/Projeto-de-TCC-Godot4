@@ -138,8 +138,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 2
 
-[node name="LevelInfo" type="MarginContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-custom_minimum_size = Vector2(0, 396)
+[node name="LevelInfo" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
 layout_mode = 2
 size_flags_vertical = 3
 

@@ -1450,7 +1450,8 @@ sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 script = ExtResource("1_qmjnr")
 nome = "level_4"
 comandos = Array[PackedScene]([ExtResource("2_smx8j"), ExtResource("3_ig5t8"), ExtResource("4_8wijh"), ExtResource("5_lwtda")])
-stars = Array[String](["ACESSE O COMPUTADOR", "USE O COMANDO PULAR", "USE NO MÁXIMO 3 COMANDOS"])
+comando_requerido = "pular"
+max_comandos = 3
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
