@@ -30,6 +30,7 @@ func _ready():
 func load_level(level_name: String):
 	_on_clear_button_pressed()
 	load_map(level_name)
+	update_level_info(level_name)
 
 func load_map(level_name: String):
 	execute_button.disabled = false
@@ -41,7 +42,6 @@ func load_map(level_name: String):
 		current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		
-		
 		player = current_map.get_node("player")
 		if player:
 			# Conecta o sinal de morte do player a este script
@@ -50,9 +50,6 @@ func load_map(level_name: String):
 		else:
 			print("Player não encontrado no mapa!")
 		load_commands()
-
-func _on_player_died():
-	load_map(current_map.nome)
 
 func load_commands():
 	# Remove todos os comandos anteriores
@@ -65,6 +62,25 @@ func load_commands():
 			if command_scene:  # Verifica se a cena é válida
 				var command_instance = command_scene.instantiate()
 				command_container.add_child(command_instance)
+
+func update_level_info(level_name: String):
+	# Obtém o título do nível (por exemplo, LEVEL 1, LEVEL 2, etc.)
+	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/LevelTitle.text = "LEVEL " + level_name.split("_")[1]
+	
+	# Adiciona os novos stars conforme o nível
+	if current_map and "stars" in current_map:
+		# Acessa as estrelas do nível atual
+		var level_stars = current_map.stars
+		
+		# Verifica se o array de estrelas tem o tamanho esperado
+		if level_stars.size() == 3:
+			# Atualiza as labels das estrelas
+			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Label.text = level_stars[0]  # Atualiza a primeira estrela
+			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Label.text = level_stars[1]  # Atualiza a segunda estrela
+			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Label.text = level_stars[2]  # Atualiza a terceira estrela
+
+func _on_player_died():
+	load_map(current_map.nome)
 
 func _on_restart_button_pressed() -> void:
 	load_map(current_map.nome)

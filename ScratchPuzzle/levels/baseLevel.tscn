@@ -183,7 +183,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-text = "ESTRELA 1 : ACESSE O COMPUTADOR."
+text = "ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -205,7 +205,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-text = "ESTRELA 2 : USE O COMANDO ANDAR. "
+text = "USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -227,7 +227,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
-text = "ESTRELA 3 : USE NO MÁXIMO 4 COMANDOS."
+text = "USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
 
