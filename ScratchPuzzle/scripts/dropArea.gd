@@ -88,14 +88,3 @@ func executar_sequencial(comandos):
 				var inner_comandos = comando.get_comandos()
 				if player.check_condition(condition):
 					await executar_sequencial(inner_comandos)
-
-func verificar_objetivo():
-	find_map_and_player()
-	find_goal()
-	if goal and player:
-		if goal.overlaps_body(player):
-			print("Objetivo atingido!")
-		else:
-			print("Objetivo não atingido. Resetando o nível...")
-			print("Nome do mapa antes de resetar:", map.nome)
-			base_level.load_level(map.nome)

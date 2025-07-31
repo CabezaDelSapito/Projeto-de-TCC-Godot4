@@ -5,6 +5,15 @@ extends PanelContainer
 @onready var execute_area: VBoxContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
 @onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
 @onready var execute_button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
+@onready var star_icons := [
+	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Star,
+	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Star,
+	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Star
+]
+
+# Texturas para estrelas (configure no Inspector)
+@export var star_texture: Texture2D
+@export var gray_star_texture: Texture2D
 
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/level_1.tscn"),
@@ -78,6 +87,22 @@ func update_level_info(level_name: String):
 			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Label.text = level_stars[0]  # Atualiza a primeira estrela
 			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Label.text = level_stars[1]  # Atualiza a segunda estrela
 			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Label.text = level_stars[2]  # Atualiza a terceira estrela
+		
+			# Inicializa estrelas como cinzas
+			resetar_estrelas()
+
+# Função para atualizar o visual das estrelas
+func atualizar_estrelas(objetivos: Array):
+	for i in range(star_icons.size()):
+		if i < objetivos.size():
+			if objetivos[i]:
+				star_icons[i].texture = star_texture
+			else:
+				star_icons[i].texture = gray_star_texture
+
+func resetar_estrelas():
+	for star in star_icons:
+		star.texture = gray_star_texture
 
 func _on_player_died():
 	load_map(current_map.nome)
