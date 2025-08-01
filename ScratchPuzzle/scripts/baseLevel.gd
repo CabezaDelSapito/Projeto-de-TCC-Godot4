@@ -31,6 +31,7 @@ var current_level = "level_1"
 var player = null
 
 func _ready():
+	add_to_group("MainNode")
 	if clear_button and not clear_button.pressed.is_connected(_on_clear_button_pressed):
 		clear_button.pressed.connect(_on_clear_button_pressed)
 

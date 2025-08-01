@@ -43,5 +43,6 @@ func registrar_comando(nome_comando: String):
 	atualizar_ui_objetivos()
 
 func atualizar_ui_objetivos():
-	if has_node("/root/Main"):  # Ajuste para o caminho do seu nó principal
-		get_node("/root/Main").atualizar_estrelas(objetivos_concluidos)
+	var main_node = get_tree().root.get_child(0)  # Pega o primeiro nó da cena raiz
+	if main_node.has_method("atualizar_estrelas"):
+		main_node.atualizar_estrelas(objetivos_concluidos)

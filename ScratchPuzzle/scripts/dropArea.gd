@@ -11,7 +11,6 @@ var goal: Area2D = null
 func _ready():
 	await get_tree().process_frame
 	find_map_and_player()
-	find_goal()
 
 func find_map_and_player():
 	if level_area and level_area.get_child_count() > 0:
@@ -22,13 +21,6 @@ func find_map_and_player():
 	
 	if not player:
 		print("⚠️ Player não encontrado no mapa!")
-
-func find_goal():
-	if map:
-		goal = map.find_child("goal", true, false)
-	
-	if not goal:
-		print("⚠️ Goal não encontrado no mapa!")
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	return true
