@@ -21,13 +21,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.254902)
 
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(300, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.0639524, 0.16555, 0.209061, 1)
+
 [node name="menu_holder" type="VBoxContainer" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -33.0
-offset_bottom = 33.0
+offset_top = -39.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30

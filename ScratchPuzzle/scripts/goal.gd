@@ -11,9 +11,12 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == 'player' && next_level != "":
 		player.parar()
-		transition.change_scene(next_level)
+		
 		var level = get_parent()  # Assumindo que o nível é o pai direto
 		if level.has_method("concluir_objetivo_computador"):
 			level.concluir_objetivo_computador()
+
+		transition.change_scene(next_level)# irei remover este para adicionar a modal com as estrelas e botão para passar de nivel
+
 	else:
 		print("No Scene Loaded")
