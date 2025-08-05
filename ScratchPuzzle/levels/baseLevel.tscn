@@ -17,9 +17,9 @@ script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
-color = Color(0.0599123, 0.371704, 0.263765, 1)
+color = Color(0.0639524, 0.16555, 0.209061, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

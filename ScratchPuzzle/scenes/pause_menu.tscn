@@ -41,8 +41,7 @@ text = "RESUME"
 [node name="QuitButton" type="Button" parent="menu_holder"]
 layout_mode = 2
 theme = ExtResource("1_rm5ro")
-text = "QUIT GAME
-"
+text = "EXIT TO MAIN MENU"
 
 [connection signal="pressed" from="menu_holder/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="menu_holder/QuitButton" to="." method="_on_quit_button_pressed"]
