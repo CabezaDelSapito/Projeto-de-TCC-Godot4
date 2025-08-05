@@ -10,6 +10,7 @@ extends Node2D
 
 var total_comandos_usados := 0
 var comandos_usados := []
+var main_node = null
 
 # Variáveis para rastrear objetivos
 var objetivos_concluidos := [false, false, false]  # Computador, Comando Específico, Máx Comandos
@@ -43,6 +44,5 @@ func registrar_comando(nome_comando: String):
 	atualizar_ui_objetivos()
 
 func atualizar_ui_objetivos():
-	var main_node = get_tree().root.get_child(0)  # Pega o primeiro nó da cena raiz
 	if main_node.has_method("atualizar_estrelas"):
 		main_node.atualizar_estrelas(objetivos_concluidos)

@@ -49,7 +49,8 @@ func load_map(level_name: String):
 	
 	if level_name in maps:
 		current_map = maps[level_name].instantiate()
-		current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
+		current_map.main_node = self
+		#current_map.scale = Vector2(1, 1)  # Ajusta a escala do mapa
 		map_container.add_child(current_map)
 		
 		player = current_map.get_node("player")
@@ -109,7 +110,13 @@ func _on_player_died():
 	load_map(current_map.nome)
 
 func _on_restart_button_pressed() -> void:
+	# Reseta os objetivos antes de recarregar o mapa
+	if current_map and current_map.has_method("resetar_objetivos"):
+		current_map.resetar_objetivos()
+	# Recarrega o mapa
 	load_map(current_map.nome)
+	# Atualiza a UI para mostrar estrelas cinzas
+	resetar_estrelas()
 	
 func _on_clear_button_pressed() -> void:
 	# Remove todos os filhos dentro do painel
@@ -118,3 +125,10 @@ func _on_clear_button_pressed() -> void:
 
 func _on_execute_button_pressed() -> void:
 	current_map.process_mode = ProcessMode.PROCESS_MODE_INHERIT
+	
+	for command in execute_area.get_children():
+		if current_map.has_method("registrar_comando"):
+			# Converta o CommandType para o nome correspondente
+			var command_names = ["andar", "virar", "pular", "parar", "esperar", "repetir", "se"]
+			if command.CommandType < command_names.size():
+				current_map.registrar_comando(command_names[command.CommandType])
