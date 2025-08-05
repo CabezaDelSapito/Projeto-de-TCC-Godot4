@@ -11,7 +11,6 @@ var goal: Area2D = null
 func _ready():
 	await get_tree().process_frame
 	find_map_and_player()
-	find_goal()
 
 func find_map_and_player():
 	if level_area and level_area.get_child_count() > 0:
@@ -22,13 +21,6 @@ func find_map_and_player():
 	
 	if not player:
 		print("⚠️ Player não encontrado no mapa!")
-
-func find_goal():
-	if map:
-		goal = map.find_child("goal", true, false)
-	
-	if not goal:
-		print("⚠️ Goal não encontrado no mapa!")
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	return true
@@ -88,14 +80,3 @@ func executar_sequencial(comandos):
 				var inner_comandos = comando.get_comandos()
 				if player.check_condition(condition):
 					await executar_sequencial(inner_comandos)
-
-func verificar_objetivo():
-	find_map_and_player()
-	find_goal()
-	if goal and player:
-		if goal.overlaps_body(player):
-			print("Objetivo atingido!")
-		else:
-			print("Objetivo não atingido. Resetando o nível...")
-			print("Nome do mapa antes de resetar:", map.nome)
-			base_level.load_level(map.nome)
