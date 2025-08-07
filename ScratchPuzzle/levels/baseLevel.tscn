@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://doqpj3kg0vddk"]
+[gd_scene load_steps=8 format=3 uid="uid://doqpj3kg0vddk"]
 
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_i8lrg"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_wp66i"]
 [ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Mini FX, Items & UI/Food Items/gray_star.png" id="3_hk0uf"]
 [ext_resource type="Script" path="res://scripts/ComandsContainer.gd" id="3_ovs63"]
+[ext_resource type="Texture2D" uid="uid://b1wrho0iyj3ca" path="res://azul.jpg" id="4_d6qqc"]
 [ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="5_vn0uj"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_4n43j"]
 
@@ -20,6 +21,13 @@ gray_star_texture = ExtResource("3_hk0uf")
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.0639524, 0.16555, 0.209061, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.419608, 0, 0.65098, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_d6qqc")
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

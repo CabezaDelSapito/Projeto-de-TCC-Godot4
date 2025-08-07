@@ -27,7 +27,7 @@ extends PanelContainer
 }
 
 var current_map = null
-var current_level = "level_1"
+var current_level = "level_8"
 var player = null
 
 func _ready():
