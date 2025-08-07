@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dban0dsbdglg0"]
+[gd_scene load_steps=7 format=3 uid="uid://docutuehop66x"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ivbaw"]
-[ext_resource type="Theme" uid="uid://dy2ikn1tr8vva" path="res://assets/fonts/pause_menu.tres" id="1_rm5ro"]
-[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="2_xw8m4"]
+[ext_resource type="Script" path="res://scripts/next_level_menu.gd" id="1_cyc4r"]
+[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="2_fqefa"]
+[ext_resource type="Theme" uid="uid://dy2ikn1tr8vva" path="res://assets/fonts/pause_menu.tres" id="3_u5pwv"]
+[ext_resource type="Texture2D" uid="uid://y615hxfsvpkd" path="res://assets/Mini FX, Items & UI/Food Items/Salad_Bowl (16 x 16).png" id="4_o8l0s"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_8lxov"]
 action = &"ui_cancel"
@@ -10,9 +11,9 @@ action = &"ui_cancel"
 [sub_resource type="Shortcut" id="Shortcut_bxe5e"]
 events = [SubResource("InputEventAction_8lxov")]
 
-[node name="pause_menu" type="CanvasLayer"]
+[node name="next_level_menu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_ivbaw")
+script = ExtResource("1_cyc4r")
 
 [node name="bg_overlay" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -75,7 +76,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("2_xw8m4")
+texture = ExtResource("2_fqefa")
 
 [node name="Star2" type="TextureRect" parent="menu_holder/HBoxContainer"]
 texture_filter = 1
@@ -83,7 +84,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("2_xw8m4")
+texture = ExtResource("2_fqefa")
 
 [node name="Star3" type="TextureRect" parent="menu_holder/HBoxContainer"]
 texture_filter = 1
@@ -91,18 +92,32 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("2_xw8m4")
+texture = ExtResource("2_fqefa")
 
-[node name="ResumeButton" type="Button" parent="menu_holder"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="menu_holder"]
 layout_mode = 2
-theme = ExtResource("1_rm5ro")
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="QuitButton" type="Button" parent="menu_holder/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("3_u5pwv")
+icon = ExtResource("4_o8l0s")
+expand_icon = true
+
+[node name="RestartButton" type="Button" parent="menu_holder/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_u5pwv")
 shortcut = SubResource("Shortcut_bxe5e")
-text = "RESUME"
+text = "Restart"
 
-[node name="QuitButton" type="Button" parent="menu_holder"]
+[node name="NextButton" type="Button" parent="menu_holder/HBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("1_rm5ro")
-text = "EXIT TO MAIN MENU"
+theme = ExtResource("3_u5pwv")
+shortcut = SubResource("Shortcut_bxe5e")
+text = "NEXT"
 
-[connection signal="pressed" from="menu_holder/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="menu_holder/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="menu_holder/HBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="menu_holder/HBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="menu_holder/HBoxContainer2/NextButton" to="." method="_on_next_button_pressed"]

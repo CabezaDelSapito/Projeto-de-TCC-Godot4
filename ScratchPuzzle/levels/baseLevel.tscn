@@ -53,6 +53,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 24
 text = "Lista de Comandos
 "
 horizontal_alignment = 1
@@ -86,6 +87,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
 
@@ -152,14 +154,17 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 
 [node name="LevelTitle" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
 [node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -168,6 +173,7 @@ text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -185,6 +191,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -207,11 +214,13 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -229,6 +238,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
