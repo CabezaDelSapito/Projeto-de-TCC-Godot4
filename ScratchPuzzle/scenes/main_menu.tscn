@@ -59,8 +59,8 @@ label_settings = SubResource("LabelSettings_f3lga")
 [node name="PlayButton" type="Button" parent="VBoxContainer" groups=["button"]]
 texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("1_qno7v")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tkaxf")
@@ -70,8 +70,8 @@ flat = true
 [node name="CreditsButton" type="Button" parent="VBoxContainer" groups=["button"]]
 texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("1_qno7v")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tkaxf")
@@ -81,8 +81,8 @@ flat = true
 [node name="QuitButton" type="Button" parent="VBoxContainer" groups=["button"]]
 texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("1_qno7v")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tkaxf")

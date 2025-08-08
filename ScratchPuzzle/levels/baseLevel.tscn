@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://doqpj3kg0vddk"]
+[gd_scene load_steps=7 format=3 uid="uid://doqpj3kg0vddk"]
 
 [ext_resource type="Script" path="res://scripts/baseLevel.gd" id="1_i8lrg"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_wp66i"]
 [ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Mini FX, Items & UI/Food Items/gray_star.png" id="3_hk0uf"]
 [ext_resource type="Script" path="res://scripts/ComandsContainer.gd" id="3_ovs63"]
-[ext_resource type="Texture2D" uid="uid://b1wrho0iyj3ca" path="res://azul.jpg" id="4_d6qqc"]
 [ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="5_vn0uj"]
 [ext_resource type="Script" path="res://scripts/dropArea.gd" id="6_4n43j"]
 
@@ -18,44 +17,35 @@ script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 2
-color = Color(0.0639524, 0.16555, 0.209061, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.419608, 0, 0.65098, 1)
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("4_d6qqc")
-stretch_mode = 1
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="LevelArea" type="PanelContainer" parent="MarginContainer"]
+layout_direction = 1
 layout_mode = 2
-theme_override_constants/separation = 30
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 
-[node name="CommandArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
+[node name="CommandArea" type="MarginContainer" parent="MarginContainer/CommandsMenu"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CommandsMenu/CommandArea"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/CommandsMenu/CommandArea/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -66,31 +56,30 @@ text = "Lista de Comandos
 "
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CommandsMenu/CommandArea/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 script = ExtResource("3_ovs63")
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer"]
 z_as_relative = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/v_separation = 10
-columns = 3
+columns = 2
 
-[node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-custom_minimum_size = Vector2(0, 500)
+[node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/CommandsMenu"]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea"]
-custom_minimum_size = Vector2(0, 400)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CommandsMenu/ExecuteArea"]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -99,69 +88,63 @@ theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("6_4n43j")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 40
 
-[node name="ClearButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="ClearButton" type="Button" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " LIMPAR"
 
-[node name="RestartButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="RestartButton" type="Button" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " REINICIAR"
 
-[node name="ExecuteButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="ExecuteButton" type="Button" parent="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " EXECUTAR"
 
-[node name="LevelMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="LevelMenu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 theme_override_constants/separation = 40
 
-[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-layout_direction = 1
+[node name="LevelInfo" type="PanelContainer" parent="MarginContainer/LevelMenu"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 2
+size_flags_vertical = 4
 
-[node name="LevelInfo" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="LevelTitle" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="LevelTitle" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -171,7 +154,7 @@ theme_override_font_sizes/font_size = 18
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
-[node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="LevelTips" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -180,12 +163,12 @@ theme_override_fonts/font = ExtResource("2_wp66i")
 text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -193,7 +176,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -204,11 +187,11 @@ text = "ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -216,7 +199,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -227,12 +210,12 @@ text = "USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -240,7 +223,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -251,7 +234,7 @@ text = "USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="." method="_on_execute_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer" method="_on_execute_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="." method="_on_execute_button_pressed"]
+[connection signal="pressed" from="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer" method="_on_execute_button_pressed"]

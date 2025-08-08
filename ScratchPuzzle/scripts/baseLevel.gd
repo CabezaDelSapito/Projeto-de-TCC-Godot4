@@ -1,14 +1,14 @@
 extends PanelContainer
 
-@onready var map_container: Node = $MarginContainer/HBoxContainer/LevelMenu/LevelArea
-@onready var command_container: Node = $MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/GridContainer
-@onready var execute_area: VBoxContainer = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
-@onready var clear_button: Button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
-@onready var execute_button = $MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
+@onready var map_container: Node = $MarginContainer/LevelArea
+@onready var command_container: Node = $MarginContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/GridContainer
+@onready var execute_area: VBoxContainer = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
+@onready var clear_button: Button = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
+@onready var execute_button = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
 @onready var star_icons := [
-	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Star,
-	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Star,
-	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Star
+	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Star,
+	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Star,
+	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Star
 ]
 
 # Texturas para estrelas (configure no Inspector)
@@ -76,7 +76,7 @@ func load_commands():
 
 func update_level_info(level_name: String):
 	# Obtém o título do nível (por exemplo, LEVEL 1, LEVEL 2, etc.)
-	$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/LevelTitle.text = "LEVEL " + level_name.split("_")[1]
+	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/LevelTitle.text = "LEVEL " + level_name.split("_")[1]
 	
 	# Adiciona os novos stars conforme o nível
 	if current_map and "stars" in current_map:
@@ -86,9 +86,9 @@ func update_level_info(level_name: String):
 		# Verifica se o array de estrelas tem o tamanho esperado
 		if level_stars.size() == 3:
 			# Atualiza as labels das estrelas
-			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Label.text = level_stars[0]  # Atualiza a primeira estrela
-			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Label.text = level_stars[1]  # Atualiza a segunda estrela
-			$MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Label.text = level_stars[2]  # Atualiza a terceira estrela
+			$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Label.text = level_stars[0]  # Atualiza a primeira estrela
+			$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Label.text = level_stars[1]  # Atualiza a segunda estrela
+			$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3/Label.text = level_stars[2]  # Atualiza a terceira estrela
 		
 			# Inicializa estrelas como cinzas
 			resetar_estrelas()

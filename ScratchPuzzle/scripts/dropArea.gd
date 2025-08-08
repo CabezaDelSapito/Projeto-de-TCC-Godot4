@@ -5,7 +5,7 @@ extends PanelContainer
 var map: Node = null
 var player: Node = null
 var goal: Area2D = null
-@onready var base_level: PanelContainer = $"../../../../../../.."
+@onready var base_level: PanelContainer = $"../../../../../.."
 @onready var execute_button = $"../../HBoxContainer/ExecuteButton"
 
 func _ready():
