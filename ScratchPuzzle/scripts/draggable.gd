@@ -7,12 +7,27 @@ extends TextureRect
 @onready var command_container = $VBoxContainer
 @onready var repeticao_input = $repeticaoInput
 @onready var condition_option = $OptionButton
+@onready var nine_patch_rect: NinePatchRect = $NinePatchRect
 
 # Chamado quando o nó é inicializado
 func _ready():
 	# Configura as opções de condição apenas se for um comando "Se"
 	if CommandType == 6: # "Se" é o índice 6 no export_enum
 		_setup_condition_options()
+
+func _process(_delta):
+	if CommandType in [5, 6] and command_container:
+		# espera o layout atualizar
+		await get_tree().process_frame
+		
+		var total_height = 30
+		for child in command_container.get_children():
+			total_height += child.get_combined_minimum_size().y + command_container.get_theme_constant("separation")
+		
+		custom_minimum_size.y = total_height
+		nine_patch_rect.custom_minimum_size.y = total_height - 15
+
+
 
 # Configura as opções de condição no OptionButton
 func _setup_condition_options():

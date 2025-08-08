@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
+current_level = "level_7"
 
 [node name="LevelArea" type="PanelContainer" parent="."]
 layout_direction = 1
@@ -101,7 +102,8 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/ScrollContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer"]
 layout_mode = 2

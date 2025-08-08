@@ -7,14 +7,23 @@
 
 [node name="Repetir" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(178, 30)
+custom_minimum_size = Vector2(178, 70)
 offset_right = 178.0
 offset_bottom = 30.0
 tooltip_text = "Repetir"
-texture = ExtResource("1_xresa")
 expand_mode = 1
 script = ExtResource("2_ig0tx")
 CommandType = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(178, 30)
+layout_mode = 0
+offset_right = 178.0
+offset_bottom = 30.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_xresa")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="repeticaoInput" type="SpinBox" parent="."]
 layout_mode = 0
@@ -32,14 +41,14 @@ offset_left = 28.0
 offset_top = 29.0
 offset_right = 153.0
 offset_bottom = 89.0
+theme_override_constants/separation = 10
 script = ExtResource("3_vxja0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(178, 30)
 layout_mode = 0
-offset_left = 2.0
 offset_top = 30.0
-offset_right = 180.0
+offset_right = 178.0
 offset_bottom = 60.0
 texture = ExtResource("4_7yw84")
 region_rect = Rect2(0, 0, 89, 24)
