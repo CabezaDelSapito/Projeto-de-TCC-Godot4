@@ -78,5 +78,19 @@ func executar_sequencial(comandos):
 			6:  # Se (novo comando)
 				var condition = comando.get_condition()
 				var inner_comandos = comando.get_comandos()
-				if player.check_condition(condition):
-					await executar_sequencial(inner_comandos)
+
+				# Espera até a condição ser verdadeira
+				while player and is_instance_valid(player) and not player.check_condition(condition):
+					await get_tree().process_frame
+
+				if not player or not is_instance_valid(player):
+					return
+
+				# Executa os comandos internos
+				await executar_sequencial(inner_comandos)
+
+				# Espera até a condição voltar a ser falsa
+				while player and is_instance_valid(player) and player.check_condition(condition):
+					await get_tree().process_frame
+
+
