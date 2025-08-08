@@ -1,10 +1,10 @@
 extends PanelContainer
 
 @onready var map_container: Node = $LevelArea
-@onready var command_container: Node = $MarginContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/GridContainer
-@onready var execute_area: VBoxContainer = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
-@onready var clear_button: Button = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
-@onready var execute_button = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton
+@onready var command_container: Node = $MarginContainer/CommandArea/PanelContainer/VBoxContainer/GridContainer
+@onready var execute_area: VBoxContainer = $MarginContainer/ExecuteArea/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer
+@onready var clear_button: Button = $MarginContainer/ExecuteArea/PanelContainer/VBoxContainer/HBoxContainer/ClearButton
+@onready var execute_button = $MarginContainer/ExecuteArea/PanelContainer/VBoxContainer/HBoxContainer/ExecuteButton
 @onready var star_icons := [
 	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer/Star,
 	$MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2/Star,
@@ -27,7 +27,7 @@ extends PanelContainer
 }
 
 var current_map = null
-var current_level = "level_8"
+var current_level = "level_1"
 var player = null
 
 func _ready():
