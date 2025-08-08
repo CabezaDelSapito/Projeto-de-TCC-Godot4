@@ -27,7 +27,7 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_right = 35
 theme_override_constants/margin_bottom = 20
 
 [node name="CommandArea" type="PanelContainer" parent="MarginContainer"]
@@ -129,22 +129,25 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " EXECUTAR"
 
-[node name="LevelMenu" type="VBoxContainer" parent="MarginContainer"]
+[node name="LevelInfo" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_constants/separation = 40
+size_flags_vertical = 0
 
-[node name="LevelInfo" type="PanelContainer" parent="MarginContainer/LevelMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/LevelInfo"]
 layout_mode = 2
-size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
-[node name="LevelTitle" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="LevelTitle" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -154,21 +157,12 @@ theme_override_font_sizes/font_size = 18
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
-[node name="LevelTips" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_wp66i")
-text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -176,7 +170,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -187,11 +181,11 @@ text = "ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -199,7 +193,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -210,12 +204,12 @@ text = "USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -223,7 +217,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
