@@ -17,18 +17,18 @@ script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
 
+[node name="LevelArea" type="PanelContainer" parent="."]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
-
-[node name="LevelArea" type="PanelContainer" parent="MarginContainer"]
-layout_direction = 1
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

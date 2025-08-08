@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var map_container: Node = $MarginContainer/LevelArea
+@onready var map_container: Node = $LevelArea
 @onready var command_container: Node = $MarginContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer/GridContainer
 @onready var execute_area: VBoxContainer = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer/VBoxContainer
 @onready var clear_button: Button = $MarginContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton
