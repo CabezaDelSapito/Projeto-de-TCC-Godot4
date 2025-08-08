@@ -1,12 +1,12 @@
 extends PanelContainer
 
-@onready var target_node = $VBoxContainer/ScrollContainer/VBoxContainer
+@onready var target_node = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var level_area: Node = get_tree().current_scene.find_child("LevelArea", true, false)
 var map: Node = null
 var player: Node = null
 var goal: Area2D = null
 @onready var base_level: PanelContainer = $"../../../../.."
-@onready var execute_button = $VBoxContainer/HBoxContainer/ExecuteButton
+@onready var execute_button = $MarginContainer/VBoxContainer/HBoxContainer/ExecuteButton
 
 func _ready():
 	await get_tree().process_frame

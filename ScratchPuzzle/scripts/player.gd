@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -300.0
 const RAYCAST_DISTANCE = 25  # Distância para detectar obstáculos
 const HOLE_DETECTION_DISTANCE = 50.0  # Distância para detectar buracos
 
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity") 
 var is_jumping := false
 var is_moving := false
 var direction := 1  # 1 = Direita, -1 = Esquerda
