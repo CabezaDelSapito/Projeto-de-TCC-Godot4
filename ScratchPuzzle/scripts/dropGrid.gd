@@ -21,6 +21,8 @@ func setup_drop_indicator():
 	move_child(drop_indicator, get_child_count())  # Coloca no final
 
 func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
+	if get_parent() and get_parent().get_parent() and get_parent().get_parent() is GridContainer:
+		return false
 	return true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
@@ -30,7 +32,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	drop_indicator.visible = false
 	
 	# Se vier da área de comandos disponíveis, duplica
-	if original_parent is GridContainer and original_parent.get_parent() is PanelContainer:
+	if original_parent is GridContainer:
 		var new_node = dropped_node.duplicate()
 		var insert_position = calculate_insert_position(at_position, null)
 		add_child(new_node)
