@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0m128uxbpkty"]
+[gd_scene load_steps=7 format=3 uid="uid://d0m128uxbpkty"]
 
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_qno7v"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_tt5wh"]
+[ext_resource type="Texture2D" uid="uid://bv1py8qljmi0c" path="res://teste background.jpg" id="2_tl633"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f3lga"]
 font = ExtResource("1_qno7v")
@@ -23,14 +24,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5wh")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0639524, 0.16555, 0.209061, 1)
+texture = ExtResource("2_tl633")
+stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

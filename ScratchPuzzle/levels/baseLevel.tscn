@@ -17,223 +17,219 @@ script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="LevelArea" type="PanelContainer" parent="."]
+layout_direction = 1
 layout_mode = 2
-color = Color(0.0639524, 0.16555, 0.209061, 1)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="CommandArea" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(348, 250)
 layout_mode = 2
-theme_override_constants/separation = 30
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("3_ovs63")
 
-[node name="CommandsMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CommandArea"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CommandArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-layout_mode = 2
-size_flags_vertical = 3
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CommandArea/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/CommandArea/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 24
 text = "Lista de Comandos
 "
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("3_ovs63")
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/CommandArea/VBoxContainer/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/CommandArea/MarginContainer/VBoxContainer"]
 z_as_relative = false
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/v_separation = 10
-columns = 3
-
-[node name="ExecuteArea" type="MarginContainer" parent="MarginContainer/HBoxContainer/CommandsMenu"]
-custom_minimum_size = Vector2(0, 500)
-layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea"]
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/v_separation = 10
+columns = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="ExecuteArea" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(348, 350)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("6_4n43j")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ExecuteArea"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ExecuteArea/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 24
 text = "Area de Execução"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("6_4n43j")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/ScrollContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 40
 
-[node name="ClearButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="ClearButton" type="Button" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " LIMPAR"
 
-[node name="RestartButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="RestartButton" type="Button" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " REINICIAR"
 
-[node name="ExecuteButton" type="Button" parent="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer"]
+[node name="ExecuteButton" type="Button" parent="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
 text = " EXECUTAR"
 
-[node name="LevelMenu" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="LevelInfo" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
-[node name="LevelArea" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-layout_direction = 1
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/LevelInfo"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="LevelInfo" type="PanelContainer" parent="MarginContainer/HBoxContainer/LevelMenu"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
-[node name="LevelTitle" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="LevelTitle" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
-[node name="LevelTips" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_wp66i")
-text = "DICAS: USE OS BLOCOS DE COMANDO PARA LEVAR O PLAYER ATE O COMPUTADOR. "
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "ACESSE O COMPUTADOR."
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "USE O COMANDO ANDAR. "
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Star" type="TextureRect" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Star" type="TextureRect" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
-custom_minimum_size = Vector2(25, 25)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_vn0uj")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LevelMenu/LevelInfo/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/LevelInfo/MarginContainer/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_wp66i")
+theme_override_font_sizes/font_size = 18
 text = "USE NO MÁXIMO 4 COMANDOS."
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="." method="_on_execute_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/HBoxContainer/CommandsMenu/ExecuteArea/VBoxContainer/ScrollContainer/PanelContainer" method="_on_execute_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/ExecuteButton" to="." method="_on_execute_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/ExecuteButton" to="MarginContainer/ExecuteArea" method="_on_execute_button_pressed"]

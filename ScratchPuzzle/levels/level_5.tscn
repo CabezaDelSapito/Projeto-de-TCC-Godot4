@@ -1450,6 +1450,7 @@ sources/0 = SubResource("TileSetAtlasSource_fdq8t")
 sources/1 = SubResource("TileSetAtlasSource_3u2vx")
 
 [node name="level_5" type="Node2D"]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_2q3gh")
 nome = "level_5"
 comandos = Array[PackedScene]([ExtResource("2_l0gda"), ExtResource("3_wuxju"), ExtResource("4_cm453"), ExtResource("5_7fk5s"), ExtResource("6_qht27")])

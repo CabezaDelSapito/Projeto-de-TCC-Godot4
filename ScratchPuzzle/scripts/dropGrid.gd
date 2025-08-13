@@ -2,9 +2,9 @@ extends VBoxContainer
 
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	#if data[1] == CommandType:
-		return true
-	#return false
+	if get_parent() and get_parent().get_parent() and get_parent().get_parent() is GridContainer:
+		return false
+	return true
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	#data[0].get_parent().remove_child(data[0])

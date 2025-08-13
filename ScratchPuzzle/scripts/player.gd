@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 signal player_died()
 
-const SPEED = 218.75
-const JUMP_VELOCITY = -300.0
-const RAYCAST_DISTANCE = 25  # Distância para detectar obstáculos
-const HOLE_DETECTION_DISTANCE = 50.0  # Distância para detectar buracos
+const SCALE_FACTOR = 2.5
 
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+const SPEED = 218.75 * SCALE_FACTOR
+const JUMP_VELOCITY = -300.0 * SCALE_FACTOR
+const RAYCAST_DISTANCE = 25 * SCALE_FACTOR  # Distância para detectar obstáculos
+const HOLE_DETECTION_DISTANCE = 50.0 * SCALE_FACTOR  # Distância para detectar buracos
+
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity") 
 var is_jumping := false
 var is_moving := false
 var direction := 1  # 1 = Direita, -1 = Esquerda
@@ -102,7 +104,7 @@ func check_condition(condition: String) -> bool:
 func _has_obstacle_ahead() -> bool:
 	var space_state = get_world_2d().direct_space_state
 	var ray_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
-	var player_height = 35.0
+	var player_height = 35.0 * SCALE_FACTOR
 	var ray_count = 3
 	var ray_spacing = player_height / (ray_count - 1)
 	var base_y = global_position.y + (player_height / 2)
@@ -127,8 +129,8 @@ func _has_ground_ahead() -> bool:
 	var ray_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
 	
 	# Ajuste estes valores conforme necessário
-	var forward_offset = 30  # Distância à frente do personagem
-	var vertical_offset = -10  # Ajuste vertical (negativo = acima dos pés)
+	var forward_offset = 30 * SCALE_FACTOR  # Distância à frente do personagem
+	var vertical_offset = -10 * SCALE_FACTOR  # Ajuste vertical (negativo = acima dos pés)
 	
 	var start_pos = global_position + ray_direction * forward_offset + Vector2(0, vertical_offset)
 	var end_pos = start_pos + Vector2.DOWN * HOLE_DETECTION_DISTANCE
