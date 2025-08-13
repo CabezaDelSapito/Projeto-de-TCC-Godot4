@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://3oldlert27hf"]
+[gd_scene load_steps=14 format=3 uid="uid://3oldlert27hf"]
 
 [ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_p26o8"]
-[ext_resource type="Texture2D" uid="uid://bv1py8qljmi0c" path="res://teste background.jpg" id="1_v5nxj"]
 [ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://print-level-1.png" id="2_k1lbj"]
+[ext_resource type="Shader" path="res://shaders/background.gdshader" id="2_tt5d1"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ueyia"]
 [ext_resource type="Texture2D" uid="uid://dtxv4r5tnahwg" path="res://print-level-2.png" id="5_uuc42"]
 [ext_resource type="Texture2D" uid="uid://fm0qd10aijmm" path="res://print-level-3.png" id="6_eoada"]
@@ -13,6 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://cd3u74ftkl15e" path="res://print-level-8.png" id="11_0rg3w"]
 [ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="12_0cceo"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kou0m"]
+shader = ExtResource("2_tt5d1")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 50.0
+shader_parameter/small_stars_far_size = 0.5
+shader_parameter/small_stars_near_size = 1.0
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.5
+shader_parameter/large_stars_near_size = 1.0
+shader_parameter/far_stars_color = Color(0.5, 0, 1, 1)
+shader_parameter/near_stars_color = Color(1, 1, 1, 1)
+shader_parameter/base_scroll_speed = 0.05
+shader_parameter/additional_scroll_speed = 0.05
+
 [node name="level_select_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -22,15 +36,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p26o8")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kou0m")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_v5nxj")
-stretch_mode = 1
+color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
