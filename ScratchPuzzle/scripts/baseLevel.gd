@@ -1,8 +1,9 @@
 extends PanelContainer
 
+@onready var execute_area: PanelContainer = $MarginContainer/ExecuteArea
+@onready var v_box_container: VBoxContainer = $MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var map_container: Node = $LevelArea
 @onready var command_container: Node = $MarginContainer/CommandArea/MarginContainer/VBoxContainer/GridContainer
-@onready var execute_area: VBoxContainer = $MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var clear_button: Button = $MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/ClearButton
 @onready var execute_button = $MarginContainer/ExecuteArea/MarginContainer/VBoxContainer/HBoxContainer/ExecuteButton
 @onready var star_icons := [
@@ -128,16 +129,24 @@ func _on_restart_button_pressed() -> void:
 	resetar_estrelas()
 
 func _on_clear_button_pressed() -> void:
+
 	if execute_area.has_method("safe_clear"):
 		execute_area.safe_clear()
+		# Força uma atualização do frame
+		await get_tree().process_frame
+		# Reativa o sistema de drop
+		execute_area.setup_drop_indicator()
 	else:
 		for child in execute_area.get_children():
 			child.queue_free()
+		# Garante a recriação do indicador
+		await get_tree().process_frame
+		execute_area.setup_drop_indicator()
 
 func _on_execute_button_pressed() -> void:
 	current_map.process_mode = ProcessMode.PROCESS_MODE_INHERIT
 	
-	for command in execute_area.get_children():
+	for command in v_box_container.get_children():
 		# Ignora nós que não são comandos (como o ColorRect do indicador)
 		if not command.has_method("get_command_type"):  # Ou a propriedade que você usa para identificar comandos
 			continue

@@ -159,17 +159,16 @@ func _process(_delta):
 
 func safe_clear():
 	is_changing_level = true
-	# Limpa todos os comandos exceto o drop_indicator
+	# Limpa todos os comandos
 	for child in target_node.get_children():
-		if child != drop_indicator:
-			child.queue_free()
+		child.queue_free()
 	is_changing_level = false
 	
-	# Reconfigura o indicador de drop
-	if is_instance_valid(drop_indicator):
-		drop_indicator.visible = false
-	else:
-		setup_drop_indicator()
+	# Recria completamente o sistema de drop
+	setup_drop_indicator()
+	# Garante que o drag and drop será reiniciado
+	dragging_node = null
+	drag_preview = null
 
 func _on_execute_button_pressed() -> void:
 	if is_changing_level:
