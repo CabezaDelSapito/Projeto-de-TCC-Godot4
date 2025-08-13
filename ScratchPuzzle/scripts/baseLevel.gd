@@ -106,6 +106,7 @@ func resetar_estrelas():
 		star.texture = gray_star_texture
 
 func _on_player_died():
+	resetar_estrelas()
 	load_map(current_map.nome)
 
 func _on_restart_button_pressed() -> void:

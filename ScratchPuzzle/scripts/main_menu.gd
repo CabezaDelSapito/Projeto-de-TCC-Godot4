@@ -8,7 +8,7 @@ func _ready() -> void:
 func _on_button_pressed(_button: Button) -> void:
 	match _button.name:
 		"PlayButton":
-			get_tree().change_scene_to_file("res://levels/baseLevel.tscn")
+			get_tree().change_scene_to_file("res://scenes/level_select_menu.tscn")
 		"CreditsButton":
 			pass
 		"QuitButton":

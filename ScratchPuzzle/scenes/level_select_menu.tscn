@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://3oldlert27hf"]
+[gd_scene load_steps=13 format=3 uid="uid://3oldlert27hf"]
 
+[ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_p26o8"]
 [ext_resource type="Texture2D" uid="uid://bv1py8qljmi0c" path="res://teste background.jpg" id="1_v5nxj"]
 [ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://print-level-1.png" id="2_k1lbj"]
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ueyia"]
+[ext_resource type="Texture2D" uid="uid://dtxv4r5tnahwg" path="res://print-level-2.png" id="5_uuc42"]
+[ext_resource type="Texture2D" uid="uid://fm0qd10aijmm" path="res://print-level-3.png" id="6_eoada"]
+[ext_resource type="Texture2D" uid="uid://cqydv5iya1bgg" path="res://print-level-4.png" id="7_5fvse"]
+[ext_resource type="Texture2D" uid="uid://xuwh328vfwxj" path="res://print-level-5.png" id="8_x3wfg"]
+[ext_resource type="Texture2D" uid="uid://c7it58na7gmix" path="res://print-level-6.png" id="9_4y5qv"]
+[ext_resource type="Texture2D" uid="uid://bj0xfompvuggu" path="res://print-level-7.png" id="10_gemx0"]
+[ext_resource type="Texture2D" uid="uid://cd3u74ftkl15e" path="res://print-level-8.png" id="11_0rg3w"]
+[ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="12_0cceo"]
 
 [node name="level_select_menu" type="Control"]
 layout_mode = 3
@@ -11,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p26o8")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -21,6 +31,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_v5nxj")
 stretch_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 146.5
+offset_top = 116.0
+offset_right = 275.5
+offset_bottom = 152.0
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ueyia")
+theme_override_font_sizes/font_size = 28
+text = "< Voltar"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,6 +62,7 @@ theme_override_constants/separation = 80
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -68,14 +92,20 @@ theme_override_font_sizes/font_size = 18
 text = "LEVEL - 1"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_k1lbj")
 expand_mode = 1
-
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -88,17 +118,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 2"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer2"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uuc42")
+expand_mode = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -111,17 +147,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 3"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer3"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_eoada")
+expand_mode = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -134,17 +176,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 4"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer4"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_5fvse")
+expand_mode = 1
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -157,17 +205,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 5"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer5"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer5"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_x3wfg")
+expand_mode = 1
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -180,17 +234,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 6"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer6"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer6"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_4y5qv")
+expand_mode = 1
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -203,17 +263,23 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 7"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer7"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
-expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer7"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_gemx0")
+expand_mode = 1
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -226,14 +292,24 @@ theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("2_ueyia")
 theme_override_font_sizes/font_size = 18
-text = "LEVEL - 1"
+text = "LEVEL - 8"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8"]
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer8"]
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
-texture = ExtResource("2_k1lbj")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_0rg3w")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer8"]
-layout_mode = 2
+[node name="transition" parent="." instance=ExtResource("12_0cceo")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
