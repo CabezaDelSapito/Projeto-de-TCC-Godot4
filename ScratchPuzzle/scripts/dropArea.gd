@@ -202,7 +202,6 @@ func _on_execute_button_pressed() -> void:
 					comandos.append([child])
 	
 	await executar_sequencial(comandos)
-	execute_button.disabled = false
 
 func executar_sequencial(comandos):
 	find_map_and_player()

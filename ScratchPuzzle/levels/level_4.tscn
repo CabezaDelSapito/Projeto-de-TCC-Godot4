@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ihisnntmr1cl"]
+[gd_scene load_steps=17 format=3 uid="uid://ihisnntmr1cl"]
 
 [ext_resource type="Script" path="res://scripts/maps.gd" id="1_qmjnr"]
 [ext_resource type="Texture2D" uid="uid://cttk4h1sudh2f" path="res://assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_rdnxp"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://icnhidp3gljf" path="res://commands/ComandoPular.tscn" id="5_lwtda"]
 [ext_resource type="PackedScene" uid="uid://dban0dsbdglg0" path="res://scenes/pause_menu.tscn" id="6_o88uo"]
 [ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="7_0lusw"]
+[ext_resource type="PackedScene" uid="uid://docutuehop66x" path="res://scenes/next_level_menu.tscn" id="13_t5e1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdq8t"]
 texture = ExtResource("2_wn618")
@@ -1475,7 +1476,6 @@ layer_1/tile_data = PackedInt32Array(1048591, 589824, 2, 1114127, 589824, 3, 117
 [node name="goal" parent="." instance=ExtResource("4_o0plu")]
 position = Vector2(458.667, 117.333)
 scale = Vector2(1.5, 1.5)
-next_level = "level_5"
 
 [node name="player" parent="." instance=ExtResource("5_jg3h8")]
 position = Vector2(178.667, 104)
@@ -1485,3 +1485,7 @@ visible = false
 
 [node name="transition" parent="." instance=ExtResource("7_0lusw")]
 visible = false
+
+[node name="next_level_menu" parent="." instance=ExtResource("13_t5e1l")]
+visible = false
+next_level = "level_5"

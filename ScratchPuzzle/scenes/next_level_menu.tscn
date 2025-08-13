@@ -1,9 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://docutuehop66x"]
+[gd_scene load_steps=8 format=3 uid="uid://docutuehop66x"]
 
 [ext_resource type="Script" path="res://scripts/next_level_menu.gd" id="1_cyc4r"]
 [ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="2_fqefa"]
+[ext_resource type="Shader" path="res://shaders/background.gdshader" id="2_p31px"]
 [ext_resource type="Theme" uid="uid://dy2ikn1tr8vva" path="res://assets/fonts/pause_menu.tres" id="3_u5pwv"]
-[ext_resource type="Texture2D" uid="uid://y615hxfsvpkd" path="res://assets/Mini FX, Items & UI/Food Items/Salad_Bowl (16 x 16).png" id="4_o8l0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywjhm"]
+shader = ExtResource("2_p31px")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 50.0
+shader_parameter/small_stars_far_size = 0.5
+shader_parameter/small_stars_near_size = 1.0
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.5
+shader_parameter/large_stars_near_size = 1.0
+shader_parameter/far_stars_color = Color(0.5, 0, 1, 1)
+shader_parameter/near_stars_color = Color(1, 1, 1, 1)
+shader_parameter/base_scroll_speed = 0.05
+shader_parameter/additional_scroll_speed = 0.05
 
 [sub_resource type="InputEventAction" id="InputEventAction_8lxov"]
 action = &"ui_cancel"
@@ -23,8 +37,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.254902)
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(308, 308)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -154.0
+offset_right = 154.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+material = SubResource("ShaderMaterial_ywjhm")
 custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,21 +64,6 @@ offset_left = -150.0
 offset_top = -150.0
 offset_right = 150.0
 offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-color = Color(0.0639524, 0.16555, 0.209061, 1)
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -105,7 +120,6 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("3_u5pwv")
 text = "EXIT"
-icon = ExtResource("4_o8l0s")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

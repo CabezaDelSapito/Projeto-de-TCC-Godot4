@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://clr4fqks8innb"]
+[gd_scene load_steps=19 format=3 uid="uid://clr4fqks8innb"]
 
 [ext_resource type="Script" path="res://scripts/maps.gd" id="1_2psjv"]
 [ext_resource type="PackedScene" uid="uid://dfv7dhi7km4wx" path="res://commands/ComandoAndar.tscn" id="2_7nkee"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cqfj3kd2iqgwe" path="res://commands/ComandoRepetir.tscn" id="7_ivuja"]
 [ext_resource type="PackedScene" uid="uid://dban0dsbdglg0" path="res://scenes/pause_menu.tscn" id="7_q0wxb"]
 [ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="8_qns8j"]
+[ext_resource type="PackedScene" uid="uid://docutuehop66x" path="res://scenes/next_level_menu.tscn" id="15_wpw1b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdq8t"]
 texture = ExtResource("3_ljdvp")
@@ -1523,7 +1524,6 @@ layer_2/tile_data = PackedInt32Array(1310720, 65537, 2, 1245184, 65537, 2, 11796
 [node name="goal" parent="." instance=ExtResource("5_duysx")]
 position = Vector2(586.667, 165.333)
 scale = Vector2(1.5, 1.5)
-next_level = "level_7"
 
 [node name="player" parent="." instance=ExtResource("6_6k18o")]
 position = Vector2(48, 152)
@@ -1533,3 +1533,7 @@ visible = false
 
 [node name="transition" parent="." instance=ExtResource("8_qns8j")]
 visible = false
+
+[node name="next_level_menu" parent="." instance=ExtResource("15_wpw1b")]
+visible = false
+next_level = "level_7"
