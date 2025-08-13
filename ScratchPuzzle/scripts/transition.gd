@@ -23,12 +23,15 @@ func change_scene(next_level, delay = 0.5):
 	scene_transition.tween_property(color_rect, 'threshold', 1.0, 0.5).set_delay(delay)
 	await scene_transition.finished
 	
-	# Update reference in case it changed
+	# Notificar todos os nós para preparar para mudança de cena
+	get_tree().call_group("execution_areas", "prepare_for_scene_change")
+	
 	_update_estrutura_reference()
 	
 	if is_instance_valid(estrutura) and estrutura.has_method("load_level"):
 		estrutura.load_level(next_level)
 	else:
+
 		# Fallback: direct scene loading
 		var level_scene = load("res://levels/baseLevel.tscn")
 		var new_level = level_scene.instantiate()
@@ -43,7 +46,8 @@ func change_scene(next_level, delay = 0.5):
 		get_tree().current_scene.queue_free()
 		get_tree().current_scene = new_level
 		estrutura = new_level
-	
+		
+	get_tree().call_group("execution_areas", "scene_change_completed")
 	show_new_scene()
 
 func show_new_scene():

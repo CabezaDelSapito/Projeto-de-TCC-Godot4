@@ -37,9 +37,18 @@ func _ready():
 	load_level(current_level) # Carrega o primeiro mapa e seus comandos
 
 func load_level(level_name: String):
+	# Garante que a área de execução está pronta
+	if execute_area.has_method("prepare_for_scene_change"):
+		execute_area.prepare_for_scene_change()
+	
+	# Limpeza tradicional
 	_on_clear_button_pressed()
 	load_map(level_name)
 	update_level_info(level_name)
+	
+	# Notifica que o nível foi carregado
+	if execute_area.has_method("scene_change_completed"):
+		execute_area.scene_change_completed()
 
 func load_map(level_name: String):
 	execute_button.disabled = false
@@ -117,16 +126,22 @@ func _on_restart_button_pressed() -> void:
 	load_map(current_map.nome)
 	# Atualiza a UI para mostrar estrelas cinzas
 	resetar_estrelas()
-	
+
 func _on_clear_button_pressed() -> void:
-	# Remove todos os filhos dentro do painel
-	for child in execute_area.get_children():
-		child.queue_free()
+	if execute_area.has_method("safe_clear"):
+		execute_area.safe_clear()
+	else:
+		for child in execute_area.get_children():
+			child.queue_free()
 
 func _on_execute_button_pressed() -> void:
 	current_map.process_mode = ProcessMode.PROCESS_MODE_INHERIT
 	
 	for command in execute_area.get_children():
+		# Ignora nós que não são comandos (como o ColorRect do indicador)
+		if not command.has_method("get_command_type"):  # Ou a propriedade que você usa para identificar comandos
+			continue
+			
 		if current_map.has_method("registrar_comando"):
 			# Converta o CommandType para o nome correspondente
 			var command_names = ["andar", "virar", "pular", "parar", "esperar", "repetir", "se"]

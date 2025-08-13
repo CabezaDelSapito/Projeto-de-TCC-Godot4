@@ -28,6 +28,9 @@ func _process(_delta):
 		nine_patch_rect.custom_minimum_size.y = total_height - 15
 
 
+# Adicione esta função ao seu bloco de comando (CommandBlock.gd)
+func get_command_type() -> int:
+	return CommandType
 
 # Configura as opções de condição no OptionButton
 func _setup_condition_options():
@@ -65,11 +68,15 @@ func get_valor() -> float:
 	return float(tempo_input.value) if tempo_input else 1.0
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	var data = [self, CommandType, valor]
+	var parent = get_parent()
+	if parent and parent.has_method("is_transitioning") and parent.is_transitioning:
+		return null
+		
 	var preview = TextureRect.new()
 	preview.texture = texture
+	preview.modulate = Color(1, 1, 1, 0.7)
 	set_drag_preview(preview)
-	return data
+	return [self]
 
 func _notification(notification_type) -> void:
 	match notification_type:
