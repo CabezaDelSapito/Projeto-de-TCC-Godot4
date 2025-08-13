@@ -82,3 +82,9 @@ func _notification(notification_type) -> void:
 	match notification_type:
 		NOTIFICATION_DRAG_END:
 			visible = true
+
+func set_inside_container(is_inside: bool):
+	if is_inside:
+		modulate = Color(0.9, 0.9, 1.0)  # Tom azulado claro
+	else:
+		modulate = Color.WHITE

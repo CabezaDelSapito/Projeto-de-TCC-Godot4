@@ -63,25 +63,30 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var dropped_node = data[0]
 	var original_parent = dropped_node.get_parent()
 	
-	if is_instance_valid(drop_indicator):
-		drop_indicator.visible = false
+	drop_indicator.visible = false
 	
-	# Se o nó já está no container alvo, vamos reordenar
-	if original_parent == target_node:
-		var insert_position = calculate_insert_position(at_position, dropped_node)
-		
-		# Remove o nó da posição atual
-		target_node.remove_child(dropped_node)
-		# Insere na nova posição
-		target_node.add_child(dropped_node)
-		target_node.move_child(dropped_node, insert_position)
-	else:
-		# Adiciona uma cópia do nó se vier de outro lugar
+	# Caso 1: Veio da área de comandos (duplica)
+	if original_parent == $"../CommandArea/MarginContainer/VBoxContainer/GridContainer":
 		var new_node = dropped_node.duplicate()
 		var insert_position = calculate_insert_position(at_position, null)
 		target_node.add_child(new_node)
 		if insert_position < target_node.get_child_count() - 1:
 			target_node.move_child(new_node, insert_position)
+	
+	# Caso 2: Já está na área de execução (reordena)
+	elif original_parent == target_node:
+		var insert_position = calculate_insert_position(at_position, dropped_node)
+		target_node.remove_child(dropped_node)
+		target_node.add_child(dropped_node)
+		target_node.move_child(dropped_node, insert_position)
+	
+	# Caso 3: Veio de outro lugar (como o "SE") - move sem duplicar
+	else:
+		original_parent.remove_child(dropped_node)
+		var insert_position = calculate_insert_position(at_position, null)
+		target_node.add_child(dropped_node)
+		if insert_position < target_node.get_child_count() - 1:
+			target_node.move_child(dropped_node, insert_position)
 
 func calculate_insert_position(at_position: Vector2, excluded_node: Control) -> int:
 	var local_pos = target_node.get_local_mouse_position()
