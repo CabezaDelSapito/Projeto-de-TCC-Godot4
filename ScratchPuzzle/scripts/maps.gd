@@ -34,16 +34,15 @@ func concluir_objetivo_computador():
 
 # Chamado quando um comando é executado
 func registrar_comando(nome_comando: String):
-	total_comandos_usados += 1
-	comandos_usados.append(nome_comando)
-	
-	# Verifica se o comando específico foi usado
 	if nome_comando == comando_requerido:
 		objetivos_concluidos[1] = true
 	
-	# Verifica limite de comandos
-	objetivos_concluidos[2] = (total_comandos_usados <= max_comandos)
-	
+	comandos_usados.append(nome_comando)
+	atualizar_ui_objetivos()
+
+func set_total_comandos(total_comandos: int):
+	# Verifica o objetivo de limite de comandos
+	objetivos_concluidos[2] = (total_comandos <= max_comandos)
 	atualizar_ui_objetivos()
 
 func atualizar_ui_objetivos():
