@@ -88,7 +88,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		if insert_position < target_node.get_child_count() - 1:
 			target_node.move_child(dropped_node, insert_position)
 
-func calculate_insert_position(at_position: Vector2, excluded_node: Control) -> int:
+func calculate_insert_position(_at_position: Vector2, excluded_node: Control) -> int:
 	var local_pos = target_node.get_local_mouse_position()
 	var insert_position = target_node.get_child_count()
 	

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	platform.position = platform.position.lerp(follow,0.5)
 
 func move_platform():

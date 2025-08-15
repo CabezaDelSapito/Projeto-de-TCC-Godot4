@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var next_level_menu: CanvasLayer = $next_level_menu
+@onready var pause_menu: CanvasLayer = $pause_menu
+
 @export var nome : String = ""
 @export var comandos: Array[PackedScene] = []
 @export var stars: Array[String] = ["ACESSE O COMPUTADOR", "", ""]
@@ -46,3 +49,9 @@ func registrar_comando(nome_comando: String):
 func atualizar_ui_objetivos():
 	if main_node.has_method("atualizar_estrelas"):
 		main_node.atualizar_estrelas(objetivos_concluidos)
+
+	if pause_menu.has_method("atualizar_estrelas"):
+		pause_menu.atualizar_estrelas(objetivos_concluidos)
+
+	if next_level_menu.has_method("atualizar_estrelas"):
+		next_level_menu.atualizar_estrelas(objetivos_concluidos)

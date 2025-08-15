@@ -5,8 +5,8 @@ var level_buttons = []
 @onready var transition: CanvasLayer = $transition
 
 func _ready():
-	# Add transition to the scene tree
-	add_child(transition)
+	# Remova a linha abaixo. O nó 'transition' já é um filho de 'level_select_menu'.
+	# add_child(transition)
 	transition.visible = false
 	
 	# Get all button nodes

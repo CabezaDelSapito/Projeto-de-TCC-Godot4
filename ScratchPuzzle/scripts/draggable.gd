@@ -2,17 +2,30 @@ extends TextureRect
 
 @export_enum("Andar", "Virar", "Pular", "Parar", "Esperar", "Repetir", "Se") var CommandType = 0
 @export var valor: float = 1.0
-@onready var tempo_input: SpinBox = $TempoInput
 @export var repeat_count: int = 1
-@onready var command_container = $VBoxContainer
-@onready var repeticao_input = $repeticaoInput
-@onready var condition_option = $OptionButton
-@onready var nine_patch_rect: NinePatchRect = $NinePatchRect
+
+# Variáveis que podem ou não existir, não use @onready aqui
+var tempo_input: SpinBox
+var repeticao_input: SpinBox
+var command_container: VBoxContainer
+var condition_option: OptionButton
+var nine_patch_rect: NinePatchRect
 
 # Chamado quando o nó é inicializado
 func _ready():
-	# Configura as opções de condição apenas se for um comando "Se"
-	if CommandType == 6: # "Se" é o índice 6 no export_enum
+	# Andar, Virar, Pular, Esperar
+	if CommandType == 4:
+		tempo_input = get_node_or_null("TempoInput")
+	# Repetir
+	if CommandType == 5:
+		command_container = get_node_or_null("VBoxContainer")
+		repeticao_input = get_node_or_null("repeticaoInput")
+		nine_patch_rect = get_node_or_null("NinePatchRect")
+	# Se
+	if CommandType == 6:
+		command_container = get_node_or_null("VBoxContainer")
+		condition_option = get_node_or_null("OptionButton")
+		nine_patch_rect = get_node_or_null("NinePatchRect")
 		_setup_condition_options()
 
 func _process(_delta):
