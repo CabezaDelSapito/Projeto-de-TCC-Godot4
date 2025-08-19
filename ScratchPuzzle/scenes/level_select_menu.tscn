@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3oldlert27hf"]
+[gd_scene load_steps=15 format=3 uid="uid://3oldlert27hf"]
 
 [ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_p26o8"]
 [ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://print-level-1.png" id="2_k1lbj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bj0xfompvuggu" path="res://print-level-7.png" id="10_gemx0"]
 [ext_resource type="Texture2D" uid="uid://cd3u74ftkl15e" path="res://print-level-8.png" id="11_0rg3w"]
 [ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="12_0cceo"]
+[ext_resource type="AudioStream" uid="uid://6apt0wefmqm5" path="res://CYBER TECNO FUNK - DJNEYREVOLUTION FT DENTINHO PL - PEGA PIT PEGA.mp3" id="13_y1081"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kou0m"]
 shader = ExtResource("2_tt5d1")
@@ -325,5 +326,10 @@ texture = ExtResource("11_0rg3w")
 expand_mode = 1
 
 [node name="transition" parent="." instance=ExtResource("12_0cceo")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_y1081")
+volume_db = -40.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
