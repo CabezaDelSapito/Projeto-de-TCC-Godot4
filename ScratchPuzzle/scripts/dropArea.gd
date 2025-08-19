@@ -230,8 +230,6 @@ func executar_sequencial(comandos):
 			# Caso o comando não seja reconhecido
 			continue
 			
-		if map and map.has_method("set_total_comandos"):
-			map.set_total_comandos(nome_comando)
 		# REGISTRA O COMANDO ANTES DE EXECUTAR
 		if map and map.has_method("registrar_comando"):
 			map.registrar_comando(nome_comando)
