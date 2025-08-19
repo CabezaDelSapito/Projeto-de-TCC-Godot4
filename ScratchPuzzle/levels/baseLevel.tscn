@@ -16,7 +16,6 @@ grow_vertical = 2
 script = ExtResource("1_i8lrg")
 star_texture = ExtResource("5_vn0uj")
 gray_star_texture = ExtResource("3_hk0uf")
-current_level = "level_7"
 
 [node name="LevelArea" type="PanelContainer" parent="."]
 layout_direction = 1
