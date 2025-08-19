@@ -1,5 +1,6 @@
 extends PanelContainer
 
+const COMMAND_NAMES = ["andar", "virar", "pular", "parar", "esperar", "repetir", "se"]
 @onready var target_node = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var level_area: Node = $"../../LevelArea"
 var map: Node = null
@@ -220,6 +221,18 @@ func executar_sequencial(comandos):
 			continue
 			
 		var command_type = comando.get_command_type()
+		
+		# Obtenha o nome do comando usando o array de nomes
+		var nome_comando: String = ""
+		if command_type >= 0 and command_type < COMMAND_NAMES.size():
+			nome_comando = COMMAND_NAMES[command_type]
+		else:
+			# Caso o comando não seja reconhecido
+			continue
+			
+		# REGISTRA O COMANDO ANTES DE EXECUTAR
+		if map and map.has_method("registrar_comando"):
+			map.registrar_comando(nome_comando)
 		
 		match command_type:
 			0:  # Andar

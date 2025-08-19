@@ -15,6 +15,7 @@ extends PanelContainer
 @export var star_texture: Texture2D
 @export var gray_star_texture: Texture2D
 
+
 @export var maps: Dictionary = {
 	"level_1": preload("res://levels/level_1.tscn"),
 	"level_2": preload("res://levels/level_2.tscn"),
@@ -146,13 +147,24 @@ func _on_clear_button_pressed() -> void:
 func _on_execute_button_pressed() -> void:
 	current_map.process_mode = ProcessMode.PROCESS_MODE_INHERIT
 	
-	for command in v_box_container.get_children():
-		# Ignora nós que não são comandos (como o ColorRect do indicador)
-		if not command.has_method("get_command_type"):  # Ou a propriedade que você usa para identificar comandos
-			continue
-			
-		if current_map.has_method("registrar_comando"):
-			# Converta o CommandType para o nome correspondente
-			var command_names = ["andar", "virar", "pular", "parar", "esperar", "repetir", "se"]
-			if command.CommandType < command_names.size():
-				current_map.registrar_comando(command_names[command.CommandType])
+	var total_comando = count_children_recursively(v_box_container)
+	print(total_comando)
+	
+	if current_map and current_map.has_method("set_total_comandos"):
+		current_map.set_total_comandos(total_comando)
+
+# Função recursiva para contar filhos de VBoxContainer
+func count_children_recursively(node: Node) -> int:
+	var total = 0
+	
+	# Percorre todos os filhos do nó atual
+	for child in node.get_children():
+		if child is TextureRect:
+			total += 1  # Conta o filho atual
+
+		# Verifica se o filho tem um VBoxContainer como filho
+		for grandchild in child.get_children():
+			if grandchild is VBoxContainer:
+				total += count_children_recursively(grandchild)  # Chama a recursão para o VBoxContainer
+		
+	return total
