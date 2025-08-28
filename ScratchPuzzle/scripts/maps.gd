@@ -37,16 +37,13 @@ func concluir_objetivo_computador():
 	objetivos_concluidos[0] = true
 	atualizar_ui_objetivos()
 	
-	# Salvar progresso: Assume-se que GameData é um Singleton (Autoload)
-	# que contém a função save_progress.
-	# Certifique-se de configurar o "GameData" como um Autoload no seu projeto Godot.
+	# Conta quantas estrelas o jogador ganhou nesse level
+	var stars_earned = objetivos_concluidos.count(true)
+
+	# Salvar progresso global (nível e estrelas)
 	if GameData.has_method("save_progress"):
-		# Salva o progresso SOMENTE se este nível for maior que o último completado salvo
-		if level_number > GameData.last_completed_level:
-			GameData.save_progress(level_number)
-			print("Progresso do nível ", level_number, " salvo (novo recorde).")
-		else:
-			print("Nível ", level_number, " concluído, mas não é um novo recorde. Progresso não salvo.")
+		GameData.save_progress(level_number, stars_earned)
+		print("Level %d concluído com %d estrela(s)." % [level_number, stars_earned])
 	else:
 		print("Erro: 'GameData' não possui o método 'save_progress'.")
 
