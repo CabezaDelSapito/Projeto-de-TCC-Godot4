@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://3oldlert27hf"]
+[gd_scene load_steps=16 format=3 uid="uid://3oldlert27hf"]
 
 [ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_p26o8"]
 [ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://print-level-1.png" id="2_k1lbj"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ueyia"]
 [ext_resource type="Texture2D" uid="uid://dtxv4r5tnahwg" path="res://print-level-2.png" id="5_uuc42"]
 [ext_resource type="Texture2D" uid="uid://fm0qd10aijmm" path="res://print-level-3.png" id="6_eoada"]
+[ext_resource type="Texture2D" uid="uid://dhj7v43rmcalj" path="res://cadeado.png" id="6_irq71"]
 [ext_resource type="Texture2D" uid="uid://cqydv5iya1bgg" path="res://print-level-4.png" id="7_5fvse"]
 [ext_resource type="Texture2D" uid="uid://xuwh328vfwxj" path="res://print-level-5.png" id="8_x3wfg"]
 [ext_resource type="Texture2D" uid="uid://c7it58na7gmix" path="res://print-level-6.png" id="9_4y5qv"]
@@ -151,6 +152,30 @@ grow_vertical = 2
 texture = ExtResource("5_uuc42")
 expand_mode = 1
 
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
+expand_mode = 1
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -178,6 +203,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_eoada")
+expand_mode = 1
+
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
 expand_mode = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
@@ -209,6 +258,30 @@ grow_vertical = 2
 texture = ExtResource("7_5fvse")
 expand_mode = 1
 
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
+expand_mode = 1
+
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -236,6 +309,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_x3wfg")
+expand_mode = 1
+
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
 expand_mode = 1
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
@@ -267,6 +364,30 @@ grow_vertical = 2
 texture = ExtResource("9_4y5qv")
 expand_mode = 1
 
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
+expand_mode = 1
+
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -296,6 +417,30 @@ grow_vertical = 2
 texture = ExtResource("10_gemx0")
 expand_mode = 1
 
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
+expand_mode = 1
+
 [node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -323,6 +468,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_0rg3w")
+expand_mode = 1
+
+[node name="bg_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button/bg_overlay"]
+modulate = Color(1, 1, 1, 0.745098)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_irq71")
 expand_mode = 1
 
 [node name="transition" parent="." instance=ExtResource("12_0cceo")]

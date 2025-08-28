@@ -14,6 +14,7 @@ extends Node2D
 var total_comandos_usados := 0
 var comandos_usados := []
 var main_node = null
+var level_number: int = 0
 
 # Variáveis para rastrear objetivos
 var objetivos_concluidos := [false, false, false]  # Computador, Comando Específico, Máx Comandos
@@ -23,6 +24,10 @@ func _ready():
 	stars[1] = "USE O COMANDO " + comando_requerido.to_upper()
 	stars[2] = "USE NO MÁXIMO %d COMANDOS" % max_comandos
 	resetar_objetivos()
+	
+	var parts = nome.split("_")
+	if parts.size() == 2 and parts[0] == "level":
+		level_number = int(parts[1])
 
 func resetar_objetivos():
 	objetivos_concluidos = [false, false, false]
@@ -31,6 +36,20 @@ func resetar_objetivos():
 func concluir_objetivo_computador():
 	objetivos_concluidos[0] = true
 	atualizar_ui_objetivos()
+	
+	# Salvar progresso: Assume-se que GameData é um Singleton (Autoload)
+	# que contém a função save_progress.
+	# Certifique-se de configurar o "GameData" como um Autoload no seu projeto Godot.
+	if GameData.has_method("save_progress"):
+		# Salva o progresso SOMENTE se este nível for maior que o último completado salvo
+		if level_number > GameData.last_completed_level:
+			GameData.save_progress(level_number)
+			print("Progresso do nível ", level_number, " salvo (novo recorde).")
+		else:
+			print("Nível ", level_number, " concluído, mas não é um novo recorde. Progresso não salvo.")
+	else:
+		print("Erro: 'GameData' não possui o método 'save_progress'.")
+
 
 # Chamado quando um comando é executado
 func registrar_comando(nome_comando: String):
