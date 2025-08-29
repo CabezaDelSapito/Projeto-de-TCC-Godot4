@@ -230,6 +230,56 @@ grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
 
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer2/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer2/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -282,6 +332,56 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
+
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer3/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer3/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -336,6 +436,56 @@ grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
 
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer4/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer4/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
 [node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -388,6 +538,56 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
+
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer5/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer5/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -442,6 +642,56 @@ grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
 
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer6/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer6/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
 [node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -495,6 +745,56 @@ grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
 
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer7/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer7/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
 [node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 
@@ -547,6 +847,56 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_irq71")
 expand_mode = 1
+
+[node name="star_overlay" type="ColorRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer/VBoxContainer8/Button/star_overlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Star" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_bovdf")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/GridContainer/VBoxContainer8/Button/star_overlay/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_bovdf")
 
 [node name="transition" parent="." instance=ExtResource("12_0cceo")]
 
