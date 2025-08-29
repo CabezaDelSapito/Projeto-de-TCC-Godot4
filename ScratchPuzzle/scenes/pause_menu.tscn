@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dban0dsbdglg0"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ivbaw"]
-[ext_resource type="Theme" uid="uid://dy2ikn1tr8vva" path="res://assets/fonts/pause_menu.tres" id="1_rm5ro"]
+[ext_resource type="Theme" uid="uid://dy2ikn1tr8vva" path="res://assets/Fonts/pause_menu.tres" id="1_rm5ro"]
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="2_dxo6o"]
-[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="2_xw8m4"]
-[ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Mini FX, Items & UI/Food Items/gray_star.png" id="3_jdmsg"]
+[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Items & UI/Mini UI/star.png" id="2_xw8m4"]
+[ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Items & UI/Mini UI/gray_star.png" id="3_jdmsg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4qg57"]
 shader = ExtResource("2_dxo6o")

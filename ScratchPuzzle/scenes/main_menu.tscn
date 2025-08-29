@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0m128uxbpkty"]
+[gd_scene load_steps=8 format=3 uid="uid://d0m128uxbpkty"]
 
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="1_qno7v"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/Fonts/RevMiniPixel.ttf" id="1_qno7v"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_tt5wh"]
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="2_ps84n"]
-[ext_resource type="AudioStream" uid="uid://6apt0wefmqm5" path="res://CYBER TECNO FUNK - DJNEYREVOLUTION FT DENTINHO PL - PEGA PIT PEGA.mp3" id="4_p14wj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rwds8"]
 shader = ExtResource("2_ps84n")
@@ -125,8 +124,3 @@ theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dxp77")
 text = "ALPHA 1.0"
 horizontal_alignment = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_p14wj")
-volume_db = -40.0
-autoplay = true

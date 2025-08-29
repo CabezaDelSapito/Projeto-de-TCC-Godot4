@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqfj3kd2iqgwe"]
 
-[ext_resource type="Texture2D" uid="uid://dljwlvhfa7y8j" path="res://assets/Mini FX, Items & UI/Common Pick-ups/repetir.png" id="1_xresa"]
+[ext_resource type="Texture2D" uid="uid://dljwlvhfa7y8j" path="res://assets/Items & UI/Icon  Commands/repetir.png" id="1_xresa"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_ig0tx"]
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="3_vxja0"]
-[ext_resource type="Texture2D" uid="uid://cqornouqpvh2c" path="res://assets/Mini FX, Items & UI/Common Pick-ups/PerninhaRepetir.png" id="4_7yw84"]
+[ext_resource type="Texture2D" uid="uid://cqornouqpvh2c" path="res://assets/Items & UI/Icon  Commands/PerninhaRepetir.png" id="4_7yw84"]
 
 [node name="Repetir" type="TextureRect"]
 texture_filter = 1

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameData="*res://scripts/GameData.gd"
+SoundManager="*res://scenes/sound_manager.tscn"
 
 [display]
 

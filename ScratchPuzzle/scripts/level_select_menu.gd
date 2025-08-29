@@ -11,7 +11,6 @@ var last_completed_level_from_game_data: int = 0
 @export var gray_star_texture: Texture2D
 
 # Dicionário que guarda as referências das estrelas de cada botão
-# Exemplo: {1: [star1, star2, star3], 2: [...], ...}
 var level_star_icons := {}
 
 func _ready():

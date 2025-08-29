@@ -1,21 +1,20 @@
-[gd_scene load_steps=18 format=3 uid="uid://3oldlert27hf"]
+[gd_scene load_steps=17 format=3 uid="uid://3oldlert27hf"]
 
 [ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_p26o8"]
-[ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://print-level-1.png" id="2_k1lbj"]
+[ext_resource type="Texture2D" uid="uid://cg8n7wfwfv0ov" path="res://assets/Items & UI/thumb levels/print-level-1.png" id="2_k1lbj"]
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="2_tt5d1"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_ueyia"]
-[ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Mini FX, Items & UI/Food Items/gray_star.png" id="3_hhiks"]
-[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Mini FX, Items & UI/Food Items/star.png" id="5_bovdf"]
-[ext_resource type="Texture2D" uid="uid://dtxv4r5tnahwg" path="res://print-level-2.png" id="5_uuc42"]
-[ext_resource type="Texture2D" uid="uid://fm0qd10aijmm" path="res://print-level-3.png" id="6_eoada"]
-[ext_resource type="Texture2D" uid="uid://dhj7v43rmcalj" path="res://cadeado.png" id="6_irq71"]
-[ext_resource type="Texture2D" uid="uid://cqydv5iya1bgg" path="res://print-level-4.png" id="7_5fvse"]
-[ext_resource type="Texture2D" uid="uid://xuwh328vfwxj" path="res://print-level-5.png" id="8_x3wfg"]
-[ext_resource type="Texture2D" uid="uid://c7it58na7gmix" path="res://print-level-6.png" id="9_4y5qv"]
-[ext_resource type="Texture2D" uid="uid://bj0xfompvuggu" path="res://print-level-7.png" id="10_gemx0"]
-[ext_resource type="Texture2D" uid="uid://cd3u74ftkl15e" path="res://print-level-8.png" id="11_0rg3w"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/Fonts/RevMiniPixel.ttf" id="2_ueyia"]
+[ext_resource type="Texture2D" uid="uid://b6bp06msf1ya2" path="res://assets/Items & UI/Mini UI/gray_star.png" id="3_hhiks"]
+[ext_resource type="Texture2D" uid="uid://dedk3n2d1ntu3" path="res://assets/Items & UI/Mini UI/star.png" id="5_bovdf"]
+[ext_resource type="Texture2D" uid="uid://dtxv4r5tnahwg" path="res://assets/Items & UI/thumb levels/print-level-2.png" id="5_uuc42"]
+[ext_resource type="Texture2D" uid="uid://fm0qd10aijmm" path="res://assets/Items & UI/thumb levels/print-level-3.png" id="6_eoada"]
+[ext_resource type="Texture2D" uid="uid://dhj7v43rmcalj" path="res://assets/Items & UI/Mini UI/cadeado.png" id="6_irq71"]
+[ext_resource type="Texture2D" uid="uid://cqydv5iya1bgg" path="res://assets/Items & UI/thumb levels/print-level-4.png" id="7_5fvse"]
+[ext_resource type="Texture2D" uid="uid://xuwh328vfwxj" path="res://assets/Items & UI/thumb levels/print-level-5.png" id="8_x3wfg"]
+[ext_resource type="Texture2D" uid="uid://c7it58na7gmix" path="res://assets/Items & UI/thumb levels/print-level-6.png" id="9_4y5qv"]
+[ext_resource type="Texture2D" uid="uid://bj0xfompvuggu" path="res://assets/Items & UI/thumb levels/print-level-7.png" id="10_gemx0"]
+[ext_resource type="Texture2D" uid="uid://cd3u74ftkl15e" path="res://assets/Items & UI/thumb levels/print-level-8.png" id="11_0rg3w"]
 [ext_resource type="PackedScene" uid="uid://dflntd4tv6247" path="res://scenes/transition.tscn" id="12_0cceo"]
-[ext_resource type="AudioStream" uid="uid://6apt0wefmqm5" path="res://CYBER TECNO FUNK - DJNEYREVOLUTION FT DENTINHO PL - PEGA PIT PEGA.mp3" id="13_y1081"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kou0m"]
 shader = ExtResource("2_tt5d1")
@@ -899,10 +898,5 @@ size_flags_vertical = 4
 texture = ExtResource("5_bovdf")
 
 [node name="transition" parent="." instance=ExtResource("12_0cceo")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_y1081")
-volume_db = -40.0
-autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

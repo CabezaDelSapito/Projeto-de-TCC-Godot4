@@ -75,6 +75,8 @@ func virar():
 	texture.scale.x = -direction
 
 func pular():
+	if is_instance_valid(SoundManager):
+		SoundManager.play_jump()
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 

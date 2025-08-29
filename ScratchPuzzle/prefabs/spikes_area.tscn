@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://beijv3dcnw1ts"]
 
 [ext_resource type="Script" path="res://scripts/spikes_area.gd" id="1_8s32c"]
-[ext_resource type="Texture2D" uid="uid://bh8ad1a7iq2bq" path="res://assets/Mini FX, Items & UI/Mini UI/Spike.png" id="1_crado"]
+[ext_resource type="Texture2D" uid="uid://bh8ad1a7iq2bq" path="res://assets/Items & UI/Mini UI/Spike.png" id="1_crado"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehd0v"]
 size = Vector2(7, 7)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cicfrprcsw5y5"]
 
-[ext_resource type="Texture2D" uid="uid://clqbhlnyy4cxo" path="res://assets/Mini FX, Items & UI/Common Pick-ups/se.png" id="1_kggtk"]
+[ext_resource type="Texture2D" uid="uid://clqbhlnyy4cxo" path="res://assets/Items & UI/Icon  Commands/se.png" id="1_kggtk"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_ehpyo"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="3_7fihn"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/Fonts/RevMiniPixel.ttf" id="3_7fihn"]
 [ext_resource type="Script" path="res://scripts/dropGrid.gd" id="3_vryld"]
-[ext_resource type="Texture2D" uid="uid://drsh37jovl5k4" path="res://assets/Mini FX, Items & UI/Common Pick-ups/PerninhaSe.png" id="5_cp1gf"]
+[ext_resource type="Texture2D" uid="uid://drsh37jovl5k4" path="res://assets/Items & UI/Icon  Commands/PerninhaSe.png" id="5_cp1gf"]
 
 [node name="Se" type="TextureRect"]
 texture_filter = 1

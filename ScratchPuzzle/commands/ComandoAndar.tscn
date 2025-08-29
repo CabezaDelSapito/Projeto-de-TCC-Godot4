@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfv7dhi7km4wx"]
 
-[ext_resource type="Texture2D" uid="uid://276afqp0i5tu" path="res://assets/Mini FX, Items & UI/Common Pick-ups/andar kkk.png" id="1_cw835"]
+[ext_resource type="Texture2D" uid="uid://276afqp0i5tu" path="res://assets/Items & UI/Icon  Commands/andar kkk.png" id="1_cw835"]
 [ext_resource type="Script" path="res://scripts/draggable.gd" id="2_olyd1"]
 
 [node name="Andar" type="TextureRect"]

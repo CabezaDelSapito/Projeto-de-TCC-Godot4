@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://biff6hvce3p1j"]
 
-[ext_resource type="Texture2D" uid="uid://bkn8l35m6qhan" path="res://assets/Mini FX, Items & UI/Mini UI/Dialog_Box(16 x 16).png" id="1_aud42"]
+[ext_resource type="Texture2D" path="res://assets/Mini FX, Items & UI/Mini UI/Dialog_Box(16 x 16).png" id="1_aud42"]
 [ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_nh706"]
-[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/fonts/RevMiniPixel.ttf" id="2_1y756"]
+[ext_resource type="FontFile" uid="uid://d4cruh03p3ty4" path="res://assets/Fonts/RevMiniPixel.ttf" id="2_1y756"]
 
 [node name="dialog_box" type="MarginContainer"]
 offset_right = 40.0
