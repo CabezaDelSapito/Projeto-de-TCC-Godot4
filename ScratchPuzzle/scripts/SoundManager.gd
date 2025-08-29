@@ -3,27 +3,21 @@ extends Node
 @onready var jump_player = $JumpPlayer
 @onready var ground_player = $GroundPlayer
 #@onready var land_player: AudioStreamPlayer = $LandPlayer
-#@onready var hit_player = $HitPlayer
-#@onready var death_player = $HitPlayer
+#@onready var death_player = $DeathPlayer
 #@onready var button_player = $ButtonPlayer
-#@onready var fail_player = $FailPlayer
 #@onready var won_player = $WonPlayer
 #@onready var applause_player = $ApplausePlayer
 #@onready var music_player: AudioStreamPlayer = $MenuMusicPlayer
 #@onready var endless_player: AudioStreamPlayer = $EndlessMusicPlayer
-#@onready var squash_player = $SquashPlayer
 
 #var land_sound: AudioStream
 var ground_sound: AudioStream
-#var hit_sound: AudioStream
 #var death_sound: AudioStream
 #var button_sound: AudioStream
 var jump_sounds: Array[AudioStream]
 #var menu_music: AudioStream
-#var fail_music: AudioStream
 #var won_music: AudioStream
 #var applause_sound: AudioStream
-#var squash_sound: AudioStream
 #var music_playing := false
 #var endless_playing := false
 #var game_musics: Array[AudioStream] = []
@@ -32,13 +26,10 @@ var jump_sounds: Array[AudioStream]
 func _ready():
 	#menu_music = load("res://Assets/Sounds/main_music.ogg")  
 	ground_sound = load("res://assets/Sounds/walk.ogg")  
-	#hit_sound = load("res://Assets/Sounds/hit.ogg")  
 	#death_sound = load("res://Assets/Sounds/death.ogg") 
 	#button_sound = load("res://Assets/Sounds/click.ogg") 
-	#applause_sound = load("res://Assets/Sounds/applause.ogg") 
-	#fail_music = load("res://Assets/Sounds/losetrumpet.ogg") 
-	#won_music = load("res://Assets/Sounds/won.ogg") 
-	#squash_sound = load("res://Assets/Sounds/squash.ogg") 
+	#applause_sound = load("res://Assets/Sounds/applause.ogg")
+	#won_music = load("res://Assets/Sounds/won.ogg")
 	jump_sounds = [
 		load("res://assets/Sounds/CartoonJump.ogg"),
 		load("res://assets/Sounds/jump2.ogg"),
@@ -113,11 +104,7 @@ func _process(_delta):
 	#won_player.play()
 	#applause_player.stream = applause_sound
 	#applause_player.play()
-	
-#func play_fail():
-	#fail_player.stream = fail_music
-	#fail_player.play()
-	#
+
 #func play_button():
 	#button_player.stream = button_sound
 	#button_player.play()
@@ -130,19 +117,11 @@ func play_ground():
 	#if land_player and land_sound:
 		#land_player.stream = land_sound
 		#land_player.play()
-	
-#func play_hit():
-	#hit_player.stream = hit_sound
-	#hit_player.play()
-#
+
 #func play_death():
 	#death_player.stream = death_sound
 	#death_player.play()
-	#
-#func play_squash():
-	#squash_player.stream = squash_sound
-	#squash_player.play()
-	
+
 func play_jump():
 	if jump_sounds.size() == 0:
 		return
@@ -151,7 +130,7 @@ func play_jump():
 	jump_player.play()
 	
 #func stop_all_sounds():
-	#for player in [jump_player, ground_player, hit_player, death_player, fail_player, won_player, applause_player, music_player, endless_player]:
+	#for player in [jump_player, ground_player, death_player, won_player, applause_player, music_player, endless_player]:
 		#if player.playing:
 			#player.stop()
 	#music_playing = false
