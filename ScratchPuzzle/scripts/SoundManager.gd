@@ -14,7 +14,7 @@ extends Node
 #@onready var squash_player = $SquashPlayer
 
 #var land_sound: AudioStream
-#var ground_sound: AudioStream
+var ground_sound: AudioStream
 #var hit_sound: AudioStream
 #var death_sound: AudioStream
 #var button_sound: AudioStream
@@ -31,7 +31,7 @@ var jump_sounds: Array[AudioStream]
 
 func _ready():
 	#menu_music = load("res://Assets/Sounds/main_music.ogg")  
-	#ground_sound = load("res://Assets/Sounds/tap.ogg")  
+	ground_sound = load("res://assets/Sounds/walk.ogg")  
 	#hit_sound = load("res://Assets/Sounds/hit.ogg")  
 	#death_sound = load("res://Assets/Sounds/death.ogg") 
 	#button_sound = load("res://Assets/Sounds/click.ogg") 
@@ -122,10 +122,10 @@ func _process(_delta):
 	#button_player.stream = button_sound
 	#button_player.play()
 	#
-#func play_ground():
-	#ground_player.stream = ground_sound
-	#ground_player.play()
-	#
+func play_ground():
+	ground_player.stream = ground_sound
+	ground_player.play()
+
 #func play_land():
 	#if land_player and land_sound:
 		#land_player.stream = land_sound
