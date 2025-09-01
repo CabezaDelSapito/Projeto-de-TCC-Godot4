@@ -69,7 +69,7 @@ func die() -> void:
 
 func andar():
 	if is_instance_valid(SoundManager):
-		SoundManager.play_ground()
+		SoundManager.play_step()
 	is_moving = true
 
 func virar():

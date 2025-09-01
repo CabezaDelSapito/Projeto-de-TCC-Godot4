@@ -13,4 +13,8 @@ script = ExtResource("1_epc10")
 
 [node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="GroundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="StepPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="EndlessMusicPlayer" type="AudioStreamPlayer" parent="."]
