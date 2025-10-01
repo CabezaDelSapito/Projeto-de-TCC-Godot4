@@ -179,3 +179,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 7.5)
 shape = SubResource("RectangleShape2D_wkrvt")
+
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="StepTimer" to="." method="_on_step_timer_timeout"]

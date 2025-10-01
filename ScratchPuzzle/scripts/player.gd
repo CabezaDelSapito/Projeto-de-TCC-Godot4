@@ -18,6 +18,7 @@ var current_health := max_health
 var is_dead := false
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
+@onready var step_timer := $StepTimer as Timer
 
 func _physics_process(delta: float) -> void:
 	# Adiciona a gravidade
@@ -32,6 +33,7 @@ func _physics_process(delta: float) -> void:
 
 	_set_state()
 	move_and_slide()
+	_gerenciar_som_passos()
 
 func _set_state():
 	var state = 'idle'
@@ -65,11 +67,26 @@ func die() -> void:
 	# Emite o sinal de morte
 	emit_signal("player_died")
 
+func _gerenciar_som_passos():
+	var deve_andar = is_moving and is_on_floor()
+	
+	# Se deve andar E o timer está parado, comece o timer.
+	if deve_andar and step_timer.is_stopped():
+		step_timer.start()
+		SoundManager.play_step()
+	
+	# Se NÃO deve andar E o timer está rodando, pare o timer.
+	elif not deve_andar and not step_timer.is_stopped():
+		step_timer.stop()
+		
+
+func _on_step_timer_timeout():
+	if is_instance_valid(SoundManager):
+		SoundManager.play_step()
+
 # ====== COMANDOS EXTERNOS ======
 
 func andar():
-	if is_instance_valid(SoundManager):
-		SoundManager.play_step()
 	is_moving = true
 
 func virar():
