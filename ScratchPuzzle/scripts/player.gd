@@ -61,6 +61,8 @@ func take_damage(knockback_force: Vector2) -> void:
 
 func die() -> void:
 	is_dead = true
+	if is_instance_valid(SoundManager):
+		SoundManager.play_death()
 	#$AnimatedSprite2D.play("death")
 	
 	await get_tree().create_timer(0.5).timeout

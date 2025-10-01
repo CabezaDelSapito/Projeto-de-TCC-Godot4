@@ -3,9 +3,9 @@ extends Node
 @onready var jump_player = $JumpPlayer
 @onready var step_player = $StepPlayer
 #@onready var land_player: AudioStreamPlayer = $LandPlayer
-#@onready var death_player = $DeathPlayer
+@onready var death_player = $DeathPlayer
 #@onready var button_player = $ButtonPlayer
-#@onready var won_player = $WonPlayer
+@onready var won_player = $WonPlayer
 #@onready var applause_player = $ApplausePlayer
 @onready var music_player: AudioStreamPlayer = $MenuMusicPlayer
 @onready var endless_player: AudioStreamPlayer = $EndlessMusicPlayer
@@ -13,11 +13,11 @@ extends Node
 
 #var land_sound: AudioStream
 var step_sound: AudioStream
-#var death_sound: AudioStream
+var death_sound: AudioStream
 #var button_sound: AudioStream
 var jump_sounds: Array[AudioStream]
 var menu_music: AudioStream
-#var won_music: AudioStream
+var won_music: AudioStream
 #var applause_sound: AudioStream
 var music_playing := false
 var endless_playing := false
@@ -28,10 +28,10 @@ func _ready():
 	menu_music = load("res://assets/Sounds/leap.WAV")
 	menu_player.volume_db = -40
 	step_sound = load("res://assets/Sounds/walk.ogg")
-	#death_sound = load("res://Assets/Sounds/death.ogg") 
+	death_sound = load("res://assets/Sounds/sfx_hurt.ogg") 
 	#button_sound = load("res://Assets/Sounds/click.ogg") 
 	#applause_sound = load("res://Assets/Sounds/applause.ogg")
-	#won_music = load("res://Assets/Sounds/won.ogg")
+	won_music = load("res://assets/Sounds/winfretless.ogg")
 	jump_sounds = [
 		#load("res://assets/Sounds/CartoonJump.ogg"),
 		load("res://assets/Sounds/jump2.ogg"),
@@ -100,9 +100,9 @@ func stop_endless_music():
 	endless_player.stop()
 	endless_playing = false
 
-#func play_won():
-	#won_player.stream = won_music
-	#won_player.play()
+func play_won():
+	won_player.stream = won_music
+	won_player.play()
 	#applause_player.stream = applause_sound
 	#applause_player.play()
 
@@ -119,9 +119,9 @@ func play_step():
 		#land_player.stream = land_sound
 		#land_player.play()
 
-#func play_death():
-	#death_player.stream = death_sound
-	#death_player.play()
+func play_death():
+	death_player.stream = death_sound
+	death_player.play()
 
 func play_jump():
 	if jump_sounds.size() == 0:
