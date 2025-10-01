@@ -22,3 +22,5 @@ script = ExtResource("1_epc10")
 [node name="DeathPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="WonPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ButtonPlayer" type="AudioStreamPlayer" parent="."]

@@ -110,6 +110,8 @@ func _on_level_button_pressed(level_number: int):
 	transition.change_scene("level_%d" % level_number)
 
 func _on_button_pressed() -> void:
+	if is_instance_valid(SoundManager):
+		SoundManager.play_button()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 func _unhandled_input(event) -> void:

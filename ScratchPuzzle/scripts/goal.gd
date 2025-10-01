@@ -20,8 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 			
 		await get_tree().create_timer(0.5).timeout
 		next_level_menu.visible = true
-		await get_tree().create_timer(3).timeout
-		get_tree().paused = true
 		#transition.change_scene(next_level)
 
 	else:

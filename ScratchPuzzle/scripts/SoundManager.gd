@@ -4,7 +4,7 @@ extends Node
 @onready var step_player = $StepPlayer
 #@onready var land_player: AudioStreamPlayer = $LandPlayer
 @onready var death_player = $DeathPlayer
-#@onready var button_player = $ButtonPlayer
+@onready var button_player = $ButtonPlayer
 @onready var won_player = $WonPlayer
 #@onready var applause_player = $ApplausePlayer
 @onready var music_player: AudioStreamPlayer = $MenuMusicPlayer
@@ -14,7 +14,7 @@ extends Node
 #var land_sound: AudioStream
 var step_sound: AudioStream
 var death_sound: AudioStream
-#var button_sound: AudioStream
+var button_sound: AudioStream
 var jump_sounds: Array[AudioStream]
 var menu_music: AudioStream
 var won_music: AudioStream
@@ -29,7 +29,7 @@ func _ready():
 	menu_player.volume_db = -40
 	step_sound = load("res://assets/Sounds/walk.ogg")
 	death_sound = load("res://assets/Sounds/sfx_hurt.ogg") 
-	#button_sound = load("res://Assets/Sounds/click.ogg") 
+	button_sound = load("res://assets/Sounds/bong_001.ogg") 
 	#applause_sound = load("res://Assets/Sounds/applause.ogg")
 	won_music = load("res://assets/Sounds/winfretless.ogg")
 	jump_sounds = [
@@ -106,9 +106,9 @@ func play_won():
 	#applause_player.stream = applause_sound
 	#applause_player.play()
 
-#func play_button():
-	#button_player.stream = button_sound
-	#button_player.play()
+func play_button():
+	button_player.stream = button_sound
+	button_player.play()
 	
 func play_step():
 	step_player.stream = step_sound

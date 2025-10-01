@@ -46,10 +46,14 @@ func _unhandled_input(event) -> void:
 		resume_button.grab_focus()
 
 func _on_resume_button_pressed() -> void:
+	if is_instance_valid(SoundManager):
+		SoundManager.play_button()
 	get_tree().paused = false
 	visible = false
 
 
 func _on_quit_button_pressed() -> void:
+	if is_instance_valid(SoundManager):
+		SoundManager.play_button()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
