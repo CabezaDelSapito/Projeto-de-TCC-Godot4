@@ -21,9 +21,8 @@ shader_parameter/additional_scroll_speed = 0.05
 [sub_resource type="LabelSettings" id="LabelSettings_f3lga"]
 font = ExtResource("1_qno7v")
 font_size = 96
-shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 4)
+shadow_offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkaxf"]
 
@@ -66,7 +65,8 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-text = "TCC GAME"
+size_flags_horizontal = 4
+text = "Forever.Run()"
 label_settings = SubResource("LabelSettings_f3lga")
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" groups=["button"]]
