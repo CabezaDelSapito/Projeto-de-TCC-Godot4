@@ -20,6 +20,10 @@ var is_transitioning := false
 var _exec_step := 0
 var _exec_total := 0
 
+# Colapso/expansão da área de execução (reduz a oclusão do cenário)
+var _collapsed := false
+var _collapse_button: Button = null
+
 const COMMAND_DESCRIPTIONS = {
 	"andar": "Personagem anda para frente",
 	"virar": "Altera a direção do personagem",
@@ -44,6 +48,7 @@ func _ready():
 	find_map_and_player()
 	setup_drop_indicator()
 	_setup_code_edit()
+	_setup_collapse_button()
 
 func setup_drop_indicator():
 	# Remove o indicador antigo se existir
@@ -296,6 +301,36 @@ func _setup_code_edit() -> void:
 func _on_code_text_changed() -> void:
 	# Força o pedido de autocomplete ao digitar
 	code_edit.request_code_completion()
+
+# === Colapsar / expandir a área de execução ===
+
+func _setup_collapse_button() -> void:
+	var btn_row = get_node_or_null("MarginContainer/VBoxContainer/HBoxContainer")
+	if btn_row == null:
+		return
+	_collapse_button = Button.new()
+	_collapse_button.text = "▼"
+	_collapse_button.tooltip_text = "Minimizar a área de execução"
+	_collapse_button.focus_mode = Control.FOCUS_NONE
+	_collapse_button.pressed.connect(_toggle_collapse)
+	# Deferido: durante o _ready a fileira de botões ainda está sendo montada.
+	btn_row.add_child.call_deferred(_collapse_button)
+
+func _toggle_collapse() -> void:
+	_collapsed = not _collapsed
+
+	# Esconde a parte volumosa (abas de blocos/código) e encolhe o painel,
+	# liberando a tela para o jogador analisar o cenário.
+	if tab_container:
+		tab_container.visible = not _collapsed
+	if _collapsed and error_label:
+		error_label.visible = false
+
+	size_flags_vertical = Control.SIZE_SHRINK_BEGIN if _collapsed else (Control.SIZE_FILL | Control.SIZE_EXPAND)
+
+	if _collapse_button:
+		_collapse_button.text = "▲" if _collapsed else "▼"
+		_collapse_button.tooltip_text = "Expandir a área de execução" if _collapsed else "Minimizar a área de execução"
 
 const COMMAND_SCENES = {
 	"andar": preload("res://commands/ComandoAndar.tscn"),
