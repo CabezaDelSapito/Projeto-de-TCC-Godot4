@@ -18,8 +18,11 @@ func _ready() -> void:
 	sprite_2d.region_rect = region_rect
 
 	# Ajusta o tamanho do CollisionShape2D com base no novo tamanho do Sprite2D.
-	collision_shape_2d.shape.extents.x = rect_w / 2
-	collision_shape_2d.shape.extents.y = sprite_2d.texture.get_size().y / 2
+	# Godot 4: RectangleShape2D usa "size" (dimensão inteira), não "extents".
+	# Duplica o shape para não alterar as outras instâncias que compartilham o recurso.
+	var shape := collision_shape_2d.shape.duplicate() as RectangleShape2D
+	shape.size = Vector2(rect_w, sprite_2d.texture.get_size().y)
+	collision_shape_2d.shape = shape
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player" && body.has_method("take_damage"):

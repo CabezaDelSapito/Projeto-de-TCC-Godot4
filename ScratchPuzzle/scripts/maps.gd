@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var next_level_menu: CanvasLayer = $next_level_menu
-@onready var pause_menu: CanvasLayer = preload("res://scenes/pause_menu.tscn").instantiate()
 
 @export var nome : String = ""
 @export var comandos: Array[PackedScene] = []
@@ -103,12 +102,19 @@ func set_total_comandos(total_comandos: int):
 	objetivos_concluidos[2] = (total_comandos <= max_comandos)
 	atualizar_ui_objetivos()
 
+func _get_pause_menu():
+	# O pause_menu real é filho do baseLevel (main_node), não deste nó de mapa.
+	if main_node:
+		return main_node.get_node_or_null("pause_menu")
+	return null
+
 func atualizar_ui_objetivos():
-	if main_node.has_method("atualizar_estrelas"):
+	if main_node and main_node.has_method("atualizar_estrelas"):
 		main_node.atualizar_estrelas(objetivos_concluidos)
 
-	if pause_menu.has_method("atualizar_estrelas"):
+	var pause_menu = _get_pause_menu()
+	if pause_menu and pause_menu.has_method("atualizar_estrelas"):
 		pause_menu.atualizar_estrelas(objetivos_concluidos)
 
-	if next_level_menu.has_method("atualizar_estrelas"):
+	if next_level_menu and next_level_menu.has_method("atualizar_estrelas"):
 		next_level_menu.atualizar_estrelas(objetivos_concluidos)

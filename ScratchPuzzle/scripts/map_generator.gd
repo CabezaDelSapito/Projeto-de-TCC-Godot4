@@ -221,9 +221,9 @@ static func _is_solvable(grid: Dictionary, width: int) -> bool:
 		var next_x = player_x + 1
 		if next_x < width:
 			for h in heights_at[next_x]:
-				var diff = player_y - h
-				if diff >= 0 or abs(diff) <= 1:
-					# Pode andar (mesmo nível ou descida ou subida de 1)
+				var diff = player_y - h  # positivo = subir, negativo = descer
+				if diff <= 1:
+					# Pode andar: sobe no máximo 1 tile, desce qualquer altura
 					player_x = next_x
 					player_y = h
 					advanced = true

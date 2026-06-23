@@ -239,6 +239,7 @@ func _on_execute_button_pressed() -> void:
 
 	await executar_sequencial(comandos)
 	_clear_execution_feedback()
+	execute_button.disabled = false
 
 func _parse_from_blocks() -> Array:
 	var comandos = []
@@ -559,16 +560,10 @@ func executar_sequencial(comandos, is_root := true):
 				var condition = comando.get_condition()
 				var inner_comandos = comando.get_comandos()
 
-				while player and is_instance_valid(player) and not player.check_condition(condition):
-					await get_tree().process_frame
-
-				if not player or not is_instance_valid(player):
-					return
-
-				await executar_sequencial(inner_comandos, false)
-
-				while player and is_instance_valid(player) and player.check_condition(condition):
-					await get_tree().process_frame
+				# Condicional de execução única: avalia a condição uma vez.
+				# Se verdadeira, executa o bloco; senão, pula.
+				if player and is_instance_valid(player) and player.check_condition(condition):
+					await executar_sequencial(inner_comandos, false)
 
 		# Delay entre passos para o highlight ser visível
 		await get_tree().create_timer(0.3).timeout
