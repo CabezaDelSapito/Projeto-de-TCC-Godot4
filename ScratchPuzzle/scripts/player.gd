@@ -152,7 +152,9 @@ func _has_ground_ahead() -> bool:
 	var ray_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
 	
 	# Ajuste estes valores conforme necessário
-	var forward_offset = 30 * SCALE_FACTOR  # Distância à frente do personagem
+	# Sensor mais próximo do corpo: detecta o buraco apenas no tile imediatamente
+	# à frente (antes ficava ~1,5 tile adiante, disparando o pulo cedo demais).
+	var forward_offset = 18 * SCALE_FACTOR  # Distância à frente do personagem
 	var vertical_offset = -10 * SCALE_FACTOR  # Ajuste vertical (negativo = acima dos pés)
 	
 	var start_pos = global_position + ray_direction * forward_offset + Vector2(0, vertical_offset)
