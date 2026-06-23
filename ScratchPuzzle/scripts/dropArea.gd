@@ -516,6 +516,11 @@ func executar_sequencial(comandos, is_root := true):
 		_exec_total = _count_total_commands(comandos)
 
 	for comando_data in comandos:
+		# Trava de execução: aborta imediatamente se o player morreu ou foi liberado
+		# (evita contagem de passos "fantasma" após o Game Over).
+		if not player or not is_instance_valid(player) or player.is_dead:
+			return
+
 		var comando = comando_data[0]
 
 		if not comando or not is_instance_valid(comando):
