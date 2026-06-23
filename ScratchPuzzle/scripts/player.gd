@@ -9,6 +9,13 @@ const JUMP_VELOCITY = -240.0 * SCALE_FACTOR
 const RAYCAST_DISTANCE = 25 * SCALE_FACTOR  # Distância para detectar obstáculos
 const HOLE_DETECTION_DISTANCE = 50.0 * SCALE_FACTOR  # Distância para detectar buracos
 
+# Hitbox (medidas extraídas do spritesheet): o personagem ocupa 13px parado/correndo
+# e alarga para 15px nos frames de pulo. O centro visível fica ~0.5px deslocado e
+# espelha conforme a direção. Estes valores mantêm a colisão colada ao sprite.
+const HITBOX_GROUND_WIDTH := 13.0
+const HITBOX_JUMP_WIDTH := 15.0
+const HITBOX_CENTER_OFFSET := 0.5
+
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity") 
 var is_jumping := false
 var is_moving := false
@@ -19,8 +26,17 @@ var is_dead := false
 
 @onready var texture := $AnimatedSprite2D as AnimatedSprite2D
 @onready var step_timer := $StepTimer as Timer
+@onready var collision_shape := $CollisionShape2D as CollisionShape2D
+
+func _ready() -> void:
+	# Torna o shape de colisão único para poder ajustá-lo em runtime sem
+	# afetar outras instâncias que compartilham o mesmo recurso.
+	if collision_shape and collision_shape.shape:
+		collision_shape.shape = collision_shape.shape.duplicate()
+	_update_hitbox()
 
 func _physics_process(delta: float) -> void:
+	_update_hitbox()
 	# Adiciona a gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -94,6 +110,21 @@ func andar():
 func virar():
 	direction *= -1
 	texture.scale.x = -direction
+	_update_hitbox()
+
+# Mantém a caixa de colisão alinhada ao sprite visível:
+#  - largura acompanha o estado (parado/correndo = 13px, pulo = 15px), evitando
+#    que o sprite atravesse as paredes durante o salto;
+#  - centro horizontal acompanha a direção, eliminando a folga lateral
+#    assimétrica que fazia o personagem "flutuar" ao lado das plataformas.
+func _update_hitbox() -> void:
+	if not collision_shape:
+		return
+	var shape := collision_shape.shape as RectangleShape2D
+	if shape == null:
+		return
+	shape.size.x = HITBOX_JUMP_WIDTH if not is_on_floor() else HITBOX_GROUND_WIDTH
+	collision_shape.position.x = HITBOX_CENTER_OFFSET * direction
 
 func pular():
 	if is_instance_valid(SoundManager):

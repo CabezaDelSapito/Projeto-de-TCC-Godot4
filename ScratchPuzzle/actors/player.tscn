@@ -162,7 +162,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkrvt"]
-size = Vector2(11, 17)
+size = Vector2(13, 17)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
