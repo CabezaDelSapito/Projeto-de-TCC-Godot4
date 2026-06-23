@@ -369,8 +369,9 @@ static func _paint_tilemap(tilemap: TileMap, grid: Dictionary, width: int) -> vo
 		# Superfície do chão (caminhável)
 		tilemap.set_cell(0, Vector2i(x, ground_y), 1, TILE_SURFACE)
 
-		# Preenchimento abaixo do chão
-		for y in range(ground_y + 1, ground_y + FILL_ROWS + 1):
+		# Preenchimento abaixo do chão — até o fundo do mapa para não deixar
+		# lacunas vazias na base topológica do cenário.
+		for y in range(ground_y + 1, MAP_HEIGHT):
 			var fill = TILE_FILL_A if (x + y) % 2 == 0 else TILE_FILL_B
 			tilemap.set_cell(0, Vector2i(x, y), 1, fill)
 
@@ -381,8 +382,9 @@ static func _paint_tilemap(tilemap: TileMap, grid: Dictionary, width: int) -> vo
 				tilemap.set_cell(0, Vector2i(x, y), 1, fill)
 			tilemap.set_cell(0, Vector2i(x, GROUND_Y), 1, TILE_SURFACE)
 
-	# Paredes laterais
-	for y in range(-1, GROUND_Y + FILL_ROWS + 1):
+	# Paredes laterais — descem até o fundo do mapa, acompanhando o preenchimento
+	# do chão para que as molduras laterais fechem a base sem buracos.
+	for y in range(-1, MAP_HEIGHT):
 		tilemap.set_cell(0, Vector2i(-1, y), 1, TILE_EDGE_LEFT)
 		tilemap.set_cell(0, Vector2i(width, y), 1, TILE_EDGE_RIGHT)
 
