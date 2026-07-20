@@ -134,7 +134,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Blocos" type="Container" parent="MarginContainer/LeftColumn/ExecuteArea/MarginContainer/VBoxContainer/TabContainer"]
+[node name="Blocos" type="MarginContainer" parent="MarginContainer/LeftColumn/ExecuteArea/MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/LeftColumn/ExecuteArea/MarginContainer/VBoxContainer/TabContainer/Blocos"]
@@ -149,7 +149,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_constants/separation = 10
 
-[node name="Codigo" type="Container" parent="MarginContainer/LeftColumn/ExecuteArea/MarginContainer/VBoxContainer/TabContainer"]
+[node name="Codigo" type="MarginContainer" parent="MarginContainer/LeftColumn/ExecuteArea/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
